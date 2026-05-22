@@ -1,0 +1,608 @@
+    <script>
+        // Translation Data
+        const translations = {
+            es: {
+                nav_home: "Inicio", nav_projects: "Proyectos", nav_skills: "Habilidades", nav_contact: "Contacto",
+                hero_badge: "Ingeniero de Sistemas",
+                hero_desc: "Diseñando el futuro a través de IA, Automatización y arquitectura de sistemas de alto rendimiento.",
+                hero_btn_work: "EXPLORAR TRABAJO",
+                hero_btn_contact: "Comencemos",
+                sec_projects_title: "SOLUCIONES REALES", sec_projects_subtitle: "PROYECTOS SELECCIONADOS",
+                sec_projects_desc: "Una muestra de mi capacidad para transformar ideas complejas en productos digitales funcionales y atractivos.",
+                sec_about_title: "SOBRE MÍ", 
+                sec_skills_title: "HABILIDADES", sec_skills_subtitle: "STACK TECNOLÓGICO",
+                sec_experience_title: "EXPERIENCIA", sec_experience_subtitle: "TRAYECTORIA PROFESIONAL",
+                sec_blog_title: "BLOG / LAB", sec_blog_subtitle: "LABORATORIO & IDEAS",
+                sec_blog_soon: "Próximamente...",
+                sec_contact_title: "HABLEMOS AHORA", sec_contact_subtitle: "¿TIENES UNA IDEA?",
+                contact_btn: "ENVIAR MENSAJE", contact_copy_btn: "Copiar",
+                modal_visit_site: "Visitar Sitio", modal_tech_stack: "Stack Tecnológico", modal_features: "Características Clave",
+                toast_copy: "¡Email copiado con éxito!",
+                footer_tagline: "Paul Jared Medina Aranda | Diseñando y desarrollando el futuro a través de código e innovación.",
+                footer_quote: '"El código es la herramienta, la lógica es el arte."',
+                footer_made: "Hecho con"
+            },
+            en: {
+                nav_home: "Home", nav_projects: "Projects", nav_skills: "Skills", nav_contact: "Contact",
+                hero_badge: "Systems Engineer",
+                hero_desc: "Designing the future through AI, Automation, and high-performance system architecture.",
+                hero_btn_work: "EXPLORE WORK",
+                hero_btn_contact: "Let's Begin",
+                sec_projects_title: "REAL SOLUTIONS", sec_projects_subtitle: "SELECTED PROJECTS",
+                sec_projects_desc: "A sample of my ability to transform complex ideas into functional and attractive digital products.",
+                sec_about_title: "ABOUT ME", 
+                sec_skills_title: "SKILLS", sec_skills_subtitle: "TECH STACK",
+                sec_experience_title: "EXPERIENCE", sec_experience_subtitle: "PROFESSIONAL CAREER",
+                sec_blog_title: "BLOG / LAB", sec_blog_subtitle: "LABORATORY & IDEAS",
+                sec_blog_soon: "Coming Soon...",
+                sec_contact_title: "LET'S TALK NOW", sec_contact_subtitle: "HAVE AN IDEA?",
+                contact_btn: "SEND MESSAGE", contact_copy_btn: "Copy",
+                modal_visit_site: "Visit Site", modal_tech_stack: "Tech Stack", modal_features: "Key Features",
+                toast_copy: "Email copied successfully!",
+                footer_tagline: "Paul Jared Medina Aranda | Designing and developing the future through code and innovation.",
+                footer_quote: '"Code is the tool, logic is the art."',
+                footer_made: "Made with"
+            },
+            pt: {
+                nav_home: "Início", nav_projects: "Projetos", nav_skills: "Habilidades", nav_contact: "Contato",
+                hero_badge: "Engenheiro de Sistemas",
+                hero_desc: "Projetando o futuro através de IA, Automação e arquitetura de sistemas de alto desempenho.",
+                hero_btn_work: "EXPLORAR TRABALHO",
+                hero_btn_contact: "Vamos Começar",
+                sec_projects_title: "SOLUÇÕES REAIS", sec_projects_subtitle: "PROJETOS SELECIONADOS",
+                sec_projects_desc: "Uma amostra da minha capacidade de transformar ideias complexas em produtos digitais funcionais e atraentes.",
+                sec_about_title: "SOBRE MIM", 
+                sec_skills_title: "HABILIDADES", sec_skills_subtitle: "STACK DE TECNOLOGIA",
+                sec_experience_title: "EXPERIÊNCIA", sec_experience_subtitle: "TRAJETÓRIA PROFISSIONAL",
+                sec_blog_title: "BLOG / LAB", sec_blog_subtitle: "LABORATÓRIO & IDEAS",
+                sec_blog_soon: "Em breve...",
+                sec_contact_title: "VAMOS CONVERSAR AGORA", sec_contact_subtitle: "TEM UMA IDEIA?",
+                contact_btn: "ENVIAR MENSAGEM", contact_copy_btn: "Copiar",
+                modal_visit_site: "Visitar Site", modal_tech_stack: "Stack de Tecnologia", modal_features: "Características Principais",
+                toast_copy: "E-mail copiado com sucesso!",
+                footer_tagline: "Paul Jared Medina Aranda | Projetando e desenvolvendo o futuro através de código e inovação.",
+                footer_quote: '"O código é a ferramenta, a lógica é a arte."',
+                footer_made: "Feito com"
+            },
+            fr: {
+                nav_home: "Accueil", nav_projects: "Projets", nav_skills: "Compétences", nav_contact: "Contact",
+                hero_badge: "Ingénieur Systèmes",
+                hero_desc: "Concevoir l'avenir grâce à l'IA, l'automatisation et l'architecture système haute performance.",
+                hero_btn_work: "EXPLORER LE TRAVAIL",
+                hero_btn_contact: "Commençons",
+                sec_projects_title: "SOLUTIONS RÉELLES", sec_projects_subtitle: "PROJETS SÉLECTIONNÉS",
+                sec_projects_desc: "Un échantillon de ma capacité à transformer des idées complexes en produits numériques fonctionnels et attractifs.",
+                sec_about_title: "À PROPOS", 
+                sec_skills_title: "COMPÉTENCES", sec_skills_subtitle: "STACK TECHNIQUE",
+                sec_experience_title: "EXPÉRIENCE", sec_experience_subtitle: "PARCOURS PROFESSIONNEL",
+                sec_blog_title: "BLOG / LAB", sec_blog_subtitle: "LABORATOIRE & IDÉES",
+                sec_blog_soon: "Bientôt disponible...",
+                sec_contact_title: "PARLONS MAINTENANT", sec_contact_subtitle: "UNE IDÉE ?",
+                contact_btn: "ENVOYER UN MESSAGE", contact_copy_btn: "Copier",
+                modal_visit_site: "Visiter le Site", modal_tech_stack: "Stack Technique", modal_features: "Caractéristiques Clés",
+                toast_copy: "E-mail copié avec succès !",
+                footer_tagline: "Paul Jared Medina Aranda | Concevoir et développer l'avenir par le code et l'innovation.",
+                footer_quote: '"Le code est l\'outil, la logique est l\'art."',
+                footer_made: "Fait avec"
+            },
+            de: {
+                nav_home: "Startseite", nav_projects: "Projekte", nav_skills: "Fähigkeiten", nav_contact: "Kontakt",
+                hero_badge: "Systemingenieur",
+                hero_desc: "Die Zukunft gestalten durch KI, Automatisierung und Hochleistungs-Systemarchitektur.",
+                hero_btn_work: "ARBEIT ERKUNDEN",
+                hero_btn_contact: "Lass uns anfangen",
+                sec_projects_title: "ECHTE LÖSUNGEN", sec_projects_subtitle: "AUSGEWÄHLTE PROJEKTE",
+                sec_projects_desc: "Eine Kostprobe meiner Fähigkeit, komplexe Ideen in funktionale und attraktive digitale Produkte zu verwandeln.",
+                sec_about_title: "ÜBER MICH", 
+                sec_skills_title: "FÄHIGKEITEN", sec_skills_subtitle: "TECH-STACK",
+                sec_experience_title: "ERFAHRUNG", sec_experience_subtitle: "BERUFLICHER WERDEGANG",
+                sec_blog_title: "BLOG / LAB", sec_blog_subtitle: "LABOR & IDEEN",
+                sec_blog_soon: "Demnächst...",
+                sec_contact_title: "LASS UNS JETZT REDEN", sec_contact_subtitle: "HAST DU EINE IDEE?",
+                contact_btn: "NACHRICHT SENDEN", contact_copy_btn: "Kopieren",
+                modal_visit_site: "Website Besuchen", modal_tech_stack: "Tech-Stack", modal_features: "Hauptmerkmale",
+                toast_copy: "E-Mail erfolgreich kopiert!",
+                footer_tagline: "Paul Jared Medina Aranda | Gestaltung und Entwicklung der Zukunft durch Code und Innovation.",
+                footer_quote: '"Code ist das Werkzeug, Logik ist die Kunst."',
+                footer_made: "Hergestellt mit"
+            },
+            ko: {
+                nav_home: "홈", nav_projects: "프로젝트", nav_skills: "기술", nav_contact: "연락처",
+                hero_badge: "시스템 엔지니어",
+                hero_desc: "AI, 자동화 및 고성능 시스템 아키텍처를 통해 미래를 설계합니다.",
+                hero_btn_work: "작업 탐색",
+                hero_btn_contact: "시작합시다",
+                sec_projects_title: "실제 솔루션", sec_projects_subtitle: "선택된 프로젝트",
+                sec_projects_desc: "복잡한 아이디어를 기능적이고 매력적인 디지털 제품으로 변화시키는 저의 역량을 보여주는 샘플입니다.",
+                sec_about_title: "내 소개", 
+                sec_skills_title: "기술 역량", sec_skills_subtitle: "기술 스택",
+                sec_experience_title: "경력", sec_experience_subtitle: "전문 분야 경력",
+                sec_blog_title: "블로그 / 랩", sec_blog_subtitle: "연구소 & 아이디어",
+                sec_blog_soon: "곧 출시 예정...",
+                sec_contact_title: "지금 이야기합시다", sec_contact_subtitle: "아이디어가 있으신가요?",
+                contact_btn: "메시지 보내기", contact_copy_btn: "복사",
+                modal_visit_site: "사이트 방문", modal_tech_stack: "기술 스택", modal_features: "주요 특징",
+                toast_copy: "이메일이 복사되었습니다!",
+                footer_tagline: "Paul Jared Medina Aranda | 코드와 혁신을 통해 미래를 설계하고 개발합니다.",
+                footer_quote: '"코드는 도구이고, 로직은 예술이다."',
+                footer_made: "제작자:"
+            }
+        };
+
+        const methodologiesData = [
+            {
+                title: "Design Thinking",
+                icon: "fa-brain",
+                color: "neon-purple",
+                desc: {
+                    es: "Metodología de resolución de problemas centrada en el usuario.",
+                    en: "User-centered problem-solving methodology.",
+                    pt: "Metodologia de resolução de problemas centrada no usuário.",
+                    fr: "Méthodologie de résolution de problèmes centrée sur l'utilisateur.",
+                    de: "Benutzerzentrierte Problemlösungsmethodik.",
+                    ko: "사용자 중심의 문제 해결 방법론."
+                }
+            },
+            {
+                title: { es: "Modelado UML", en: "UML Modeling", pt: "Modelagem UML", fr: "Modélisation UML", de: "UML-Modellierung", ko: "UML 모델링" },
+                icon: "fa-sitemap",
+                color: "neon-blue",
+                desc: {
+                    es: "Arquitectura de software con diagramas profesionales.",
+                    en: "Software architecture with professional diagrams.",
+                    pt: "Arquitetura de software com diagramas profissionais.",
+                    fr: "Architecture logicielle avec des diagrammes professionnels.",
+                    de: "Softwarearchitektur mit professionellen Diagrammen.",
+                    ko: "전문적인 다이어그램을 사용한 소프트웨어 아키텍처."
+                }
+            },
+            {
+                title: { es: "IA Aplicada", en: "Applied AI", pt: "IA Aplicada", fr: "IA Appliquée", de: "Angewandte KI", ko: "응용 AI" },
+                icon: "fa-microchip",
+                color: "neon-green",
+                desc: {
+                    es: "Integración de modelos de lenguaje y automatización.",
+                    en: "Integration of language models and automation.",
+                    pt: "Integração de modelos de linguagem e automação.",
+                    fr: "Intégration de modèles de langage et d'automatisation.",
+                    de: "Integration von Sprachmodellen und Automatisierung.",
+                    ko: "언어 모델과 자동화의 통합."
+                }
+            },
+            {
+                title: { es: "Despliegue", en: "Deployment", pt: "Implantação", fr: "Déploiement", de: "Bereitstellung", ko: "배포" },
+                icon: "fa-terminal",
+                color: "neon-pink",
+                desc: {
+                    es: "Gestión de servidores y entornos cloud robustos.",
+                    en: "Management of servers and robust cloud environments.",
+                    pt: "Gestão de servidores e ambientes de nuvem robustos.",
+                    fr: "Gestion des serveurs et des environnements cloud robustes.",
+                    de: "Verwaltung von Servern und robusten Cloud-Umgebungen.",
+                    ko: "서버 및 강력한 클라우드 환경 관리."
+                }
+            }
+        ];
+
+        const experienceData = [
+            {
+                period: { es: "2024 - PRESENTE", en: "2024 - PRESENT", pt: "2024 - PRESENTE", fr: "2024 - PRÉSENT", de: "2024 - GEGENWART", ko: "2024 - 현재" },
+                role: { 
+                    es: "Desarrollador / Estudiante Ingeniería de Sistemas", 
+                    en: "Developer / Systems Engineering Student",
+                    pt: "Desenvolvedor / Estudante de Engenharia de Sistemas",
+                    fr: "Développeur / Étudiant en Ingénierie des Systèmes",
+                    de: "Entwickler / Student der Systemtechnik",
+                    ko: "개발자 / 시스템 공학 학생"
+                },
+                company: "UPAO / FREELANCE",
+                color: "neon-blue",
+                desc: {
+                    es: "Enfocado en el desarrollo de sistemas robustos, integración de modelos de IA y automatización de procesos empresariales.",
+                    en: "Focused on the development of robust systems, integration of AI models, and automation of business processes.",
+                    pt: "Focado no desenvolvimento de sistemas robustos, integração de modelos de IA e automação de processos de negócios.",
+                    fr: "Axé sur le développement de systèmes robustes, l'intégration de modèles d'IA et l'automatisation des processus métier.",
+                    de: "Fokussiert auf die Entwicklung robuster Systeme, die Integration von KI-Modellen und die Automatisierung von Geschäftsprozessen.",
+                    ko: "강력한 시스템 개발, AI 모델 통합 및 비즈니스 프로세스 자동화에 집중합니다."
+                }
+            },
+            {
+                period: "2023",
+                role: { 
+                    es: "Especialista en Infraestructura Gaming", 
+                    en: "Gaming Infrastructure Specialist",
+                    pt: "Especialista em Infraestrutura de Jogos",
+                    fr: "Spécialiste en Infrastructure de Jeux",
+                    de: "Spezialist für Gaming-Infrastruktur",
+                    ko: "게이밍 인프라 전문가"
+                },
+                company: "KAI'Z ENTERTAINMENT",
+                color: "gray-500",
+                desc: {
+                    es: "Gestión de servidores de alto rendimiento y arquitectura de sistemas para entretenimiento digital.",
+                    en: "Management of high-performance servers and system architecture for digital entertainment.",
+                    pt: "Gestão de servidores de alto desempenho e arquitetura de sistemas para entretenimento digital.",
+                    fr: "Gestion de serveurs haute performance et architecture système pour le divertissement numérique.",
+                    de: "Verwaltung von Hochleistungsservern und Systemarchitektur für digitale Unterhaltung.",
+                    ko: "디지털 엔터테인먼트를 위한 고성능 서버 관리 및 시스템 아키텍처."
+                }
+            }
+        ];
+
+        const blogData = [
+            {
+                category: { es: "IA / AUTOMACIÓN", en: "AI / AUTOMATION", pt: "IA / AUTOMAÇÃO", fr: "IA / AUTOMATISATION", de: "KI / AUTOMATISIERUNG", ko: "AI / 자동화" },
+                title: { 
+                    es: "El futuro de los agentes de código...", 
+                    en: "The future of code agents...",
+                    pt: "O futuro dos agentes de código...",
+                    fr: "L'avenir des agents de code...",
+                    de: "Die Zukunft der Code-Agenten...",
+                    ko: "코드 에이전트의 미래..."
+                },
+                progress: 33,
+                color: "neon-pink"
+            }
+        ];
+
+        const testimonialsData = [
+            {
+                quote: {
+                    es: '"Paul tiene una capacidad analítica excepcional para resolver problemas complejos de arquitectura con soluciones simples y elegantes."',
+                    en: '"Paul has an exceptional analytical capacity to solve complex architectural problems with simple and elegant solutions."',
+                    pt: '"Paul tem uma capacidade analítica excepcional para resolver problemas complexos de arquitetura com soluções simples e elegantes."',
+                    fr: '"Paul a une capacité analytique exceptionnelle pour résoudre des problèmes d\'architecture complexes avec des solutions simples et élégantes."',
+                    de: '"Paul verfügt über eine außergewöhnliche analytische Kapazität, um komplexe Architekturprobleme mit einfachen und eleganten Lösungen zu lösen."',
+                    ko: '"Paul은 복잡한 아키텍처 문제를 단순하고 우아한 솔루션으로 해결하는 뛰어난 분석 능력을 갖추고 있습니다."'
+                },
+                author: { es: "Colaborador / Cliente", en: "Collaborator / Client", pt: "Colaborador / Cliente", fr: "Collaborateur / Client", de: "Mitarbeiter / Kunde", ko: "협업자 / 고객" },
+                company: "Tech Solutions S.A."
+            }
+        ];
+
+        const aboutData = {
+            bio: {
+                es: 'Soy <span class="text-white font-bold">Paul Jared Medina Aranda</span>, un estudiante de Ingeniería de Sistemas con una visión clara: <span class="text-neon-blue italic">automatizar lo mundano para potenciar lo extraordinario</span>.',
+                en: 'I am <span class="text-white font-bold">Paul Jared Medina Aranda</span>, a Systems Engineering student with a clear vision: <span class="text-neon-blue italic">automate the mundane to empower the extraordinary</span>.',
+                pt: 'Sou <span class="text-white font-bold">Paul Jared Medina Aranda</span>, um estudante de Engenharia de Sistemas com uma visão clara: <span class="text-neon-blue italic">automatizar o mundano para potencializar o extraordinário</span>.',
+                fr: 'Je suis <span class="text-white font-bold">Paul Jared Medina Aranda</span>, un étudiant en Ingénierie des Systèmes avec une vision claire : <span class="text-neon-blue italic">automatiser le banal pour libérer l\'extraordinaire</span>.',
+                de: 'Ich bin <span class="text-white font-bold">Paul Jared Medina Aranda</span>, ein Student der Systemtechnik mit einer klaren Vision: <span class="text-neon-blue italic">das Alltägliche automatisieren, um das Außergewöhnliche zu ermöglichen</span>.',
+                ko: '저는 <span class="text-white font-bold">폴 자레드 메디나 아란다</span>입니다. 시스템 공학 학생으로서 "평범한 것을 자동화하여 비범한 결과를 만들어낸다"는 명확한 비전을 가지고 있습니다.'
+            },
+            subbio: {
+                es: "Me especializo en el desarrollo de soluciones que integran IA para optimizar procesos, desde infraestructuras de gaming hasta sistemas empresariales complejos. Mi enfoque siempre está en la eficiencia y la experiencia del usuario final.",
+                en: "I specialize in developing solutions that integrate AI to optimize processes, from gaming infrastructures to complex business systems. My focus is always on efficiency and end-user experience.",
+                pt: "Eu me especializo no desenvolvimento de soluções que integram IA para otimizar processos, desde infraestruturas de jogos até sistemas empresariais complexos. Meu foco é sempre na eficiência e na experiência do usuário final.",
+                fr: "Je me spécialise dans le développement de solutions intégrant l'IA pour optimiser les processus, des infrastructures de jeux aux systèmes d'entreprise complexes. Mon objectif est siempre l'efficacité et l'expérience de l'utilisateur final.",
+                de: "Ich bin spezialisiert auf die Entwicklung von Lösungen, die KI integrieren, um Prozesse zu optimieren, von Gaming-Infrastrukturen bis hin zu komplexen Geschäftssystemen. Mein Fokus liegt immer auf Effizienz und Endnutzererfahrung.",
+                ko: "게이밍 인프라부터 복잡한 기업 시스템에 이르기까지 프로세스를 최적화하기 위해 AI를 통합하는 솔루션 개발을 전문으로 합니다. 저의 집중 분야는 항상 효율성과 최종 사용자 경험에 있습니다."
+            },
+            stats: [
+                { value: "3+", label: { es: "Años Codeando", en: "Years Coding", pt: "Anos Codando", fr: "Années de Code", de: "Jahre Coding", ko: "코딩 경력" } },
+                { value: "10+", label: { es: "Proyectos", en: "Projects", pt: "Projetos", fr: "Projets", de: "Projekte", ko: "프로젝트" } },
+                { value: "5+", label: { es: "Certificaciones", en: "Certifications", pt: "Certificações", fr: "Certifications", de: "Zertifizierungen", ko: "인증" } },
+                { value: "100%", label: { es: "Compromiso", en: "Commitment", pt: "Compromisso", fr: "Engagement", de: "Engagement", ko: "헌신" } }
+            ]
+        };
+
+        const projectData = {
+            botica: {
+                title: "Botica Vida y Salud",
+                icon: "fa-prescription-bottle-medical",
+                color: "neon-green",
+                link: "https://www.boticavidaysalud.com",
+                size: "large",
+                badge: { es: "PHARMA", en: "PHARMA", pt: "FARMÁCIA", fr: "PHARMACIE", de: "APOTHEKE", ko: "제약" },
+                desc: { 
+                    es: "Solución farmacéutica integral con control de stock y ventas.",
+                    en: "Comprehensive pharmaceutical solution with stock and sales control.",
+                    pt: "Solução farmacêutica abrangente com controle de estoque e vendas.",
+                    fr: "Solution pharmaceutique complète avec contrôle des stocks et des ventes.",
+                    de: "Umfassende pharmazeutische Lösung mit Lager- und Verkaufssteuerung.",
+                    ko: "재고 및 판매 관리를 포함한 종합 제약 솔루션."
+                },
+                features: {
+                    es: ["Control FEFO de stock", "Reportes de ventas diarios", "Interfaz amigable"],
+                    en: ["FEFO Stock Control", "Daily sales reports", "User-friendly interface"],
+                    pt: ["Controle de estoque FEFO", "Relatórios de vendas diários", "Interface amigável"],
+                    fr: ["Contrôle des stocks FEFO", "Rapports de ventes quotidiens", "Interface conviviale"],
+                    de: ["FEFO-Lagersteuerung", "Tägliche Verkaufsberichte", "Benutzerfreundliche Oberfläche"],
+                    ko: ["FEFO 재고 관리", "일일 판매 보고서", "사용자 친화적 인터페이스"]
+                },
+                tech: ["PHP", "Laravel", "MySQL", "TailwindCSS"],
+                metrics: { uptime: 99.9, ping: 24, users: 145 },
+                codeSnippet: {
+                    lang: "php",
+                    code: `public function checkStock(Request $request) {\n    return DB::transaction(function () use ($request) {\n        $product = Product::findOrFail($request->id);\n        if ($product->stock < $request->qty) {\n            throw new InsufficientStockException();\n        }\n        return response()->json(['status' => 'ok', 'stock' => $product->stock]);\n    });\n}`
+                }
+            },
+            evelyn_web: {
+                title: "Evelyn SAC Web",
+                icon: "fa-building",
+                color: "neon-blue",
+                link: "https://evelynsac-web.vercel.app/",
+                size: "standard",
+                badge: { es: "CORPORATE", en: "CORPORATE", pt: "CORPORATIVO", fr: "ENTREPRISE", de: "UNTERNEHMEN", ko: "기업" },
+                desc: { 
+                    es: "Sitio web corporativo moderno diseñado para servicios industriales.",
+                    en: "Modern corporate website designed for industrial services.",
+                    pt: "Site corporativo moderno projetado para serviços industriais.",
+                    fr: "Site Web d'entreprise moderne conçu pour les services industriels.",
+                    de: "Moderne Unternehmenswebsite für Industriedienstleistungen.",
+                    ko: "산업 서비스를 위해 설계된 현대적인 기업 웹사이트."
+                },
+                features: {
+                    es: ["Optimización SEO", "Diseño Responsivo", "Formularios"],
+                    en: ["SEO Optimization", "Responsive Design", "Contact Forms"],
+                    pt: ["Otimização SEO", "Design Responsivo", "Formulários"],
+                    fr: ["Optimisation SEO", "Design Réactif", "Formulaires"],
+                    de: ["SEO-Optimierung", "Reaktionsschnelles Design", "Kontaktformulare"],
+                    ko: ["SEO 최적화", "반응형 디자인", "문의 양식"]
+                },
+                tech: ["Next.js", "Vercel", "TailwindCSS"],
+                metrics: { uptime: 100, ping: 12, users: 890 },
+                codeSnippet: {
+                    lang: "javascript",
+                    code: `export default async function generateStaticParams() {\n  const services = await getServices();\n  return services.map((service) => ({\n    slug: service.slug,\n  }));\n}`
+                }
+            },
+            evelyn_inv: {
+                title: "Inventario Evelyn SAC",
+                icon: "fa-boxes-stacked",
+                color: "neon-purple",
+                link: "https://inventario-evelyn-sac.onrender.com",
+                size: "wide",
+                badge: { es: "SAAS / INVENTORY", en: "SAAS / INVENTORY", pt: "SAAS / ESTOQUE", fr: "SAAS / INVENTAIRE", de: "SAAS / LAGER", ko: "SaaS / 재고" },
+                desc: {
+                    es: "Dashboard avanzado para el control de stock y reportes en tiempo real.",
+                    en: "Advanced dashboard for live stock control and reporting.",
+                    pt: "Painel avançado para controle de estoque e relatórios em tempo real.",
+                    fr: "Tableau de bord avancé pour le contrôle des stocks et le reporting en direct.",
+                    de: "Fortschrittliches Dashboard zur Live-Lagerkontrolle und -Berichterstellung.",
+                    ko: "실시간 재고 제어 및 보고를 위한 고급 대시보드."
+                },
+                features: {
+                    es: ["Trazabilidad completa", "Alertas automáticas", "Roles y Permisos"],
+                    en: ["Full traceability", "Automated alerts", "Roles and Permissions"],
+                    pt: ["Rastreabilidade total", "Alertas automatizados", "Funções e Permissões"],
+                    fr: ["Traçabilité totale", "Alertes automatisées", "Rôles et Permissions"],
+                    de: ["Vollständige Rückverfolgbarkeit", "Automatisierte Warnungen", "Rollen und Berechtigungen"],
+                    ko: ["전체 추적 가능성", "자동 알림", "역할 및 권한"]
+                },
+                tech: ["Next.js", "Express", "PostgreSQL"],
+                metrics: { uptime: 99.5, ping: 45, users: 120 },
+                codeSnippet: {
+                    lang: "javascript",
+                    code: `const generateReport = async (req, res) => {\n  const data = await Inventory.aggregate([\n    { $match: { status: 'active' } },\n    { $group: { _id: '$category', total: { $sum: '$qty' } } }\n  ]);\n  return res.json({ success: true, data });\n}`
+                }
+            },
+            axon: {
+                title: "AXON Framework",
+                icon: "fa-microchip",
+                color: "neon-pink",
+                size: "large",
+                badge: { es: "FRAMEWORK", en: "FRAMEWORK", pt: "ESTRUTURA", fr: "CADRE", de: "FRAMEWORK", ko: "프레임워크" },
+                desc: { 
+                    es: "Ecosistema de componentes React para aplicaciones escalables.",
+                    en: "React component ecosystem for scalable applications.",
+                    pt: "Ecossistema de componentes React para aplicativos escaláveis.",
+                    fr: "Écosystème de composants React pour les applications évolutives.",
+                    de: "React-Komponenten-Ökosystem für skalierbare Anwendungen.",
+                    ko: "확장 가능한 애플리케이션을 위한 React 컴포넌트 에코시스템."
+                },
+                features: {
+                    es: ["Componentes reutilizables", "Estado atómico", "Arquitectura limpia"],
+                    en: ["Reusable components", "Atomic state", "Clean architecture"],
+                    pt: ["Componentes reutilizáveis", "Estado atômico", "Arquitetura limpa"],
+                    fr: ["Composants réutilisables", "État atomique", "Architecture propre"],
+                    de: ["Wiederverwendbare Komponenten", "Atomarer Status", "Saubere Architektur"],
+                    ko: ["재사용 가능한 컴포넌트", "원자적 상태", "클린 아키텍처"]
+                },
+                tech: ["React", "TypeScript", "TailwindCSS"],
+                metrics: { uptime: 99.99, ping: 8, users: 4000 },
+                codeSnippet: {
+                    lang: "typescript",
+                    code: `export const useAtomicState = <T,>(initial: T) => {\n  const [state, setState] = useState<T>(initial);\n  const dispatch = useCallback((action: Action) => {\n    setState(prev => reducer(prev, action));\n  }, []);\n  return [state, dispatch] as const;\n};`
+                }
+            },
+            flutter: {
+                title: "Cognito Mobile",
+                icon: "fa-android",
+                color: "neon-blue",
+                size: "wide",
+                badge: { es: "MOBILE", en: "MOBILE", pt: "MÓVEL", fr: "MOBILE", de: "MOBIL", ko: "모바일" },
+                desc: { 
+                    es: "Aplicación móvil multiplataforma de trivia y entretenimiento.",
+                    en: "Multiplatform mobile trivia and entertainment application.",
+                    pt: "Aplicativo móvel multiplataforma de curiosidades e entretenimento.",
+                    fr: "Application mobile multiplateforme de quiz et de divertissement.",
+                    de: "Plattformübergreifende mobile Trivia- und Unterhaltungs-App.",
+                    ko: "멀티플랫폼 모바일 퀴즈 및 엔터테인먼트 애플리케이션."
+                },
+                features: {
+                    es: ["Notificaciones Push", "Transiciones fluidas", "Modo offline"],
+                    en: ["Push Notifications", "Smooth transitions", "Offline mode"],
+                    pt: ["Notificações Push", "Transições suaves", "Modo offline"],
+                    fr: ["Notifications Push", "Transitions fluides", "Mode hors ligne"],
+                    de: ["Push-Benachrichtigungen", "Flüssige Übergänge", "Offline-Modus"],
+                    ko: ["푸시 알림", "부드러운 전환", "오프라인 모드"]
+                },
+                tech: ["Flutter", "Dart", "Firebase"],
+                metrics: { uptime: 99.8, ping: 45, users: 1200 },
+                codeSnippet: {
+                    lang: "dart",
+                    code: `Future<void> syncOfflineData() async {\n  final db = await DatabaseHelper.instance;\n  final unsynced = await db.getUnsyncedScores();\n  \n  if (unsynced.isNotEmpty && await hasNetwork()) {\n    await FirebaseService.pushScores(unsynced);\n    await db.markAsSynced(unsynced);\n  }\n}`
+                }
+            }
+        };
+
+        const milestonesData = [
+            { es: { title: "Infraestructura Cloud", date: "2024", desc: "Sistemas distribuidos en entornos nube." }, 
+              en: { title: "Cloud Infrastructure", date: "2024", desc: "Distributed systems in cloud environments." }, 
+              icon: "fa-cloud", color: "neon-blue" },
+            { es: { title: "Ecosistema AXON", date: "2023", desc: "Arquitectura de componentes políglotas." }, 
+              en: { title: "AXON Ecosystem", date: "2023", desc: "Polyglot component architecture." }, 
+              icon: "fa-project-diagram", color: "neon-purple" },
+            { es: { title: "Gaming High-Performance", date: "2023", desc: "Baja latencia para Kai'z Entertainment." }, 
+              en: { title: "Gaming High-Performance", date: "2023", desc: "Low-latency for Kai'z Entertainment." }, 
+              icon: "fa-gamepad", color: "neon-pink" }
+        ];
+
+        class SoundManager {
+            constructor() {
+                this.muted = localStorage.getItem('sound_muted') === 'true';
+                try {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                    this.hoverSound = { freq: 800, duration: 0.05, type: 'sine' };
+                    this.clickSound = { freq: 400, duration: 0.1, type: 'triangle' };
+                } catch(e) { console.warn("Audio not supported"); }
+            }
+            play(type) {
+                if (this.muted || !this.ctx) return;
+                if (this.ctx.state === 'suspended') this.ctx.resume();
+                const sound = type === 'hover' ? this.hoverSound : this.clickSound;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = sound.type;
+                osc.frequency.setValueAtTime(sound.freq, this.ctx.currentTime);
+                gain.gain.setValueAtTime(type === 'hover' ? 0.01 : 0.03, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + sound.duration);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start();
+                osc.stop(this.ctx.currentTime + sound.duration);
+            }
+            toggle() {
+                this.muted = !this.muted;
+                localStorage.setItem('sound_muted', this.muted);
+                const icon = document.getElementById('sound-icon');
+                if (icon) icon.className = this.muted ? 'fas fa-volume-mute text-xs text-gray-600' : 'fas fa-volume-up text-xs text-gray-400';
+                return this.muted;
+            }
+        }
+        const sound = new SoundManager();
+        window.toggleSound = () => sound.toggle();
+
+        function setLanguage(lang) {
+            localStorage.setItem('preferred_lang', lang);
+            
+            // Update UI
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = translations[lang][key];
+                    } else {
+                        // Preserve icons if any
+                        const icon = el.querySelector('i');
+                        el.innerHTML = translations[lang][key];
+                        if (icon) el.appendChild(icon);
+                    }
+                }
+            });
+
+            // Update all dynamic sections
+            renderProjects(lang);
+            renderMilestones(lang);
+            renderTechGraph();
+            renderMethodologies(lang);
+            renderExperience(lang);
+            renderBlog(lang);
+            renderTestimonials(lang);
+            renderAbout(lang);
+            
+            // Update current lang indicators
+            const langFlags = { es: '🇪🇸', en: '🇺🇸', pt: '🇧🇷', fr: '🇫🇷', de: '🇩🇪', ko: '🇰🇷' };
+            const flagEl = document.getElementById('current-lang-flag');
+            const textEl = document.getElementById('current-lang-text');
+            if (flagEl) flagEl.textContent = langFlags[lang];
+            if (textEl) textEl.textContent = lang.toUpperCase();
+            
+            document.documentElement.lang = lang;
+        }
+
+        function renderProjects(lang) {
+            const projectGrid = document.querySelector('#proyectos .grid');
+            if (!projectGrid) return;
+            
+            projectGrid.className = "bento-grid"; // Switch to Bento layout
+            projectGrid.innerHTML = Object.entries(projectData).map(([id, data]) => `
+                <div class="glass-card group rounded-3xl overflow-hidden cursor-pointer bento-${data.size}" onclick="openModal('${id}')">
+                    <div class="${data.size === 'large' ? 'h-full absolute inset-0' : 'h-56'} bg-dark-800 flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-${data.color}/10 to-transparent"></div>
+                        <i class="fas ${data.icon} ${data.size === 'large' ? 'text-8xl' : 'text-6xl'} text-${data.color}/30 group-hover:scale-110 transition-transform duration-700"></i>
+                    </div>
+                    <div class="${data.size === 'large' ? 'absolute bottom-0 left-0 right-0 p-10 bg-gradient-to-t from-dark-950/90 to-transparent' : 'p-8 relative'}">
+                        <span class="text-[10px] font-bold text-${data.color} tracking-widest uppercase mb-2 block">${data.badge[lang] || data.badge.es}</span>
+                        <h3 class="${data.size === 'large' ? 'text-3xl' : 'text-xl'} font-bold text-white mb-4 group-hover:text-neon-blue transition-colors">${data.title}</h3>
+                        <p class="text-gray-500 text-xs leading-relaxed line-clamp-2">${data.desc[lang] || data.desc.es}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderMilestones(lang) {
+            const track = document.getElementById('horizontal-track');
+            if (!track) return;
+            track.innerHTML = milestonesData.map(m => `
+                <div class="milestone-card glass rounded-[3rem] p-12 flex flex-col justify-between border-white/5 group hover:border-${m.color}/30 transition-all duration-700">
+                    <div class="flex justify-between items-start">
+                        <div class="w-20 h-20 rounded-2xl bg-${m.color}/10 flex items-center justify-center">
+                            <i class="fas ${m.icon} text-3xl text-${m.color}"></i>
+                        </div>
+                        <span class="text-4xl font-black text-white/5 tracking-tighter">${m[lang].date}</span>
+                    </div>
+                    <div class="space-y-4">
+                        <h3 class="text-3xl font-bold text-white group-hover:text-${m.color} transition-colors">${m[lang].title}</h3>
+                        <p class="text-gray-500 text-lg leading-relaxed">${m[lang].desc}</p>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Adjust track width dynamically
+            const totalWidth = milestonesData.length * (400 + 64); // card width + gap
+            track.style.width = `${totalWidth}px`;
+        }
+
+        // Horizontal Scroll Logic
+        window.addEventListener('scroll', () => {
+            const section = document.getElementById('highlights');
+            const track = document.getElementById('horizontal-track');
+            if (!section || !track) return;
+            
+            const rect = section.getBoundingClientRect();
+            const scrollPercent = -rect.top / (section.offsetHeight - window.innerHeight);
+            
+            if (scrollPercent >= 0 && scrollPercent <= 1) {
+                const maxMove = track.offsetWidth - window.innerWidth;
+                track.style.transform = `translateX(${-scrollPercent * maxMove}px)`;
+            }
+        });
+
+        const techGraphData = [
+            { id: 'core', label: 'SYSTEMS', icon: 'fa-microchip', x: 50, y: 50, color: 'neon-purple', size: 3 },
+            { id: 'js', label: 'JavaScript', icon: 'fa-js', x: 20, y: 25, color: 'yellow-500', size: 2, links: ['core'] },
+            { id: 'react', label: 'React', icon: 'fa-react', x: 25, y: 75, color: 'neon-blue', size: 2, links: ['js', 'core'] },
+            { id: 'python', label: 'Python', icon: 'fa-python', x: 80, y: 25, color: 'blue-400', size: 2, links: ['core'] },
+            { id: 'sql', label: 'Database', icon: 'fa-database', x: 75, y: 75, color: 'neon-green', size: 2, links: ['python', 'core'] },
+            { id: 'git', label: 'Git/CI', icon: 'fa-git-alt', x: 50, y: 85, color: 'red-500', size: 1.5, links: ['core'] },
+            { id: 'cloud', label: 'Cloud', icon: 'fa-cloud', x: 50, y: 15, color: 'gray-300', size: 2, links: ['core'] }
+        ];
+
+        function renderTechGraph() {
+            const nodesContainer = document.getElementById('tech-graph-nodes');
+            const svg = document.getElementById('tech-graph-lines');
+            if (!nodesContainer || !svg) return;
+
+            // Render Nodes
+            nodesContainer.innerHTML = techGraphData.map(node => `
+                <div class="absolute transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-2 cursor-pointer group tech-node" 
+                     style="left: ${node.x}%; top: ${node.y}%; z-index: ${node.size === 3 ? 20 : 10};"
+                     onmouseenter="sound.play('hover')" onclick="sound.play('click')">
+                    <div class="glass flex items-center justify-center rounded-full border border-white/5 group-hover:bg-white/5 transition-all duration-500"
+                         style="width: ${node.size * 3}rem; height: ${node.size * 3}rem;">
+                        <i class="fab ${node.icon} fas text-${node.color} transition-transform duration-500 group-hover:scale-125 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]" style="font-size: ${node.size * 1.2}rem;"></i>
+                    </div>
+                    <span class="text-[10px] font-bold text-gray-500 group-hover:text-white uppercase tracking-widest transition-colors bg-dark-950/80 px-3 py-1 rounded-full border border-white/5 group-hover:border-white/20">${node.label}</span>
+                </div>
+            `).join('');

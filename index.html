@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paul Jared Medina Aranda | Ingeniero de Sistemas — Portafolio</title>
+    <meta name="description" content="Portafolio profesional de Paul Jared Medina Aranda. Ingeniero de Sistemas especializado en desarrollo web, IA, automatización y arquitectura de alto rendimiento.">
+    <meta name="keywords" content="Paul Medina, Ingeniero de Sistemas, Desarrollador Web, Portafolio, IA, Automatización">
+    <meta name="author" content="Paul Jared Medina Aranda">
+    <meta name="theme-color" content="#07080E">
+    <meta property="og:title" content="Paul Jared Medina Aranda | Portafolio">
+    <meta property="og:description" content="Ingeniero de Sistemas — Desarrollo, IA y Automatización.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Background Layers -->
+    <div class="bg-grid"></div>
+    <div class="bg-vignette"></div>
+    <div class="bg-noise"></div>
+    <div class="ambient-orb ambient-orb--blue"></div>
+    <div class="ambient-orb ambient-orb--steel"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <!-- ═══════════════════════════════════ -->
+    <!-- NAVBAR                              -->
+    <!-- ═══════════════════════════════════ -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar__inner">
+            <a href="#inicio" class="navbar__logo" id="nav-logo">
+                <div class="navbar__logo-mark">PJ</div>
+                <div class="navbar__logo-text">
+                    <span class="navbar__logo-name">PAUL JARED</span>
+                    <span class="navbar__logo-sub">MEDINA ARANDA</span>
+                </div>
+            </a>
+
+            <ul class="navbar__links" id="nav-links">
+                <li><a href="#inicio" class="navbar__link">Inicio</a></li>
+                <li><a href="#tecnologias" class="navbar__link">Tech</a></li>
+                <li><a href="#proyectos" class="navbar__link">Proyectos</a></li>
+                <li><a href="#sobre-mi" class="navbar__link">Sobre Mí</a></li>
+                <li><a href="#contacto" class="navbar__link navbar__link--cta">Contacto</a></li>
+            </ul>
+
+            <button class="navbar__menu-btn" id="menu-btn" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="mobile-menu__close" id="mobile-close-btn" aria-label="Cerrar menú">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="#inicio">Inicio</a>
+        <a href="#tecnologias">Tech</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#sobre-mi">Sobre Mí</a>
+        <a href="#contacto">Contacto</a>
+    </div>
+
+    <!-- ═══════════════════════════════════ -->
+    <!-- HERO                                -->
+    <!-- ═══════════════════════════════════ -->
+    <section id="inicio" class="hero">
+        <div class="particles-container" aria-hidden="true"></div>
+
+        <div class="hero__content">
+            <div class="hero__badge">
+                <span class="hero__badge-dot"></span>
+                Ingeniero de Sistemas
+            </div>
+
+            <h1 class="hero__title" id="hero-title">PAUL JARED</h1>
+            <div class="hero__subtitle" id="hero-subtitle">
+                <div class="hero__accent-bar"></div>
+                MEDINA ARANDA
+            </div>
+
+            <p class="hero__desc">
+                Diseñando el futuro a través de <strong>IA</strong>, <strong>Automatización</strong>
+                y arquitectura de sistemas de alto rendimiento.
+            </p>
+
+            <div class="hero__actions">
+                <a href="#proyectos" class="btn-primary">
+                    Explorar Trabajo
+                    <i class="fas fa-arrow-right" style="font-size: 0.7rem;"></i>
+                </a>
+                <a href="#contacto" class="btn-ghost">
+                    Comencemos <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero__scroll">
+            <span class="hero__scroll-text">Scroll</span>
+            <div class="hero__scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ -->
+    <!-- 3D TECH SPHERE                      -->
+    <!-- ═══════════════════════════════════ -->
+    <section id="tecnologias" class="sphere-section">
+        <div class="container">
+            <div class="sphere-wrapper reveal">
+                <div>
+                    <span class="section-label">Stack Tecnológico</span>
+                    <h2 class="section-title" style="text-align:center;">Tecnologías & Herramientas</h2>
+                </div>
+
+                <div class="sphere-container">
+                    <div class="sphere" id="tech-sphere"></div>
+                </div>
+
+                <p class="sphere-hint">
+                    <i class="fas fa-hand-pointer"></i>
+                    Arrastra para explorar — Rota con tu mouse
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ -->
+    <!-- INFINITE CAROUSELS                  -->
+    <!-- ═══════════════════════════════════ -->
+    <section class="carousel-section">
+        <div class="container reveal">
+            <span class="section-label">Lenguajes & Frameworks</span>
+        </div>
+        <div class="carousel-track-wrapper" id="lang-carousel">
+            <!-- JS rendered -->
+        </div>
+    </section>
+
+    <section class="carousel-section" style="padding-top: 0;">
+        <div class="container reveal">
+            <span class="section-label">Cloud & Bases de Datos</span>
+        </div>
+        <div class="carousel-track-wrapper" id="cloud-carousel">
+            <!-- JS rendered -->
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ -->
+    <!-- PROJECTS                            -->
+    <!-- ═══════════════════════════════════ -->
+    <section id="proyectos" style="padding-top: var(--section-padding); padding-bottom: var(--section-padding);">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label">Proyectos Seleccionados</span>
+                <h2 class="section-title">Soluciones Reales</h2>
+                <p style="color: var(--text-secondary); max-width: 550px; margin-bottom: 3rem; font-size: 0.9rem; line-height: 1.7;">
+                    Una muestra de mi capacidad para transformar ideas complejas en productos digitales funcionales y atractivos.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Botica Vida y Salud (LIVE) -->
+                <div class="project-card reveal reveal--delay-1" id="project-botica">
+                    <div class="project-card__preview">
+                        <div class="project-card__preview-gradient"></div>
+                        <img src="assets/botica_vida_salud.png" alt="Botica Vida y Salud" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border-radius:inherit;">
+                        <span class="project-card__status project-card__status--live"><i class="fas fa-circle" style="font-size:0.4rem;"></i> En Producción</span>
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">PWA / E-Commerce / Pharma</span>
+                        <h3 class="project-card__title">Botica Vida y Salud</h3>
+                        <p class="project-card__desc">Sistema farmacéutico PWA con gestión de inventario, control FEFO de stock, ventas en tiempo real y funcionamiento offline.</p>
+                        <a href="https://www.boticavidaysalud.com/" class="project-card__link" target="_blank" rel="noopener">
+                            Visitar sitio <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Evelyn SAC Web (IN DEVELOPMENT) -->
+                <div class="project-card reveal reveal--delay-2" id="project-evelyn-web">
+                    <div class="project-card__preview">
+                        <div class="project-card__preview-gradient"></div>
+                        <img src="assets/evelyn_sac_web.png" alt="Evelyn SAC Web" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border-radius:inherit;">
+                        <span class="project-card__status project-card__status--dev"><i class="fas fa-code" style="font-size:0.5rem;"></i> En Desarrollo</span>
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Corporate Web / ISP</span>
+                        <h3 class="project-card__title">Evelyn SAC Web</h3>
+                        <p class="project-card__desc">Sitio web corporativo para proveedor de Internet Fibra Óptica hasta 300 Mbps, Cable TV HD y Telefonía. Diseño moderno con SEO optimizado.</p>
+                        <a href="https://evelynsac-web.vercel.app/" class="project-card__link" target="_blank" rel="noopener">
+                            Ver preview <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Inventario Evelyn SAC (IN DEVELOPMENT) -->
+                <div class="project-card reveal reveal--delay-3" id="project-evelyn-inv">
+                    <div class="project-card__preview">
+                        <div class="project-card__preview-gradient"></div>
+                        <img src="assets/inventario_evelyn_sac.png" alt="Inventario Evelyn SAC" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border-radius:inherit;">
+                        <span class="project-card__status project-card__status--dev"><i class="fas fa-code" style="font-size:0.5rem;"></i> En Desarrollo</span>
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">SaaS / Inventory System</span>
+                        <h3 class="project-card__title">Inventario Evelyn SAC</h3>
+                        <p class="project-card__desc">Sistema de inventario para NET FIBER PERÚ. Dashboard con control de stock de fibra óptica y cable, reportes en tiempo real y trazabilidad completa.</p>
+                        <a href="https://inventario-evelyn-sac.onrender.com" class="project-card__link" target="_blank" rel="noopener">
+                            Ver preview <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Axon Mobile (MAINTENANCE) -->
+                <div class="project-card reveal reveal--delay-4" id="project-axon">
+                    <div class="project-card__preview">
+                        <div class="project-card__preview-gradient"></div>
+                        <img src="assets/axon_mobile.png" alt="Axon Mobile" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border-radius:inherit;">
+                        <span class="project-card__status project-card__status--maintenance"><i class="fas fa-wrench" style="font-size:0.5rem;"></i> En Mantenimiento</span>
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Mobile App</span>
+                        <h3 class="project-card__title">Axon Mobile</h3>
+                        <p class="project-card__desc">Aplicación móvil con interfaz moderna y funcionalidad completa. Actualmente en fase de mantenimiento y mejoras continuas.</p>
+                        <span class="project-card__link project-card__link--disabled">
+                            En mantenimiento <i class="fas fa-tools"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 5: Cognito Mobile -->
+                <div class="project-card reveal reveal--delay-1" id="project-cognito">
+                    <div class="project-card__preview">
+                        <div class="project-card__preview-gradient"></div>
+                        <img src="assets/cognito_1.jpg" alt="Cognito Mobile" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;top:0;left:0;border-radius:inherit;">
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Mobile / React Native</span>
+                        <h3 class="project-card__title">Cognito Mobile</h3>
+                        <p class="project-card__desc">App móvil de trivia gamificada e interactiva con diseño moderno, notificaciones push, modo offline y transiciones fluidas.</p>
+                        <span class="project-card__link project-card__link--disabled">
+                            App Móvil (Demo Privada) <i class="fas fa-lock"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 6 — Placeholder -->
+                <div class="project-card reveal reveal--delay-2" id="project-placeholder">
+                    <div class="project-card__preview">
+                        <div class="project-card__preview-gradient"></div>
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="project-card__body">
+                        <span class="project-card__tag">Próximamente</span>
+                        <h3 class="project-card__title">Nuevo Proyecto</h3>
+                        <p class="project-card__desc">En desarrollo — próximamente aquí. Espacio reservado para futuros proyectos innovadores.</p>
+                        <span class="project-card__link project-card__link--disabled">
+                            Próximamente <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ -->
+    <!-- IMAGE CAROUSEL                      -->
+    <!-- ═══════════════════════════════════ -->
+    <section style="padding-bottom: var(--section-padding);">
+        <div class="container">
+            <div class="reveal">
+                <span class="section-label">Galería</span>
+                <h2 class="section-title" style="margin-bottom: 2rem;">Showcase Visual</h2>
+            </div>
+
+            <div class="img-carousel reveal" id="img-carousel">
+                <div class="img-carousel__track">
+                    <!-- Slide 1: Botica Vida y Salud -->
+                    <div class="img-carousel__slide">
+                        <img src="assets/botica_vida_salud.png" alt="Botica Vida y Salud — Sistema farmacéutico PWA" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
+                        <div class="img-carousel__caption">
+                            <strong>Botica Vida y Salud</strong>
+                            <span>Sistema farmacéutico PWA · En Producción</span>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Evelyn SAC Web -->
+                    <div class="img-carousel__slide">
+                        <img src="assets/evelyn_sac_web.png" alt="Evelyn SAC — Internet Fibra Óptica" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
+                        <div class="img-carousel__caption">
+                            <strong>Evelyn SAC Web</strong>
+                            <span>Sitio corporativo ISP · En Desarrollo</span>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Inventario Evelyn SAC -->
+                    <div class="img-carousel__slide">
+                        <img src="assets/inventario_evelyn_sac.png" alt="Inventario Evelyn SAC — Sistema de Inventario" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
+                        <div class="img-carousel__caption">
+                            <strong>Inventario Evelyn SAC</strong>
+                            <span>Dashboard de stock NET FIBER · En Desarrollo</span>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Axon Mobile -->
+                    <div class="img-carousel__slide">
+                        <img src="assets/axon_mobile.png" alt="Axon Mobile — Aplicación Móvil" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
+                        <div class="img-carousel__caption">
+                            <strong>Axon Mobile</strong>
+                            <span>Aplicación móvil · En Mantenimiento</span>
+                        </div>
+                    </div>
+                    <!-- Slide 5: Cognito Mobile -->
+                    <div class="img-carousel__slide">
+                        <img src="assets/cognito_1.jpg" alt="Cognito Mobile — App de Trivia" loading="lazy" style="width:100%;height:100%;object-fit:contain;background:#050810;border-radius:var(--radius-lg);">
+                        <div class="img-carousel__caption">
+                            <strong>Cognito Mobile</strong>
+                            <span>App multiplataforma de trivia gamificada</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button class="img-carousel__btn img-carousel__btn--prev" aria-label="Anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="img-carousel__btn img-carousel__btn--next" aria-label="Siguiente">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="img-carousel__controls">
+                    <button class="img-carousel__dot active" data-slide="0" aria-label="Botica Vida y Salud"></button>
+                    <button class="img-carousel__dot" data-slide="1" aria-label="Evelyn SAC Web"></button>
+                    <button class="img-carousel__dot" data-slide="2" aria-label="Inventario Evelyn SAC"></button>
+                    <button class="img-carousel__dot" data-slide="3" aria-label="Axon Mobile"></button>
+                    <button class="img-carousel__dot" data-slide="4" aria-label="Cognito Mobile"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ -->
+    <!-- ABOUT ME                            -->
+    <!-- ═══════════════════════════════════ -->
+    <section id="sobre-mi">
+        <div class="container">
+            <div class="about-card reveal">
+                <div class="about-grid">
+                    <div>
+                        <div class="about__logo-box">PM</div>
+                        <span class="section-label">Conóceme</span>
+                        <h2 class="section-title">Sobre Mí</h2>
+                        <p class="about__bio">
+                            Soy <strong>Paul Jared Medina Aranda</strong>, estudiante de Ingeniería de Sistemas
+                            con una visión clara: <em>automatizar lo mundano para potenciar lo extraordinario</em>.
+                        </p>
+                        <p class="about__bio" style="color: var(--text-muted); font-size: 0.85rem;">
+                            Me especializo en el desarrollo de soluciones que integran IA para optimizar procesos,
+                            desde infraestructuras de gaming hasta sistemas empresariales complejos. Mi enfoque
+                            siempre está en la eficiencia y la experiencia del usuario final.
+                        </p>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box reveal reveal--delay-1">
+                            <div class="stat-box__value" data-count="3+">0</div>
+                            <div class="stat-box__label">Años Codeando</div>
+                        </div>
+                        <div class="stat-box reveal reveal--delay-2">
+                            <div class="stat-box__value" data-count="10+">0</div>
+                            <div class="stat-box__label">Proyectos</div>
+                        </div>
+                        <div class="stat-box reveal reveal--delay-3">
+                            <div class="stat-box__value" data-count="5+">0</div>
+                            <div class="stat-box__label">Certificaciones</div>
+                        </div>
+                        <div class="stat-box reveal reveal--delay-4">
+                            <div class="stat-box__value" data-count="100%">0</div>
+                            <div class="stat-box__label">Compromiso</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ -->
+    <!-- CONTACT                             -->
+    <!-- ═══════════════════════════════════ -->
+    <section id="contacto" class="contact-section">
+        <div class="container">
+            <div class="contact-header reveal">
+                <span class="section-label" style="justify-content:center;">¿Tienes una idea?</span>
+                <h2 class="section-title">Hablemos Ahora</h2>
+
+                <div style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
+                    <div class="contact-email-box">
+                        <span class="contact-email-box__text">pauljared96@gmail.com</span>
+                        <button class="contact-email-box__btn" onclick="copyEmail('pauljared96@gmail.com')">
+                            Copiar
+                        </button>
+                    </div>
+                    <div class="contact-email-box">
+                        <span class="contact-email-box__text">pauljared969@hotmail.com</span>
+                        <button class="contact-email-box__btn" onclick="copyEmail('pauljared969@hotmail.com')">
+                            Copiar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div style="text-align: center; margin-bottom: 2.5rem;" class="reveal reveal--delay-1">
+                <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 0.5rem;">
+                    <i class="fas fa-phone" style="color: var(--accent-steel); margin-right: 0.5rem;"></i>
+                    <a href="https://wa.me/51952449319" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color=''">+51 952 449 319</a>
+                </p>
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-socials reveal reveal--delay-2">
+                <a href="https://instagram.com/only_kopoz" class="social-link" title="Instagram" target="_blank" rel="noopener">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/Kopozz" class="social-link" title="GitHub" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/paul-medina-92b20538a" class="social-link" title="LinkedIn" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://wa.me/51952449319" class="social-link" title="WhatsApp" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://x.com/he_is_kopoz" class="social-link" title="X / Twitter" target="_blank" rel="noopener">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="mailto:pauljared96@gmail.com" class="social-link" title="Email" target="_blank" rel="noopener">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════ -->
+    <!-- FOOTER                              -->
+    <!-- ═══════════════════════════════════ -->
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p class="footer__text">
+                © 2026 Paul Jared Medina Aranda
+                <span style="color: var(--accent-blue); margin: 0 0.25rem;">·</span>
+                Hecho con <i class="fas fa-heart" style="color: var(--accent-blue); font-size: 0.6rem;"></i>
+            </p>
+            <p class="footer__quote">"El código es la herramienta, la lógica es el arte."</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>¡Email copiado con éxito!</span>
+    </div>
+
+    <!-- Scripts (deferred for performance) -->
+    <script src="js/animations.js" defer></script>
+    <script src="js/sphere.js" defer></script>
+    <script src="js/carousel.js" defer></script>
+    <script src="js/app.js" defer></script>
+</body>
+</html>

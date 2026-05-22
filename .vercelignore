@@ -1,0 +1,16 @@
+# Ignore Python scripts and development tools
+*.py
+
+# Ignore backup and insertion HTML files
+index_backup.html
+insert1.html
+insert2.html
+
+# Ignore raw WhatsApp images in the root folder
+WhatsApp Image 2026-05-22 at *.jpeg
+WhatsApp Image 2026-05-22 at*.jpeg
+*.jpeg
+
+# Ignore system files
+.DS_Store
+Thumbs.db
