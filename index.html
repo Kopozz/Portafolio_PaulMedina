@@ -3,475 +3,330 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul Jared Medina Aranda | Ingeniero de Sistemas — Portafolio</title>
-    <meta name="description" content="Portafolio profesional de Paul Jared Medina Aranda. Ingeniero de Sistemas especializado en desarrollo web, IA, automatización y arquitectura de alto rendimiento.">
-    <meta name="keywords" content="Paul Medina, Ingeniero de Sistemas, Desarrollador Web, Portafolio, IA, Automatización">
+    <title>Kzaly Group | Soluciones digitales por Paul Medina</title>
+    <meta name="description" content="Kzaly Group es el estudio digital independiente de Paul Medina. Páginas web, sistemas para negocios, automatización con IA y contenido digital.">
+    <meta name="keywords" content="Kzaly Group, Paul Medina, páginas web, automatización, sistemas para negocios, portafolio, Perú">
     <meta name="author" content="Paul Jared Medina Aranda">
-    <meta name="theme-color" content="#07080E">
-    <meta property="og:title" content="Paul Jared Medina Aranda | Portafolio">
-    <meta property="og:description" content="Ingeniero de Sistemas — Desarrollo, IA y Automatización.">
+    <meta name="theme-color" content="#07090d">
+    <meta property="og:title" content="Kzaly Group | Soluciones digitales">
+    <meta property="og:description" content="Tecnología útil para negocios reales. Un estudio digital independiente fundado por Paul Medina.">
     <meta property="og:type" content="website">
 
-    <!-- Fonts -->
+    <link rel="icon" type="image/webp" href="assets/logo-kaiz.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/portfolio.css">
 </head>
 <body>
-    <!-- Background Layers -->
-    <div class="bg-grid"></div>
-    <div class="bg-vignette"></div>
-    <div class="bg-noise"></div>
-    <div class="ambient-orb ambient-orb--blue"></div>
-    <div class="ambient-orb ambient-orb--steel"></div>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-ring"></div>
-
-    <!-- ═══════════════════════════════════ -->
-    <!-- NAVBAR                              -->
-    <!-- ═══════════════════════════════════ -->
-    <nav class="navbar" id="navbar">
-        <div class="container navbar__inner">
-            <a href="#inicio" class="navbar__logo" id="nav-logo">
-                <div class="navbar__logo-mark">PJ</div>
-                <div class="navbar__logo-text">
-                    <span class="navbar__logo-name">PAUL JARED</span>
-                    <span class="navbar__logo-sub">MEDINA ARANDA</span>
-                </div>
+    <header class="site-header" id="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="#inicio" aria-label="Kzaly Group, inicio">
+                <span class="brand-mark" aria-hidden="true">
+                    <img src="assets/logo-kaiz.webp" alt="">
+                </span>
+                <span class="brand-copy">
+                    <strong>Kzaly Group</strong>
+                    <small>Estudio digital independiente</small>
+                </span>
             </a>
 
-            <ul class="navbar__links" id="nav-links">
-                <li><a href="#inicio" class="navbar__link">Inicio</a></li>
-                <li><a href="#tecnologias" class="navbar__link">Tech</a></li>
-                <li><a href="#proyectos" class="navbar__link">Proyectos</a></li>
-                <li><a href="#sobre-mi" class="navbar__link">Sobre Mí</a></li>
-                <li><a href="#contacto" class="navbar__link navbar__link--cta">Contacto</a></li>
-            </ul>
+            <nav class="desktop-nav" aria-label="Navegación principal">
+                <a href="#servicios">Servicios</a>
+                <a href="#proyectos">Proyectos</a>
+                <a href="#perfil">Perfil</a>
+                <a class="nav-cta" href="#contacto">Conversemos</a>
+            </nav>
 
-            <button class="navbar__menu-btn" id="menu-btn" aria-label="Abrir menú">
-                <i class="fas fa-bars"></i>
+            <button class="menu-button" id="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
+                <span></span><span></span>
             </button>
         </div>
-    </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobile-menu">
-        <button class="mobile-menu__close" id="mobile-close-btn" aria-label="Cerrar menú">
-            <i class="fas fa-times"></i>
-        </button>
-        <a href="#inicio">Inicio</a>
-        <a href="#tecnologias">Tech</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#sobre-mi">Sobre Mí</a>
-        <a href="#contacto">Contacto</a>
-    </div>
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil" hidden>
+            <a href="#servicios">Servicios</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#perfil">Perfil</a>
+            <a href="#contacto">Conversemos</a>
+        </nav>
+    </header>
 
-    <!-- ═══════════════════════════════════ -->
-    <!-- HERO                                -->
-    <!-- ═══════════════════════════════════ -->
-    <section id="inicio" class="hero">
-        <div class="particles-container" aria-hidden="true"></div>
+    <main id="contenido">
+        <section class="hero" id="inicio">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow"><span></span> Tecnología útil para negocios reales</p>
+                    <h1>Soluciones digitales que hacen <em>más simple</em> tu negocio.</h1>
+                    <p class="hero-lead">
+                        Soy <strong>Paul Medina</strong>, estudiante de Ingeniería de Sistemas y fundador de Kzaly Group. Diseño páginas web, sistemas ligeros, automatizaciones y contenido digital con un enfoque claro: resolver bien, sin complicar de más.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#servicios">Ver servicios <i class="fas fa-arrow-down"></i></a>
+                        <a class="button button-secondary" href="https://wa.me/51952449319" target="_blank" rel="noopener">Escríbeme por WhatsApp <i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <ul class="hero-facts" aria-label="Datos destacados">
+                        <li><strong>5</strong><span>proyectos seleccionados</span></li>
+                        <li><strong>3+</strong><span>años aprendiendo y creando</span></li>
+                        <li><strong>1:1</strong><span>atención directa conmigo</span></li>
+                    </ul>
+                </div>
 
-        <div class="hero__content">
-            <div class="hero__badge">
-                <span class="hero__badge-dot"></span>
-                Ingeniero de Sistemas
+                <aside class="hero-panel reveal reveal-delay" aria-label="Áreas de trabajo">
+                    <div class="hero-panel-brand">
+                        <span class="hero-logo"><img src="assets/logo-kaiz.webp" alt="Logo de Kzaly Group"></span>
+                        <p>Diseño, desarrollo y acompañamiento directo en cada proyecto.</p>
+                    </div>
+                    <div class="capability-list">
+                        <div><span>01</span><strong>Presencia digital</strong><small>Webs, landing pages y portafolios.</small></div>
+                        <div><span>02</span><strong>Operación del negocio</strong><small>Sistemas, inventario y catálogos.</small></div>
+                        <div><span>03</span><strong>Tiempo y productividad</strong><small>Automatización y asesoría con IA.</small></div>
+                        <div><span>04</span><strong>Comunicación</strong><small>Contenido claro para redes sociales.</small></div>
+                    </div>
+                </aside>
             </div>
+        </section>
 
-            <h1 class="hero__title" id="hero-title">PAUL JARED</h1>
-            <div class="hero__subtitle" id="hero-subtitle">
-                <div class="hero__accent-bar"></div>
-                MEDINA ARANDA
-            </div>
-
-            <p class="hero__desc">
-                Diseñando el futuro a través de <strong>IA</strong>, <strong>Automatización</strong>
-                y arquitectura de sistemas de alto rendimiento.
-            </p>
-
-            <div class="hero__actions">
-                <a href="#proyectos" class="btn-primary">
-                    Explorar Trabajo
-                    <i class="fas fa-arrow-right" style="font-size: 0.7rem;"></i>
-                </a>
-                <a href="#contacto" class="btn-ghost">
-                    Comencemos <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-
-        <div class="hero__scroll">
-            <span class="hero__scroll-text">Scroll</span>
-            <div class="hero__scroll-line"></div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════ -->
-    <!-- 3D TECH SPHERE                      -->
-    <!-- ═══════════════════════════════════ -->
-    <section id="tecnologias" class="sphere-section">
-        <div class="container">
-            <div class="sphere-wrapper reveal">
-                <div>
-                    <span class="section-label">Stack Tecnológico</span>
-                    <h2 class="section-title" style="text-align:center;">Tecnologías & Herramientas</h2>
-                </div>
-
-                <div class="sphere-container">
-                    <div class="sphere" id="tech-sphere"></div>
-                </div>
-
-                <p class="sphere-hint">
-                    <i class="fas fa-hand-pointer"></i>
-                    Arrastra para explorar — Rota con tu mouse
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════ -->
-    <!-- INFINITE CAROUSELS                  -->
-    <!-- ═══════════════════════════════════ -->
-    <section class="carousel-section">
-        <div class="container reveal">
-            <span class="section-label">Lenguajes & Frameworks</span>
-        </div>
-        <div class="carousel-track-wrapper" id="lang-carousel">
-            <!-- JS rendered -->
-        </div>
-    </section>
-
-    <section class="carousel-section" style="padding-top: 0;">
-        <div class="container reveal">
-            <span class="section-label">Cloud & Bases de Datos</span>
-        </div>
-        <div class="carousel-track-wrapper" id="cloud-carousel">
-            <!-- JS rendered -->
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════ -->
-    <!-- PROJECTS                            -->
-    <!-- ═══════════════════════════════════ -->
-    <section id="proyectos" style="padding-top: var(--section-padding); padding-bottom: var(--section-padding);">
-        <div class="container">
-            <div class="reveal">
-                <span class="section-label">Proyectos Seleccionados</span>
-                <h2 class="section-title">Soluciones Reales</h2>
-                <p style="color: var(--text-secondary); max-width: 550px; margin-bottom: 3rem; font-size: 0.9rem; line-height: 1.7;">
-                    Una muestra de mi capacidad para transformar ideas complejas en productos digitales funcionales y atractivos.
-                </p>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Project 1: Botica Vida y Salud (LIVE) -->
-                <div class="project-card reveal reveal--delay-1" id="project-botica">
-                    <div class="project-card__preview">
-                        <div class="project-card__preview-gradient"></div>
-                        <img src="assets/botica_vida_salud.png" alt="Botica Vida y Salud" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border-radius:inherit;">
-                        <span class="project-card__status project-card__status--live"><i class="fas fa-circle" style="font-size:0.4rem;"></i> En Producción</span>
-                    </div>
-                    <div class="project-card__body">
-                        <span class="project-card__tag">PWA / E-Commerce / Pharma</span>
-                        <h3 class="project-card__title">Botica Vida y Salud</h3>
-                        <p class="project-card__desc">Sistema farmacéutico PWA con gestión de inventario, control FEFO de stock, ventas en tiempo real y funcionamiento offline.</p>
-                        <a href="https://www.boticavidaysalud.com/" class="project-card__link" target="_blank" rel="noopener">
-                            Visitar sitio <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2: Evelyn SAC Web (IN DEVELOPMENT) -->
-                <div class="project-card reveal reveal--delay-2" id="project-evelyn-web">
-                    <div class="project-card__preview">
-                        <div class="project-card__preview-gradient"></div>
-                        <img src="assets/evelyn_sac_web.png" alt="Evelyn SAC Web" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border-radius:inherit;">
-                        <span class="project-card__status project-card__status--dev"><i class="fas fa-code" style="font-size:0.5rem;"></i> En Desarrollo</span>
-                    </div>
-                    <div class="project-card__body">
-                        <span class="project-card__tag">Corporate Web / ISP</span>
-                        <h3 class="project-card__title">Evelyn SAC Web</h3>
-                        <p class="project-card__desc">Sitio web corporativo para proveedor de Internet Fibra Óptica hasta 300 Mbps, Cable TV HD y Telefonía. Diseño moderno con SEO optimizado.</p>
-                        <a href="https://evelynsac-web.vercel.app/" class="project-card__link" target="_blank" rel="noopener">
-                            Ver preview <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3: Inventario Evelyn SAC (IN DEVELOPMENT) -->
-                <div class="project-card reveal reveal--delay-3" id="project-evelyn-inv">
-                    <div class="project-card__preview">
-                        <div class="project-card__preview-gradient"></div>
-                        <img src="assets/inventario_evelyn_sac.png" alt="Inventario Evelyn SAC" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border-radius:inherit;">
-                        <span class="project-card__status project-card__status--dev"><i class="fas fa-code" style="font-size:0.5rem;"></i> En Desarrollo</span>
-                    </div>
-                    <div class="project-card__body">
-                        <span class="project-card__tag">SaaS / Inventory System</span>
-                        <h3 class="project-card__title">Inventario Evelyn SAC</h3>
-                        <p class="project-card__desc">Sistema de inventario para NET FIBER PERÚ. Dashboard con control de stock de fibra óptica y cable, reportes en tiempo real y trazabilidad completa.</p>
-                        <a href="https://inventario-evelyn-sac.onrender.com" class="project-card__link" target="_blank" rel="noopener">
-                            Ver preview <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4: Axon Mobile (MAINTENANCE) -->
-                <div class="project-card reveal reveal--delay-4" id="project-axon">
-                    <div class="project-card__preview">
-                        <div class="project-card__preview-gradient"></div>
-                        <img src="assets/axon_mobile.png" alt="Axon Mobile" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;border-radius:inherit;">
-                        <span class="project-card__status project-card__status--maintenance"><i class="fas fa-wrench" style="font-size:0.5rem;"></i> En Mantenimiento</span>
-                    </div>
-                    <div class="project-card__body">
-                        <span class="project-card__tag">Mobile App</span>
-                        <h3 class="project-card__title">Axon Mobile</h3>
-                        <p class="project-card__desc">Aplicación móvil con interfaz moderna y funcionalidad completa. Actualmente en fase de mantenimiento y mejoras continuas.</p>
-                        <span class="project-card__link project-card__link--disabled">
-                            En mantenimiento <i class="fas fa-tools"></i>
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Project 5: Cognito Mobile -->
-                <div class="project-card reveal reveal--delay-1" id="project-cognito">
-                    <div class="project-card__preview">
-                        <div class="project-card__preview-gradient"></div>
-                        <img src="assets/cognito_1.jpg" alt="Cognito Mobile" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;top:0;left:0;border-radius:inherit;">
-                    </div>
-                    <div class="project-card__body">
-                        <span class="project-card__tag">Mobile / React Native</span>
-                        <h3 class="project-card__title">Cognito Mobile</h3>
-                        <p class="project-card__desc">App móvil de trivia gamificada e interactiva con diseño moderno, notificaciones push, modo offline y transiciones fluidas.</p>
-                        <span class="project-card__link project-card__link--disabled">
-                            App Móvil (Demo Privada) <i class="fas fa-lock"></i>
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Project 6 — Placeholder -->
-                <div class="project-card reveal reveal--delay-2" id="project-placeholder">
-                    <div class="project-card__preview">
-                        <div class="project-card__preview-gradient"></div>
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <div class="project-card__body">
-                        <span class="project-card__tag">Próximamente</span>
-                        <h3 class="project-card__title">Nuevo Proyecto</h3>
-                        <p class="project-card__desc">En desarrollo — próximamente aquí. Espacio reservado para futuros proyectos innovadores.</p>
-                        <span class="project-card__link project-card__link--disabled">
-                            Próximamente <i class="fas fa-arrow-right"></i>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════ -->
-    <!-- IMAGE CAROUSEL                      -->
-    <!-- ═══════════════════════════════════ -->
-    <section style="padding-bottom: var(--section-padding);">
-        <div class="container">
-            <div class="reveal">
-                <span class="section-label">Galería</span>
-                <h2 class="section-title" style="margin-bottom: 2rem;">Showcase Visual</h2>
-            </div>
-
-            <div class="img-carousel reveal" id="img-carousel">
-                <div class="img-carousel__track">
-                    <!-- Slide 1: Botica Vida y Salud -->
-                    <div class="img-carousel__slide">
-                        <img src="assets/botica_vida_salud.png" alt="Botica Vida y Salud — Sistema farmacéutico PWA" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
-                        <div class="img-carousel__caption">
-                            <strong>Botica Vida y Salud</strong>
-                            <span>Sistema farmacéutico PWA · En Producción</span>
-                        </div>
-                    </div>
-                    <!-- Slide 2: Evelyn SAC Web -->
-                    <div class="img-carousel__slide">
-                        <img src="assets/evelyn_sac_web.png" alt="Evelyn SAC — Internet Fibra Óptica" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
-                        <div class="img-carousel__caption">
-                            <strong>Evelyn SAC Web</strong>
-                            <span>Sitio corporativo ISP · En Desarrollo</span>
-                        </div>
-                    </div>
-                    <!-- Slide 3: Inventario Evelyn SAC -->
-                    <div class="img-carousel__slide">
-                        <img src="assets/inventario_evelyn_sac.png" alt="Inventario Evelyn SAC — Sistema de Inventario" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
-                        <div class="img-carousel__caption">
-                            <strong>Inventario Evelyn SAC</strong>
-                            <span>Dashboard de stock NET FIBER · En Desarrollo</span>
-                        </div>
-                    </div>
-                    <!-- Slide 4: Axon Mobile -->
-                    <div class="img-carousel__slide">
-                        <img src="assets/axon_mobile.png" alt="Axon Mobile — Aplicación Móvil" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);">
-                        <div class="img-carousel__caption">
-                            <strong>Axon Mobile</strong>
-                            <span>Aplicación móvil · En Mantenimiento</span>
-                        </div>
-                    </div>
-                    <!-- Slide 5: Cognito Mobile -->
-                    <div class="img-carousel__slide">
-                        <img src="assets/cognito_1.jpg" alt="Cognito Mobile — App de Trivia" loading="lazy" style="width:100%;height:100%;object-fit:contain;background:#050810;border-radius:var(--radius-lg);">
-                        <div class="img-carousel__caption">
-                            <strong>Cognito Mobile</strong>
-                            <span>App multiplataforma de trivia gamificada</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Controls -->
-                <button class="img-carousel__btn img-carousel__btn--prev" aria-label="Anterior">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="img-carousel__btn img-carousel__btn--next" aria-label="Siguiente">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                <div class="img-carousel__controls">
-                    <button class="img-carousel__dot active" data-slide="0" aria-label="Botica Vida y Salud"></button>
-                    <button class="img-carousel__dot" data-slide="1" aria-label="Evelyn SAC Web"></button>
-                    <button class="img-carousel__dot" data-slide="2" aria-label="Inventario Evelyn SAC"></button>
-                    <button class="img-carousel__dot" data-slide="3" aria-label="Axon Mobile"></button>
-                    <button class="img-carousel__dot" data-slide="4" aria-label="Cognito Mobile"></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════════ -->
-    <!-- ABOUT ME                            -->
-    <!-- ═══════════════════════════════════ -->
-    <section id="sobre-mi">
-        <div class="container">
-            <div class="about-card reveal">
-                <div class="about-grid">
+        <section class="section services-section" id="servicios">
+            <div class="container">
+                <div class="section-heading reveal">
                     <div>
-                        <div class="about__logo-box">PM</div>
-                        <span class="section-label">Conóceme</span>
-                        <h2 class="section-title">Sobre Mí</h2>
-                        <p class="about__bio">
-                            Soy <strong>Paul Jared Medina Aranda</strong>, estudiante de Ingeniería de Sistemas
-                            con una visión clara: <em>automatizar lo mundano para potenciar lo extraordinario</em>.
-                        </p>
-                        <p class="about__bio" style="color: var(--text-muted); font-size: 0.85rem;">
-                            Me especializo en el desarrollo de soluciones que integran IA para optimizar procesos,
-                            desde infraestructuras de gaming hasta sistemas empresariales complejos. Mi enfoque
-                            siempre está en la eficiencia y la experiencia del usuario final.
-                        </p>
+                        <p class="eyebrow"><span></span> Servicios</p>
+                        <h2>Empieza con lo que tu negocio necesita hoy.</h2>
                     </div>
-                    <div class="stats-grid">
-                        <div class="stat-box reveal reveal--delay-1">
-                            <div class="stat-box__value" data-count="3+">0</div>
-                            <div class="stat-box__label">Años Codeando</div>
+                    <p>Precios de lanzamiento con un alcance claro. Antes de comenzar, definimos entregables, tiempos y costos externos como dominio, hosting o suscripciones.</p>
+                </div>
+
+                <div class="services-grid">
+                    <article class="service-card reveal">
+                        <div class="service-image"><img src="assets/services/optimizacion-laptop.webp" alt="Técnico optimizando una laptop" loading="lazy" decoding="async"></div>
+                        <div class="service-body">
+                            <span class="service-number">01</span>
+                            <h3>Optimización y formateo de laptop</h3>
+                            <p>Limpieza del sistema, configuración y programas esenciales para dejar tu equipo listo para trabajar.</p>
+                            <div class="service-footer"><strong>Desde S/60</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20consultar%20por%20la%20optimizaci%C3%B3n%20de%20mi%20laptop" target="_blank" rel="noopener" aria-label="Consultar optimización de laptop">Consultar <i class="fas fa-arrow-right"></i></a></div>
                         </div>
-                        <div class="stat-box reveal reveal--delay-2">
-                            <div class="stat-box__value" data-count="10+">0</div>
-                            <div class="stat-box__label">Proyectos</div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-image"><img src="assets/services/pagina-web-landing.webp" alt="Diseñador revisando una página web adaptable" loading="lazy" decoding="async"></div>
+                        <div class="service-body">
+                            <span class="service-number">02</span>
+                            <h3>Página web y landing para negocios</h3>
+                            <p>Una presencia digital clara, adaptable a celular y preparada para convertir visitas en consultas.</p>
+                            <div class="service-footer"><strong>Desde S/350</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener" aria-label="Consultar página web">Consultar <i class="fas fa-arrow-right"></i></a></div>
                         </div>
-                        <div class="stat-box reveal reveal--delay-3">
-                            <div class="stat-box__value" data-count="5+">0</div>
-                            <div class="stat-box__label">Certificaciones</div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-image"><img src="assets/services/catalogo-digital.webp" alt="Catálogo digital abierto desde un código QR" loading="lazy" decoding="async"></div>
+                        <div class="service-body">
+                            <span class="service-number">03</span>
+                            <h3>Catálogo digital + QR + WhatsApp</h3>
+                            <p>Productos organizados en un enlace fácil de compartir, con acceso rápido desde QR y WhatsApp.</p>
+                            <div class="service-footer"><strong>Desde S/120</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20un%20cat%C3%A1logo%20digital" target="_blank" rel="noopener" aria-label="Consultar catálogo digital">Consultar <i class="fas fa-arrow-right"></i></a></div>
                         </div>
-                        <div class="stat-box reveal reveal--delay-4">
-                            <div class="stat-box__value" data-count="100%">0</div>
-                            <div class="stat-box__label">Compromiso</div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-image"><img src="assets/services/sistema-negocio.webp" alt="Propietaria usando un sistema de inventario" loading="lazy" decoding="async"></div>
+                        <div class="service-body">
+                            <span class="service-number">04</span>
+                            <h3>Sistema para tu negocio</h3>
+                            <p>Soluciones pequeñas y personalizadas para organizar ventas, inventario, clientes o reservas.</p>
+                            <div class="service-footer"><strong>Desde S/700</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20evaluar%20un%20sistema%20para%20mi%20negocio" target="_blank" rel="noopener" aria-label="Consultar sistema para negocio">Consultar <i class="fas fa-arrow-right"></i></a></div>
                         </div>
-                    </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-image"><img src="assets/services/automatizacion-ia.webp" alt="Flujo sencillo de automatización en una laptop" loading="lazy" decoding="async"></div>
+                        <div class="service-body">
+                            <span class="service-number">05</span>
+                            <h3>Automatización sencilla con IA</h3>
+                            <p>Reduce tareas repetitivas y mejora el seguimiento con un flujo práctico adaptado a tu proceso.</p>
+                            <div class="service-footer"><strong>Desde S/180</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20automatizar%20una%20tarea%20de%20mi%20negocio" target="_blank" rel="noopener" aria-label="Consultar automatización con IA">Consultar <i class="fas fa-arrow-right"></i></a></div>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-image"><img src="assets/services/posts-videos.webp" alt="Creación profesional de contenido para redes" loading="lazy" decoding="async"></div>
+                        <div class="service-body">
+                            <span class="service-number">06</span>
+                            <h3>Posts y videos para negocios</h3>
+                            <p>Contenido visual constante y coherente para mantener activas las redes sociales de tu marca.</p>
+                            <div class="service-footer"><strong>Desde S/199/mes</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20contenido%20para%20las%20redes%20de%20mi%20negocio" target="_blank" rel="noopener" aria-label="Consultar contenido para redes">Consultar <i class="fas fa-arrow-right"></i></a></div>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-image"><img src="assets/services/portafolio-cv.webp" alt="Estudiante revisando su portafolio web" loading="lazy" decoding="async"></div>
+                        <div class="service-body">
+                            <span class="service-number">07</span>
+                            <h3>Portafolio y CV web</h3>
+                            <p>Una presentación profesional para mostrar tus proyectos, habilidades y experiencia desde un solo enlace.</p>
+                            <div class="service-footer"><strong>Desde S/120</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20crear%20mi%20portafolio%20web" target="_blank" rel="noopener" aria-label="Consultar portafolio web">Consultar <i class="fas fa-arrow-right"></i></a></div>
+                        </div>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-image"><img src="assets/services/asesoria-ia.webp" alt="Sesión personalizada de IA y productividad" loading="lazy" decoding="async"></div>
+                        <div class="service-body">
+                            <span class="service-number">08</span>
+                            <h3>Asesoría en IA y productividad</h3>
+                            <p>Aprende a elegir y usar herramientas de IA para estudiar, trabajar y organizarte mejor.</p>
+                            <div class="service-footer"><strong>S/40 por hora</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20agendar%20una%20asesor%C3%ADa%20de%20IA" target="_blank" rel="noopener" aria-label="Consultar asesoría en IA">Consultar <i class="fas fa-arrow-right"></i></a></div>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ═══════════════════════════════════ -->
-    <!-- CONTACT                             -->
-    <!-- ═══════════════════════════════════ -->
-    <section id="contacto" class="contact-section">
-        <div class="container">
-            <div class="contact-header reveal">
-                <span class="section-label" style="justify-content:center;">¿Tienes una idea?</span>
-                <h2 class="section-title">Hablemos Ahora</h2>
+        <section class="section work-section" id="proyectos">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div>
+                        <p class="eyebrow"><span></span> Trabajo realizado</p>
+                        <h2>Proyectos que ya resolvieron problemas reales.</h2>
+                    </div>
+                    <p>Una selección de productos web y móviles desarrollados para salud, conectividad, inventario y aprendizaje.</p>
+                </div>
 
-                <div style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
-                    <div class="contact-email-box">
-                        <span class="contact-email-box__text">pauljared96@gmail.com</span>
-                        <button class="contact-email-box__btn" onclick="copyEmail('pauljared96@gmail.com')">
-                            Copiar
-                        </button>
-                    </div>
-                    <div class="contact-email-box">
-                        <span class="contact-email-box__text">pauljared969@hotmail.com</span>
-                        <button class="contact-email-box__btn" onclick="copyEmail('pauljared969@hotmail.com')">
-                            Copiar
-                        </button>
-                    </div>
+                <div class="projects-grid">
+                    <article class="project-card project-card-featured reveal">
+                        <a class="project-media" href="https://www.boticavidaysalud.com/" target="_blank" rel="noopener">
+                            <img src="assets/botica_vida_salud.png" alt="Sitio de Botica Vida y Salud" loading="lazy">
+                            <span class="status status-live">En producción</span>
+                        </a>
+                        <div class="project-content">
+                            <p class="project-type">PWA · E-commerce · Salud</p>
+                            <h3>Botica Vida y Salud</h3>
+                            <p>Sistema farmacéutico con gestión de inventario, control FEFO, ventas en tiempo real y funcionamiento offline.</p>
+                            <a href="https://www.boticavidaysalud.com/" target="_blank" rel="noopener">Visitar proyecto <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <a class="project-media" href="https://evelynsac-web.vercel.app/" target="_blank" rel="noopener">
+                            <img src="assets/evelyn_sac_web.png" alt="Sitio corporativo de Evelyn SAC" loading="lazy">
+                            <span class="status">En desarrollo</span>
+                        </a>
+                        <div class="project-content">
+                            <p class="project-type">Web corporativa · ISP</p>
+                            <h3>Evelyn SAC Web</h3>
+                            <p>Web comercial para presentar servicios de fibra óptica, televisión y telefonía con una experiencia clara.</p>
+                            <a href="https://evelynsac-web.vercel.app/" target="_blank" rel="noopener">Ver avance <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <a class="project-media" href="https://inventario-evelyn-sac.onrender.com" target="_blank" rel="noopener">
+                            <img src="assets/inventario_evelyn_sac.png" alt="Sistema de inventario Evelyn SAC" loading="lazy">
+                            <span class="status">En desarrollo</span>
+                        </a>
+                        <div class="project-content">
+                            <p class="project-type">Sistema web · Inventario</p>
+                            <h3>Inventario Evelyn SAC</h3>
+                            <p>Control de stock, trazabilidad de materiales y reportes para una operación de telecomunicaciones.</p>
+                            <a href="https://inventario-evelyn-sac.onrender.com" target="_blank" rel="noopener">Ver avance <i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-media">
+                            <img src="assets/axon_mobile.png" alt="Aplicación Axon Mobile" loading="lazy">
+                            <span class="status">En mantenimiento</span>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-type">Aplicación móvil</p>
+                            <h3>Axon Mobile</h3>
+                            <p>Aplicación móvil con interfaz moderna, navegación clara y un ciclo continuo de mejoras.</p>
+                            <span class="project-disabled">Vista privada</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-media project-media-contain">
+                            <img src="assets/cognito_1.jpg" alt="Aplicación Cognito Mobile" loading="lazy">
+                            <span class="status">Demo privada</span>
+                        </div>
+                        <div class="project-content">
+                            <p class="project-type">React Native · Aprendizaje</p>
+                            <h3>Cognito Mobile</h3>
+                            <p>Trivia gamificada con modo offline, notificaciones y transiciones pensadas para una experiencia ágil.</p>
+                            <span class="project-disabled">Vista privada</span>
+                        </div>
+                    </article>
                 </div>
             </div>
+        </section>
 
-            <!-- Contact Info -->
-            <div style="text-align: center; margin-bottom: 2.5rem;" class="reveal reveal--delay-1">
-                <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 0.5rem;">
-                    <i class="fas fa-phone" style="color: var(--accent-steel); margin-right: 0.5rem;"></i>
-                    <a href="https://wa.me/51952449319" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; transition:color 0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color=''">+51 952 449 319</a>
-                </p>
+        <section class="section expertise-section" aria-labelledby="expertise-title">
+            <div class="container expertise-grid">
+                <div class="section-heading compact reveal">
+                    <div>
+                        <p class="eyebrow"><span></span> Herramientas</p>
+                        <h2 id="expertise-title">Tecnología elegida según el problema.</h2>
+                    </div>
+                </div>
+                <div class="stack-groups reveal">
+                    <div class="stack-group"><strong>Frontend</strong><div><span>HTML & CSS</span><span>JavaScript</span><span>TypeScript</span><span>React</span></div></div>
+                    <div class="stack-group"><strong>Backend</strong><div><span>Node.js</span><span>Python</span><span>Java</span><span>PHP</span></div></div>
+                    <div class="stack-group"><strong>Datos y nube</strong><div><span>MySQL</span><span>PostgreSQL</span><span>Firebase</span><span>Supabase</span><span>Vercel</span></div></div>
+                </div>
             </div>
+        </section>
 
-            <!-- Social Links -->
-            <div class="contact-socials reveal reveal--delay-2">
-                <a href="https://instagram.com/only_kopoz" class="social-link" title="Instagram" target="_blank" rel="noopener">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://github.com/Kopozz" class="social-link" title="GitHub" target="_blank" rel="noopener">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/paul-medina-92b20538a" class="social-link" title="LinkedIn" target="_blank" rel="noopener">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://wa.me/51952449319" class="social-link" title="WhatsApp" target="_blank" rel="noopener">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://x.com/he_is_kopoz" class="social-link" title="X / Twitter" target="_blank" rel="noopener">
-                    <i class="fab fa-x-twitter"></i>
-                </a>
-                <a href="mailto:pauljared96@gmail.com" class="social-link" title="Email" target="_blank" rel="noopener">
-                    <i class="fas fa-envelope"></i>
-                </a>
+        <section class="section founder-section" id="perfil">
+            <div class="container founder-card reveal">
+                <div class="founder-mark"><img src="assets/logo-kaiz.webp" alt="Logo de Kzaly Group"></div>
+                <div class="founder-copy">
+                    <p class="eyebrow"><span></span> La persona detrás de la marca</p>
+                    <h2>Paul Jared Medina Aranda</h2>
+                    <p class="founder-role">Estudiante de Ingeniería de Sistemas · Fundador de Kzaly Group</p>
+                    <p>Construyo soluciones digitales con atención directa, comunicación sencilla y un alcance realista. Cada proyecto es también una oportunidad para mejorar procesos y crear una experiencia útil para quien lo va a usar.</p>
+                </div>
+                <div class="founder-values">
+                    <div><i class="fas fa-check"></i><span><strong>Trato directo</strong>Desde la idea hasta la entrega.</span></div>
+                    <div><i class="fas fa-check"></i><span><strong>Alcance claro</strong>Entregables y tiempos definidos.</span></div>
+                    <div><i class="fas fa-check"></i><span><strong>Mejora continua</strong>Trabajo que crece con experiencia real.</span></div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ═══════════════════════════════════ -->
-    <!-- FOOTER                              -->
-    <!-- ═══════════════════════════════════ -->
-    <footer class="footer">
-        <div class="container footer__inner">
-            <p class="footer__text">
-                © 2026 Paul Jared Medina Aranda
-                <span style="color: var(--accent-blue); margin: 0 0.25rem;">·</span>
-                Hecho con <i class="fas fa-heart" style="color: var(--accent-blue); font-size: 0.6rem;"></i>
-            </p>
-            <p class="footer__quote">"El código es la herramienta, la lógica es el arte."</p>
+        <section class="contact-section" id="contacto">
+            <div class="container contact-card reveal">
+                <div>
+                    <p class="eyebrow light"><span></span> ¿Tienes una idea?</p>
+                    <h2>Cuéntame qué necesitas y vemos una solución realista.</h2>
+                    <p>Una conversación breve es suficiente para entender tu objetivo, aclarar el alcance y darte un precio concreto.</p>
+                </div>
+                <div class="contact-actions">
+                    <a class="button button-light" href="https://wa.me/51952449319" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a class="button button-outline-light" href="mailto:pauljared96@gmail.com"><i class="far fa-envelope"></i> Correo</a>
+                    <button class="copy-button" type="button" data-email="pauljared96@gmail.com">Copiar correo</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <span class="brand-mark small" aria-hidden="true"><img src="assets/logo-kaiz.webp" alt=""></span>
+                <span>Kzaly Group · Fundado por Paul Medina</span>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/Kopozz" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/paul-medina-92b20538a" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://instagram.com/only_kopoz" target="_blank" rel="noopener">Instagram</a>
+            </div>
+            <p>© <span id="year">2026</span> Kzaly Group</p>
         </div>
     </footer>
 
-    <!-- Toast Notification -->
-    <div class="toast" id="toast">
-        <i class="fas fa-check-circle"></i>
-        <span>¡Email copiado con éxito!</span>
-    </div>
-
-    <!-- Scripts (deferred for performance) -->
-    <script src="js/animations.js" defer></script>
-    <script src="js/sphere.js" defer></script>
-    <script src="js/carousel.js" defer></script>
-    <script src="js/app.js" defer></script>
+    <div class="toast" id="toast" role="status" aria-live="polite">Correo copiado</div>
+    <script src="js/portfolio.js" defer></script>
 </body>
 </html>
