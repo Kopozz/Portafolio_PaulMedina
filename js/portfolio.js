@@ -191,47 +191,60 @@
         const element = document.querySelector("[data-typewriter]");
         if (!element) return;
 
-        const words = window.KzalyI18n?.words || ["sitios web que venden."];
+        const words = Array.from(window.KzalyI18n?.words || ["sitios web que venden."])
+            .filter((word) => typeof word === "string" && word.length > 0);
         window.clearTimeout(typewriterTimer);
         const run = ++typewriterRun;
-        if (!words.length || prefersReducedMotion.matches) {
-            element.textContent = words[0] || element.textContent;
+        if (!words.length) return;
+        if (words.length === 1) {
+            element.textContent = words[0];
             return;
         }
 
         let wordIndex = 0;
-        let characterIndex = words[0].length;
-        let deleting = true;
+        let characters = Array.from(words[wordIndex]);
+        let characterIndex = characters.length;
+        let phase = "pause";
 
         function tick() {
             if (run !== typewriterRun) return;
-            const word = words[wordIndex];
 
-            if (deleting) {
-                characterIndex -= 1;
-            } else {
-                characterIndex += 1;
+            if (phase === "pause") {
+                phase = "deleting";
+                typewriterTimer = window.setTimeout(tick, 40);
+                return;
             }
 
-            element.textContent = word.slice(0, characterIndex);
+            if (phase === "deleting") {
+                characterIndex = Math.max(0, characterIndex - 1);
+                element.textContent = characters.slice(0, characterIndex).join("");
 
-            if (deleting && characterIndex === 0) {
-                deleting = false;
+                if (characterIndex > 0) {
+                    typewriterTimer = window.setTimeout(tick, 38);
+                    return;
+                }
+
                 wordIndex = (wordIndex + 1) % words.length;
-                typewriterTimer = window.setTimeout(tick, 280);
+                characters = Array.from(words[wordIndex]);
+                phase = "typing";
+                typewriterTimer = window.setTimeout(tick, 260);
                 return;
             }
 
-            if (!deleting && characterIndex === words[wordIndex].length) {
-                deleting = true;
-                typewriterTimer = window.setTimeout(tick, 1700);
+            characterIndex = Math.min(characters.length, characterIndex + 1);
+            element.textContent = characters.slice(0, characterIndex).join("");
+
+            if (characterIndex < characters.length) {
+                typewriterTimer = window.setTimeout(tick, 64);
                 return;
             }
 
-            typewriterTimer = window.setTimeout(tick, deleting ? 34 : 62);
+            phase = "pause";
+            typewriterTimer = window.setTimeout(tick, 1800);
         }
 
-        typewriterTimer = window.setTimeout(tick, 1500);
+        element.textContent = words[0];
+        typewriterTimer = window.setTimeout(tick, 1400);
     }
 
     function initTilt() {
