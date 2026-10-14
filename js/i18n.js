@@ -170,7 +170,55 @@
         ["Inventario farmacéutico, ventas y operación sin conexión.", "Pharmacy inventory, sales, and offline operation.", "Stocks pharmaceutiques, ventes et fonctionnement hors ligne.", "Estoque farmacêutico, vendas e operação offline.", "薬品在庫、販売、オフライン運用。", "약품 재고, 판매, 오프라인 운영.", "Аптечный склад, продажи и автономная работа."],
         ["Web comercial y herramienta interna para inventario.", "Commercial website and internal inventory tool.", "Site commercial et outil interne de gestion des stocks.", "Site comercial e ferramenta interna de estoque.", "商用Webサイトと社内在庫管理ツール。", "상업용 웹사이트와 내부 재고 도구.", "Коммерческий сайт и внутренний инструмент учёта."],
         ["FUNDADOR / 01", "FOUNDER / 01", "FONDATEUR / 01", "FUNDADOR / 01", "創業者 / 01", "창업자 / 01", "ОСНОВАТЕЛЬ / 01"],
-        ["Ver imagen", "View image", "Voir l'image", "Ver imagem", "画像を見る", "이미지 보기", "Открыть изображение"]
+        ["Ver imagen", "View image", "Voir l'image", "Ver imagem", "画像を見る", "이미지 보기", "Открыть изображение"],
+
+        // v3 redesign
+        ["Estudio de software · Perú", "Software studio · Peru", "Studio logiciel · Pérou", "Estúdio de software · Peru", "ソフトウェアスタジオ · ペルー", "소프트웨어 스튜디오 · 페루", "Студия разработки · Перу"],
+        ["documentados", "documented", "documentés", "documentados", "掲載", "수록", "в портфолио"],
+        ["Desliza", "Scroll", "Défiler", "Deslize", "スクロール", "스크롤", "Листайте"],
+        ["Aplicaciones móviles", "Mobile apps", "Applications mobiles", "Aplicativos móveis", "モバイルアプリ", "모바일 앱", "Мобильные приложения"],
+        ["Sistemas, webs y aplicaciones en los que trabajo. Abre cada ficha para ver el problema, la solución y la tecnología.", "Systems, websites, and apps I work on. Open each one to see the problem, the solution, and the technology.", "Systèmes, sites et applications sur lesquels je travaille. Ouvrez chaque fiche pour voir le problème, la solution et la technologie.", "Sistemas, sites e aplicativos em que trabalho. Abra cada ficha para ver o problema, a solução e a tecnologia.", "手がけているシステム、Webサイト、アプリです。各項目を開くと、課題・解決策・技術を確認できます。", "제가 작업 중인 시스템, 웹사이트, 앱입니다. 각 항목을 열어 문제, 해결책, 기술을 확인하세요.", "Системы, сайты и приложения, над которыми я работаю. Откройте карточку, чтобы увидеть задачу, решение и технологии."],
+        ["Filtrar proyectos", "Filter projects", "Filtrer les projets", "Filtrar projetos", "プロジェクトを絞り込む", "프로젝트 필터", "Фильтр проектов"],
+        ["Todos", "All", "Tous", "Todos", "すべて", "전체", "Все"],
+        ["Sistemas", "Systems", "Systèmes", "Sistemas", "システム", "시스템", "Системы"],
+        ["Web", "Web", "Web", "Web", "Web", "웹", "Веб"],
+        ["Móvil", "Mobile", "Mobile", "Mobile", "モバイル", "모바일", "Мобильные"],
+        ["IA", "AI", "IA", "IA", "AI", "AI", "ИИ"],
+        ["Vista previa en preparación", "Preview coming soon", "Aperçu en préparation", "Prévia em preparação", "プレビュー準備中", "미리보기 준비 중", "Превью готовится"],
+        ["Super app · Delivery · Movilidad", "Super app · Delivery · Mobility", "Super app · Livraison · Mobilité", "Super app · Delivery · Mobilidade", "スーパーアプリ · デリバリー · 移動", "슈퍼 앱 · 배달 · 모빌리티", "Суперприложение · Доставка · Мобильность"],
+        ["Sistema web · Inventario", "Web system · Inventory", "Système web · Stocks", "Sistema web · Estoque", "Webシステム · 在庫", "웹 시스템 · 재고", "Веб-система · Склад"],
+        ["Web corporativa · ISP", "Corporate website · ISP", "Site d'entreprise · FAI", "Site corporativo · Provedor", "企業サイト · ISP", "기업 웹사이트 · ISP", "Корпоративный сайт · Провайдер"],
+        ["SaaS · Turismo · Sin conexión", "SaaS · Tourism · Offline", "SaaS · Tourisme · Hors ligne", "SaaS · Turismo · Offline", "SaaS · 観光 · オフライン", "SaaS · 관광 · 오프라인", "SaaS · Туризм · Офлайн"],
+        ["Finanzas personales · Analítica", "Personal finance · Analytics", "Finances personnelles · Analyse", "Finanças pessoais · Análise", "個人財務 · 分析", "개인 재무 · 분석", "Личные финансы · Аналитика"],
+        ["Logística · Gestión de rutas", "Logistics · Route management", "Logistique · Gestion des tournées", "Logística · Gestão de rotas", "物流 · ルート管理", "물류 · 경로 관리", "Логистика · Управление маршрутами"],
+        ["Inventario y ventas · Taller", "Inventory and sales · Workshop", "Stocks et ventes · Atelier", "Estoque e vendas · Oficina", "在庫・販売 · 整備工場", "재고·판매 · 정비소", "Склад и продажи · Мастерская"],
+        ["Punto de venta · Restaurante", "Point of sale · Restaurant", "Point de vente · Restaurant", "Ponto de venda · Restaurante", "POS · レストラン", "POS · 레스토랑", "Касса · Ресторан"],
+        ["Trivia gamificada · Aprendizaje", "Gamified trivia · Learning", "Quiz ludique · Apprentissage", "Trivia gamificada · Aprendizado", "ゲーム型クイズ · 学習", "게임형 퀴즈 · 학습", "Игровая викторина · Обучение"],
+        ["Aplicación web · Música", "Web app · Music", "Application web · Musique", "Aplicativo web · Música", "Webアプリ · 音楽", "웹 앱 · 음악", "Веб-приложение · Музыка"],
+        ["Menú interactivo · Gastronomía", "Interactive menu · Food", "Menu interactif · Gastronomie", "Cardápio interativo · Gastronomia", "インタラクティブメニュー · 飲食", "인터랙티브 메뉴 · 외식", "Интерактивное меню · Гастрономия"],
+        ["Gestión comercial · Ventas", "Business management · Sales", "Gestion commerciale · Ventes", "Gestão comercial · Vendas", "営業管理 · 販売", "영업 관리 · 판매", "Учёт торговли · Продажи"],
+        ["Asistente de voz con IA local", "Voice assistant with local AI", "Assistant vocal à IA locale", "Assistente de voz com IA local", "ローカルAI音声アシスタント", "로컬 AI 음성 비서", "Голосовой ассистент с локальным ИИ"],
+        ["Prototipo", "Prototype", "Prototype", "Protótipo", "プロトタイプ", "프로토타입", "Прототип"],
+        ["Experimental", "Experimental", "Expérimental", "Experimental", "実験的", "실험적", "Эксперимент"],
+        ["Etapas", "Stages", "Étapes", "Etapas", "工程", "단계", "Этапы"],
+        ["Web · Sistemas · Móvil · IA", "Web · Systems · Mobile · AI", "Web · Systèmes · Mobile · IA", "Web · Sistemas · Mobile · IA", "Web · システム · モバイル · AI", "웹 · 시스템 · 모바일 · AI", "Веб · Системы · Мобильные · ИИ"],
+        ["CORREO", "EMAIL", "E-MAIL", "E-MAIL", "メール", "이메일", "ПОЧТА"],
+        ["Volver arriba", "Back to top", "Retour en haut", "Voltar ao topo", "トップへ戻る", "맨 위로", "Наверх"],
+        ["Redes", "Social", "Réseaux", "Redes", "SNS", "소셜", "Соцсети"],
+        ["¿Tienes un proyecto? Hablemos.", "Have a project in mind? Let's talk.", "Un projet en tête ? Parlons-en.", "Tem um projeto? Vamos conversar.", "プロジェクトのご相談はこちら。", "프로젝트가 있나요? 이야기해요.", "Есть проект? Давайте обсудим."],
+        ["Cerrar", "Close", "Fermer", "Fechar", "閉じる", "닫기", "Закрыть"],
+        ["Abrir WhatsApp", "Open WhatsApp", "Ouvrir WhatsApp", "Abrir WhatsApp", "WhatsAppを開く", "WhatsApp 열기", "Открыть WhatsApp"],
+        ["Escríbeme", "Message me", "Écrivez-moi", "Fale comigo", "メッセージ", "메시지 보내기", "Напишите мне"],
+        ["PUNTOS CLAVE", "KEY POINTS", "POINTS CLÉS", "PONTOS-CHAVE", "主なポイント", "핵심 포인트", "КЛЮЧЕВОЕ"],
+        ["TECNOLOGÍA", "TECHNOLOGY", "TECHNOLOGIE", "TECNOLOGIA", "技術", "기술", "ТЕХНОЛОГИИ"],
+        ["Quiero algo similar", "I want something similar", "Je veux quelque chose de similaire", "Quero algo parecido", "似たものを依頼する", "비슷한 것을 원해요", "Хочу похожее"],
+        ["Logo de Kzaly Group", "Kzaly Group logo", "Logo de Kzaly Group", "Logo da Kzaly Group", "Kzaly Groupのロゴ", "Kzaly Group 로고", "Логотип Kzaly Group"],
+        ["Navegación principal", "Main navigation", "Navigation principale", "Navegação principal", "メインナビゲーション", "주요 탐색", "Основная навигация"],
+        ["Navegación móvil", "Mobile navigation", "Navigation mobile", "Navegação móvel", "モバイルナビゲーション", "모바일 탐색", "Мобильная навигация"],
+        ["Áreas de trabajo", "Areas of work", "Domaines d'activité", "Áreas de atuação", "対応領域", "업무 분야", "Направления работы"],
+        ["Kzaly Group, inicio", "Kzaly Group, home", "Kzaly Group, accueil", "Kzaly Group, início", "Kzaly Group、ホーム", "Kzaly Group, 홈", "Kzaly Group, главная"],
+        ["Hola Paul, vi tu portafolio y quiero conversar sobre un proyecto.", "Hi Paul, I saw your portfolio and I'd like to talk about a project.", "Bonjour Paul, j'ai vu votre portfolio et j'aimerais parler d'un projet.", "Olá Paul, vi seu portfólio e quero conversar sobre um projeto.", "こんにちは、Paulさん。ポートフォリオを拝見し、プロジェクトについてご相談したいです。", "안녕하세요 Paul님, 포트폴리오를 보고 프로젝트에 대해 이야기하고 싶습니다.", "Здравствуйте, Пол! Хочу обсудить проект после просмотра вашего портфолио."],
+        ["Hola Paul, vi el proyecto {project} en tu portafolio y quiero algo similar.", "Hi Paul, I saw the {project} project in your portfolio and I'd like something similar.", "Bonjour Paul, j'ai vu le projet {project} dans votre portfolio et je voudrais quelque chose de similaire.", "Olá Paul, vi o projeto {project} no seu portfólio e quero algo parecido.", "こんにちは、Paulさん。ポートフォリオの{project}を拝見し、似たものを依頼したいです。", "안녕하세요 Paul님, 포트폴리오에서 {project} 프로젝트를 보고 비슷한 것을 원합니다.", "Здравствуйте, Пол! Хочу проект, похожий на {project} из вашего портфолио."]
     ];
 
     const dictionaries = Object.fromEntries(languages.map((language) => [language, Object.create(null)]));
@@ -232,13 +280,14 @@
         });
 
         document.documentElement.lang = language;
-        document.title = language === "es" ? "Kzaly Group 2.0 | Soluciones digitales por Paul Medina" : {
-            en: "Kzaly Group 2.0 | Digital solutions by Paul Medina",
-            fr: "Kzaly Group 2.0 | Solutions numériques par Paul Medina",
-            pt: "Kzaly Group 2.0 | Soluções digitais por Paul Medina",
-            ja: "Kzaly Group 2.0 | Paul Medinaのデジタルソリューション",
-            ko: "Kzaly Group 2.0 | Paul Medina의 디지털 솔루션",
-            ru: "Kzaly Group 2.0 | Цифровые решения Paul Medina"
+        document.title = {
+            es: "Kzaly Group | Software y soluciones digitales por Paul Medina",
+            en: "Kzaly Group | Software and digital solutions by Paul Medina",
+            fr: "Kzaly Group | Logiciels et solutions numériques par Paul Medina",
+            pt: "Kzaly Group | Software e soluções digitais por Paul Medina",
+            ja: "Kzaly Group | Paul Medinaのソフトウェアとデジタルソリューション",
+            ko: "Kzaly Group | Paul Medina의 소프트웨어와 디지털 솔루션",
+            ru: "Kzaly Group | Программы и цифровые решения от Paul Medina"
         }[language];
     }
 

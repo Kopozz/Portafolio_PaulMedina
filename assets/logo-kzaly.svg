@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="320 296 616 676" role="img" aria-label="Kzaly">
+  <defs>
+    <linearGradient id="kz-k" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#02b5fc"/>
+      <stop offset="0.5" stop-color="#0071fb"/>
+      <stop offset="1" stop-color="#003fd9"/>
+    </linearGradient>
+    <linearGradient id="kz-s" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0071fb"/>
+      <stop offset="1" stop-color="#033595"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#kz-k)" d="M331 306 L406 378 V690 L545 553 L613 603 L331 871 Z"/>
+  <path fill="url(#kz-s)" d="M657 720 V958 L599 900 V778 Z"/>
+  <path fill="#f6f5f6" d="M648 444 H923 V745 L705 963 V851 L850 706 V535 Q850 520 835 520 H572 Z"/>
+</svg>

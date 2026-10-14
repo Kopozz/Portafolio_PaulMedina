@@ -1,144 +1,88 @@
 (function () {
     "use strict";
 
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const root = document.documentElement;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const finePointer = window.matchMedia("(pointer: fine)");
     const header = document.getElementById("site-header");
     const menuButton = document.getElementById("menu-button");
     const mobileNav = document.getElementById("mobile-nav");
     const toast = document.getElementById("toast");
-    const year = document.getElementById("year");
+    const projects = window.KzalyProjects || {};
 
-    const projects = {
-        botica: {
-            code: "KZ–P01",
-            category: "PWA · Comercio electrónico · Salud",
-            title: "Botica Vida y Salud",
-            status: "En producción",
-            live: true,
-            description: "Sistema farmacéutico para gestionar inventario, ventas y disponibilidad incluso cuando la conexión no es estable.",
-            role: "Diseño y desarrollo",
-            platform: "Web · PWA",
-            focus: "Inventario y venta",
-            deliverables: ["Control FEFO", "Operación sin conexión", "Ventas en tiempo real"],
-            problem: "La operación necesita controlar productos, fechas de vencimiento y ventas sin depender siempre de una conexión estable.",
-            solution: "Una PWA enfocada en inventario farmacéutico, rotación FEFO y continuidad de trabajo sin conexión, con información sincronizada al recuperar la conexión.",
-            url: "https://www.boticavidaysalud.com/",
-            images: [
-                { src: "assets/projects/botica-vida-salud.webp", alt: "Interfaz del sistema Botica Vida y Salud" }
-            ]
-        },
-        evelyn: {
-            code: "KZ–P02",
-            category: "Web corporativa · ISP",
-            title: "Web Evelyn SAC",
-            status: "En desarrollo",
-            live: false,
-            description: "Experiencia comercial para presentar servicios de fibra óptica, televisión y telefonía desde una navegación clara.",
-            role: "Diseño y desarrollo web",
-            platform: "Web adaptable",
-            focus: "Oferta y conversión",
-            deliverables: ["Planes de internet", "Cobertura de servicios", "Contacto comercial"],
-            problem: "Los servicios y planes debían entenderse rápidamente desde celular, sin obligar al visitante a solicitar información básica por separado.",
-            solution: "Una web comercial que organiza la oferta por categorías, prioriza los planes y conecta cada intención con un canal directo de consulta.",
-            url: "https://evelynsac-web.vercel.app/",
-            images: [
-                { src: "assets/projects/evelyn-sac-web.webp", alt: "Página principal del sitio corporativo Evelyn SAC" }
-            ]
-        },
-        inventario: {
-            code: "KZ–P03",
-            category: "Sistema web · Inventario",
-            title: "Inventario Evelyn SAC",
-            status: "En desarrollo",
-            live: false,
-            description: "Herramienta interna para controlar stock, movimientos y trazabilidad de materiales de telecomunicaciones.",
-            role: "Producto y desarrollo",
-            platform: "Sistema web",
-            focus: "Control operativo",
-            deliverables: ["Panel de control", "Movimientos de stock", "Reportes"],
-            problem: "La operación requiere saber qué materiales existen, dónde se encuentran y cómo cambian a lo largo del trabajo diario.",
-            solution: "Un panel centraliza existencias, entradas, salidas, estados y reportes para reducir la dispersión de información operativa.",
-            url: "https://inventario-evelyn-sac.onrender.com",
-            images: [
-                { src: "assets/projects/inventario-evelyn.webp", alt: "Panel del sistema de inventario Evelyn SAC" }
-            ]
-        },
-        axon: {
-            code: "KZ–P04",
-            category: "Aplicación móvil · Operaciones",
-            title: "Axon Móvil",
-            status: "En mantenimiento",
-            live: false,
-            description: "Interfaz móvil oscura para consultar tareas, estados operativos y actividad reciente desde un solo panel.",
-            role: "Diseño de interfaz móvil",
-            platform: "Aplicación móvil",
-            focus: "Estado del sistema",
-            deliverables: ["Panel móvil", "Estados operativos", "Navegación por tareas"],
-            problem: "La información técnica debía consultarse de forma rápida en una pantalla pequeña, manteniendo jerarquía y legibilidad.",
-            solution: "Una interfaz móvil organizada por estados, alertas y tareas, con navegación persistente y contraste preparado para uso prolongado.",
-            url: "",
-            images: [
-                { src: "assets/projects/axon-mobile.webp", alt: "Interfaz de la aplicación Axon Móvil" }
-            ]
-        },
-        cognito: {
-            code: "KZ–P05",
-            category: "React Native · Aprendizaje",
-            title: "Cognito Móvil",
-            status: "Demostración privada",
-            live: false,
-            description: "Trivia gamificada con progresión, logros, modo sin conexión y una interfaz pensada para sesiones rápidas de aprendizaje.",
-            role: "Diseño y desarrollo móvil",
-            platform: "React Native",
-            focus: "Aprendizaje gamificado",
-            deliverables: ["Trivia sin conexión", "Sistema de logros", "Progresión y recompensas"],
-            problem: "La experiencia debía mantener el interés y permitir avanzar incluso cuando el usuario no dispone de conexión.",
-            solution: "Una aplicación de preguntas con dificultad progresiva, recompensas, logros y persistencia local para continuar jugando sin conexión.",
-            url: "",
-            images: [
-                { src: "assets/projects/cognito-mobile.webp", alt: "Presentación de Cognito Móvil" },
-                { src: "assets/cognito_1.jpg", alt: "Pantalla de logros de Cognito Móvil" },
-                { src: "assets/cognito_2.jpg", alt: "Pantalla de Cognito Móvil" },
-                { src: "assets/cognito_3.jpg", alt: "Pantalla de juego de Cognito Móvil" },
-                { src: "assets/cognito_4.jpg", alt: "Pantalla de progreso de Cognito Móvil" },
-                { src: "assets/cognito_5.jpg", alt: "Pantalla adicional de Cognito Móvil" }
-            ]
-        }
-    };
+    const WHATSAPP_NUMBER = "51952449319";
+    const WHATSAPP_MESSAGE = "Hola Paul, vi tu portafolio y quiero conversar sobre un proyecto.";
+    const SIMILAR_MESSAGE = "Hola Paul, vi el proyecto {project} en tu portafolio y quiero algo similar.";
+    // Assembled at runtime so the address is not sitting in the HTML for scrapers.
+    const MAIL = ["pauljared96", "gmail.com"];
 
-    let selectedProject = "botica";
     let toastTimer;
-    let projectSwitchTimer;
     let typewriterTimer;
     let typewriterRun = 0;
+    let selectedProject = null;
 
-    function translate(value) {
-        return window.KzalyI18n?.t(value) || value;
+    const t = (value) => window.KzalyI18n?.t(value) || value;
+    const lang = () => window.KzalyI18n?.language || "es";
+    const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+    const motionOk = () => !reducedMotion.matches;
+
+    /* ---------- Header, progress, scroll spy ---------- */
+    const navLinks = Array.from(document.querySelectorAll(".desktop-nav a[data-nav]"));
+    const spySections = navLinks.map((link) => document.getElementById(link.dataset.nav)).filter(Boolean);
+    const progress = document.querySelector(".scroll-progress");
+    const processList = document.querySelector("[data-process]");
+    const waFloat = document.getElementById("wa-float");
+    const hero = document.getElementById("inicio");
+    const contact = document.getElementById("contacto");
+
+    let lastScrollY = window.scrollY;
+    let scrollTicking = false;
+
+    function onScroll() {
+        const y = window.scrollY;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+
+        header?.classList.toggle("is-scrolled", y > 12);
+        const goingDown = y > lastScrollY;
+        const menuOpen = menuButton?.classList.contains("active");
+        header?.classList.toggle("is-hidden", goingDown && y > 420 && !menuOpen);
+        lastScrollY = y;
+
+        progress?.style.setProperty("--p", max > 0 ? (y / max).toFixed(4) : "0");
+
+        const marker = y + window.innerHeight * 0.35;
+        let current = null;
+        spySections.forEach((section) => { if (section.offsetTop <= marker) current = section.id; });
+        navLinks.forEach((link) => link.classList.toggle("is-current", link.dataset.nav === current));
+
+        if (processList) {
+            const rect = processList.getBoundingClientRect();
+            const value = clamp((window.innerHeight * 0.8 - rect.top) / (rect.height + window.innerHeight * 0.25), 0, 1);
+            processList.style.setProperty("--progress", value.toFixed(3));
+        }
+
+        updateWhatsAppVisibility();
+        scrollTicking = false;
     }
 
-    function updateHeader() {
-        header?.classList.toggle("scrolled", window.scrollY > 18);
+    function requestScroll() {
+        if (scrollTicking) return;
+        scrollTicking = true;
+        window.requestAnimationFrame(onScroll);
     }
 
-    function closeMenu() {
+    /* ---------- Mobile menu ---------- */
+    function setMenu(open) {
         if (!menuButton || !mobileNav) return;
-        menuButton.classList.remove("active");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Abrir menú");
-        mobileNav.hidden = true;
-        document.body.classList.remove("menu-open");
+        mobileNav.hidden = !open;
+        menuButton.classList.toggle("active", open);
+        menuButton.setAttribute("aria-expanded", String(open));
+        menuButton.setAttribute("aria-label", t(open ? "Cerrar menú" : "Abrir menú"));
+        document.body.classList.toggle("no-scroll", open);
+        if (open) header?.classList.remove("is-hidden");
     }
 
-    function toggleMenu() {
-        if (!menuButton || !mobileNav) return;
-        const opening = mobileNav.hidden;
-        mobileNav.hidden = !opening;
-        menuButton.classList.toggle("active", opening);
-        menuButton.setAttribute("aria-expanded", String(opening));
-        menuButton.setAttribute("aria-label", opening ? "Cerrar menú" : "Abrir menú");
-        document.body.classList.toggle("menu-open", opening);
-    }
-
+    /* ---------- Toast & email ---------- */
     function showToast(message) {
         if (!toast) return;
         window.clearTimeout(toastTimer);
@@ -147,406 +91,469 @@
         toastTimer = window.setTimeout(() => toast.classList.remove("show"), 2400);
     }
 
-    async function copyEmail(button) {
-        const email = button.dataset.email;
-        if (!email) return;
+    function initMail() {
+        const address = MAIL.join("@");
+        document.querySelectorAll("[data-mail]").forEach((link) => { link.href = `mailto:${address}`; });
+        document.querySelectorAll("[data-mail-text]").forEach((node) => { node.textContent = address; });
+        document.querySelectorAll("[data-copy-mail]").forEach((button) => {
+            button.addEventListener("click", async () => {
+                try {
+                    await navigator.clipboard.writeText(address);
+                } catch {
+                    const input = document.createElement("input");
+                    input.value = address;
+                    input.setAttribute("readonly", "");
+                    input.className = "sr-only";
+                    document.body.appendChild(input);
+                    input.select();
+                    document.execCommand("copy");
+                    input.remove();
+                }
+                showToast(t("Correo copiado"));
+            });
+        });
+    }
 
-        try {
-            await navigator.clipboard.writeText(email);
-        } catch {
-            const input = document.createElement("input");
-            input.value = email;
-            input.setAttribute("readonly", "");
-            input.style.position = "fixed";
-            input.style.opacity = "0";
-            document.body.appendChild(input);
-            input.select();
-            document.execCommand("copy");
-            input.remove();
+    /* ---------- WhatsApp ---------- */
+    function whatsappUrl(message) {
+        return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+
+    function updateWhatsAppLinks() {
+        const url = whatsappUrl(t(WHATSAPP_MESSAGE));
+        document.querySelectorAll("[data-wa-link]").forEach((link) => { link.href = url; });
+    }
+
+    let contactVisible = false;
+    function updateWhatsAppVisibility() {
+        if (!waFloat || !hero) return;
+        const pastHero = window.scrollY > hero.offsetHeight * 0.55;
+        const dialogOpen = document.getElementById("case-dialog")?.open;
+        const hide = !pastHero || contactVisible || dialogOpen;
+        const wasHidden = waFloat.classList.contains("is-hidden");
+        waFloat.classList.toggle("is-hidden", Boolean(hide));
+        if (wasHidden && !hide) peekWhatsApp();
+    }
+
+    let peeked = false;
+    function peekWhatsApp() {
+        if (peeked || !waFloat) return;
+        peeked = true;
+        waFloat.classList.add("is-peek");
+        window.setTimeout(() => waFloat.classList.remove("is-peek"), 2600);
+    }
+
+    function initWhatsAppFloat() {
+        if (!waFloat) return;
+        waFloat.classList.add("is-hidden");
+
+        if (contact && "IntersectionObserver" in window) {
+            new IntersectionObserver(([entry]) => {
+                contactVisible = entry.isIntersecting;
+                updateWhatsAppVisibility();
+            }, { threshold: 0.15 }).observe(contact);
         }
 
-        showToast(translate("Correo copiado"));
+        const bubble = document.getElementById("wa-bubble");
+        let dismissed = false;
+        try { dismissed = sessionStorage.getItem("kz-wa-bubble") === "1"; } catch { /* storage unavailable */ }
+        if (bubble && !dismissed) {
+            window.setTimeout(() => {
+                if (waFloat.classList.contains("is-hidden")) return;
+                bubble.hidden = false;
+                window.setTimeout(() => { bubble.hidden = true; }, 9000);
+            }, 9000);
+            bubble.querySelector(".wa-bubble-close")?.addEventListener("click", () => {
+                bubble.hidden = true;
+                try { sessionStorage.setItem("kz-wa-bubble", "1"); } catch { /* storage unavailable */ }
+            });
+        }
+    }
+
+    /* ---------- Intro & reveal ---------- */
+    function initIntro() {
+        document.querySelectorAll("[data-intro]").forEach((element, index) => {
+            element.style.setProperty("--d", `${(0.12 + index * 0.09).toFixed(2)}s`);
+        });
+        document.querySelectorAll(".hero-title .line > span, .hero-title .line > i").forEach((element) => {
+            const line = element.closest(".line");
+            if (line) element.style.setProperty("--d", getComputedStyle(line).getPropertyValue("--d"));
+        });
+
+        const start = () => root.classList.add("is-loaded");
+        const fonts = document.fonts?.ready || Promise.resolve();
+        Promise.race([fonts, new Promise((resolve) => window.setTimeout(resolve, 700))]).then(() => window.requestAnimationFrame(start));
     }
 
     function initReveal() {
-        const elements = document.querySelectorAll(".reveal");
+        const elements = Array.from(document.querySelectorAll(".reveal"));
+        elements.forEach((element) => {
+            const siblings = Array.from(element.parentElement?.children || []).filter((child) => child.classList.contains("reveal"));
+            const index = siblings.indexOf(element);
+            if (index > 0) element.style.setProperty("--d", `${Math.min(index * 0.06, 0.42).toFixed(2)}s`);
+        });
 
-        if (prefersReducedMotion.matches || !("IntersectionObserver" in window)) {
-            elements.forEach((element) => element.classList.add("visible"));
+        if (!motionOk() || !("IntersectionObserver" in window)) {
+            elements.forEach((element) => element.classList.add("is-in"));
             return;
         }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
-                entry.target.classList.add("visible");
+                entry.target.classList.add("is-in");
                 observer.unobserve(entry.target);
             });
-        }, { threshold: 0.1, rootMargin: "0px 0px -45px" });
-
+        }, { threshold: 0.12, rootMargin: "0px 0px -40px" });
         elements.forEach((element) => observer.observe(element));
     }
 
+    /* ---------- Typewriter ---------- */
     function initTypewriter() {
         const element = document.querySelector("[data-typewriter]");
         if (!element) return;
-
-        const words = Array.from(window.KzalyI18n?.words || ["sitios web que venden."])
-            .filter((word) => typeof word === "string" && word.length > 0);
+        const words = Array.from(window.KzalyI18n?.words || ["sitios web que venden."]).filter(Boolean);
         window.clearTimeout(typewriterTimer);
         const run = ++typewriterRun;
-        if (!words.length) return;
-        if (words.length === 1) {
-            element.textContent = words[0];
-            return;
-        }
+        element.textContent = words[0];
+        if (words.length < 2 || !motionOk()) return;
 
         let wordIndex = 0;
-        let characters = Array.from(words[wordIndex]);
-        let characterIndex = characters.length;
+        let characters = Array.from(words[0]);
+        let count = characters.length;
         let phase = "pause";
 
         function tick() {
             if (run !== typewriterRun) return;
-
             if (phase === "pause") {
                 phase = "deleting";
                 typewriterTimer = window.setTimeout(tick, 40);
                 return;
             }
-
             if (phase === "deleting") {
-                characterIndex = Math.max(0, characterIndex - 1);
-                element.textContent = characters.slice(0, characterIndex).join("");
-
-                if (characterIndex > 0) {
-                    typewriterTimer = window.setTimeout(tick, 38);
+                count = Math.max(0, count - 1);
+                element.textContent = characters.slice(0, count).join("");
+                if (count > 0) {
+                    typewriterTimer = window.setTimeout(tick, 32);
                     return;
                 }
-
                 wordIndex = (wordIndex + 1) % words.length;
                 characters = Array.from(words[wordIndex]);
                 phase = "typing";
-                typewriterTimer = window.setTimeout(tick, 260);
+                typewriterTimer = window.setTimeout(tick, 280);
                 return;
             }
-
-            characterIndex = Math.min(characters.length, characterIndex + 1);
-            element.textContent = characters.slice(0, characterIndex).join("");
-
-            if (characterIndex < characters.length) {
-                typewriterTimer = window.setTimeout(tick, 64);
+            count = Math.min(characters.length, count + 1);
+            element.textContent = characters.slice(0, count).join("");
+            if (count < characters.length) {
+                typewriterTimer = window.setTimeout(tick, 58);
                 return;
             }
-
             phase = "pause";
-            typewriterTimer = window.setTimeout(tick, 1800);
+            typewriterTimer = window.setTimeout(tick, 2000);
         }
 
-        element.textContent = words[0];
-        typewriterTimer = window.setTimeout(tick, 1400);
+        typewriterTimer = window.setTimeout(tick, 2600);
     }
 
-    function initTilt() {
-        const zone = document.querySelector("[data-tilt-zone]");
-        const item = zone?.querySelector(".machine-frame");
-        const canTilt = window.matchMedia("(pointer: fine)").matches && !prefersReducedMotion.matches;
-        if (!zone || !item || !canTilt) return;
+    /* ---------- Hero: cursor light + mark tilt ---------- */
+    function initHeroPointer() {
+        const field = document.querySelector(".hero-field");
+        const frame = document.querySelector(".mark-frame");
+        if (!hero || !field || !finePointer.matches || !motionOk()) return;
 
-        let frameRequest;
+        const target = { x: hero.offsetWidth * 0.72, y: hero.offsetHeight * 0.38 };
+        const current = { ...target };
+        let tilt = { x: 0, y: 0 };
+        let frameId = null;
 
-        zone.addEventListener("pointermove", (event) => {
-            const rect = zone.getBoundingClientRect();
-            const x = (event.clientX - rect.left) / rect.width - 0.5;
-            const y = (event.clientY - rect.top) / rect.height - 0.5;
+        function loop() {
+            current.x += (target.x - current.x) * 0.12;
+            current.y += (target.y - current.y) * 0.12;
+            field.style.setProperty("--mx", `${current.x.toFixed(1)}px`);
+            field.style.setProperty("--my", `${current.y.toFixed(1)}px`);
+            if (frame) {
+                frame.style.setProperty("--rx", `${tilt.x.toFixed(2)}deg`);
+                frame.style.setProperty("--ry", `${tilt.y.toFixed(2)}deg`);
+            }
+            const settled = Math.abs(target.x - current.x) < 0.5 && Math.abs(target.y - current.y) < 0.5;
+            frameId = settled ? null : window.requestAnimationFrame(loop);
+        }
 
-            window.cancelAnimationFrame(frameRequest);
-            frameRequest = window.requestAnimationFrame(() => {
-                item.style.setProperty("--tilt-x", `${(-y * 3.5).toFixed(2)}deg`);
-                item.style.setProperty("--tilt-y", `${(x * 4.5).toFixed(2)}deg`);
-            });
+        hero.addEventListener("pointermove", (event) => {
+            const rect = hero.getBoundingClientRect();
+            target.x = event.clientX - rect.left;
+            target.y = event.clientY - rect.top;
+            const nx = target.x / rect.width - 0.5;
+            const ny = target.y / rect.height - 0.5;
+            tilt = { x: -ny * 9, y: nx * 12 };
+            if (!frameId) frameId = window.requestAnimationFrame(loop);
         }, { passive: true });
 
-        zone.addEventListener("pointerleave", () => {
-            item.style.setProperty("--tilt-x", "0deg");
-            item.style.setProperty("--tilt-y", "0deg");
+        hero.addEventListener("pointerleave", () => {
+            tilt = { x: 0, y: 0 };
+            if (!frameId) frameId = window.requestAnimationFrame(loop);
         });
     }
 
-    function initTechParticles() {
-        const canvas = document.getElementById("tech-particles");
-        const context = canvas?.getContext("2d");
-        if (!canvas || !context) return;
+    function initMarkSteps() {
+        const steps = Array.from(document.querySelectorAll(".mark-steps li"));
+        if (steps.length < 2 || !motionOk()) return;
+        let index = 0;
+        window.setInterval(() => {
+            if (document.hidden) return;
+            steps[index].classList.remove("is-on");
+            index = (index + 1) % steps.length;
+            void steps[index].offsetWidth;
+            steps[index].classList.add("is-on");
+        }, 2400);
+    }
 
-        let particles = [];
-        let animationFrame;
-        let width = 0;
-        let height = 0;
-        let pixelRatio = 1;
-
-        function createParticle() {
-            return {
-                x: Math.random() * width,
-                y: Math.random() * height,
-                vx: (Math.random() - 0.5) * 0.13,
-                vy: (Math.random() - 0.5) * 0.13,
-                radius: Math.random() > 0.82 ? 1.6 : 0.85,
-                pulse: Math.random() * Math.PI * 2
-            };
-        }
-
-        function resize() {
-            pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
-            width = window.innerWidth;
-            height = window.innerHeight;
-            canvas.width = Math.round(width * pixelRatio);
-            canvas.height = Math.round(height * pixelRatio);
-            canvas.style.width = `${width}px`;
-            canvas.style.height = `${height}px`;
-            context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-            const amount = Math.max(24, Math.min(58, Math.round((width * height) / 24000)));
-            particles = Array.from({ length: amount }, createParticle);
-        }
-
-        function draw(advance = true) {
-            context.clearRect(0, 0, width, height);
-
-            particles.forEach((particle, index) => {
-                if (advance) {
-                    particle.x += particle.vx;
-                    particle.y += particle.vy;
-                    particle.pulse += 0.012;
-                    if (particle.x < -10) particle.x = width + 10;
-                    if (particle.x > width + 10) particle.x = -10;
-                    if (particle.y < -10) particle.y = height + 10;
-                    if (particle.y > height + 10) particle.y = -10;
+    /* ---------- Counters ---------- */
+    function initCounters() {
+        const counters = document.querySelectorAll("[data-count]");
+        if (!counters.length || !motionOk() || !("IntersectionObserver" in window)) return;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                observer.unobserve(entry.target);
+                const element = entry.target;
+                const end = Number(element.dataset.count);
+                const width = String(end).length;
+                const startTime = performance.now() + 900;
+                function step(now) {
+                    const progressValue = clamp((now - startTime) / 1100, 0, 1);
+                    const eased = 1 - Math.pow(1 - progressValue, 3);
+                    element.textContent = String(Math.round(end * eased)).padStart(width, "0");
+                    if (progressValue < 1) window.requestAnimationFrame(step);
                 }
-
-                for (let nextIndex = index + 1; nextIndex < particles.length; nextIndex += 1) {
-                    const next = particles[nextIndex];
-                    const dx = particle.x - next.x;
-                    const dy = particle.y - next.y;
-                    const distance = Math.hypot(dx, dy);
-                    if (distance > 155) continue;
-                    context.beginPath();
-                    context.moveTo(particle.x, particle.y);
-                    context.lineTo(next.x, next.y);
-                    context.strokeStyle = `rgba(72, 174, 244, ${0.11 * (1 - distance / 155)})`;
-                    context.lineWidth = 0.65;
-                    context.stroke();
-                }
-
-                const glow = 0.35 + Math.sin(particle.pulse) * 0.13;
-                context.beginPath();
-                context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-                context.fillStyle = `rgba(88, 188, 255, ${glow})`;
-                context.fill();
+                element.textContent = "0".padStart(width, "0");
+                window.requestAnimationFrame(step);
             });
-        }
+        }, { threshold: 0.6 });
+        counters.forEach((counter) => observer.observe(counter));
+    }
 
-        function animate() {
-            draw(true);
-            animationFrame = window.requestAnimationFrame(animate);
-        }
-
-        resize();
-        if (prefersReducedMotion.matches) draw(false);
-        else animate();
-
-        window.addEventListener("resize", resize, { passive: true });
-        document.addEventListener("visibilitychange", () => {
-            if (prefersReducedMotion.matches) return;
-            window.cancelAnimationFrame(animationFrame);
-            if (!document.hidden) animate();
+    /* ---------- Magnetic buttons ---------- */
+    function initMagnetic() {
+        if (!finePointer.matches || !motionOk()) return;
+        document.querySelectorAll("[data-magnetic], .wa-button").forEach((element) => {
+            element.addEventListener("pointermove", (event) => {
+                const rect = element.getBoundingClientRect();
+                const x = (event.clientX - rect.left) / rect.width - 0.5;
+                const y = (event.clientY - rect.top) / rect.height - 0.5;
+                element.style.setProperty("--tx", `${(x * 10).toFixed(1)}px`);
+                element.style.setProperty("--ty", `${(y * 8).toFixed(1)}px`);
+            });
+            element.addEventListener("pointerleave", () => {
+                element.style.setProperty("--tx", "0px");
+                element.style.setProperty("--ty", "0px");
+            });
         });
     }
 
-    function replaceList(element, values) {
-        if (!element) return;
-        element.replaceChildren(...values.map((value) => {
-            const item = document.createElement("li");
-            item.textContent = value;
-            return item;
-        }));
-    }
+    /* ---------- Projects: filter ---------- */
+    function initFilters() {
+        const grid = document.getElementById("project-grid");
+        const buttons = Array.from(document.querySelectorAll(".filter[data-filter]"));
+        if (!grid || !buttons.length) return;
+        const tiles = Array.from(grid.querySelectorAll(".tile"));
 
-    function updateProject(projectId, moveFocus) {
-        const project = projects[projectId];
-        const image = document.getElementById("project-image");
-        if (!project || !image) return;
-
-        selectedProject = projectId;
-        document.querySelectorAll(".project-tab").forEach((tab) => {
-            const active = tab.dataset.project === projectId;
-            tab.classList.toggle("active", active);
-            tab.setAttribute("aria-selected", String(active));
-            tab.tabIndex = active ? 0 : -1;
-            if (active && moveFocus) tab.focus();
-        });
-
-        window.clearTimeout(projectSwitchTimer);
-        image.classList.add("switching");
-        projectSwitchTimer = window.setTimeout(() => {
-            image.src = project.images[0].src;
-            image.alt = translate(project.images[0].alt);
-            image.classList.remove("switching");
-        }, prefersReducedMotion.matches ? 0 : 170);
-
-        document.getElementById("project-code").textContent = project.code;
-        document.getElementById("project-category").textContent = translate(project.category);
-        document.getElementById("project-title").textContent = project.title;
-        document.getElementById("project-description").textContent = translate(project.description);
-        document.getElementById("project-role").textContent = translate(project.role);
-        document.getElementById("project-platform").textContent = translate(project.platform);
-        document.getElementById("project-focus").textContent = translate(project.focus);
-        replaceList(document.getElementById("project-deliverables"), project.deliverables.map(translate));
-
-        const status = document.getElementById("project-status");
-        status.textContent = translate(project.status);
-        status.classList.toggle("status-live", project.live);
-
-        const openCase = document.getElementById("open-case");
-        openCase.dataset.openCase = projectId;
-
-        const link = document.getElementById("project-link");
-        if (project.url) {
-            link.href = project.url;
-            link.hidden = false;
-        } else {
-            link.removeAttribute("href");
-            link.hidden = true;
-        }
-    }
-
-    function renderCaseSpecs(project) {
-        const specs = document.getElementById("case-specs");
-        if (!specs) return;
-
-        const values = [
-            [translate("Rol"), translate(project.role)],
-            [translate("Plataforma"), translate(project.platform)],
-            [translate("Enfoque"), translate(project.focus)]
-        ];
-
-        specs.replaceChildren(...values.map(([label, value]) => {
-            const row = document.createElement("div");
-            const term = document.createElement("dt");
-            const description = document.createElement("dd");
-            term.textContent = label;
-            description.textContent = value;
-            row.append(term, description);
-            return row;
-        }));
-    }
-
-    function renderCaseGallery(project) {
-        const mainImage = document.getElementById("case-main-image");
-        const thumbs = document.getElementById("case-thumbs");
-        if (!mainImage || !thumbs) return;
-
-        mainImage.src = project.images[0].src;
-        mainImage.alt = translate(project.images[0].alt);
-
-        thumbs.replaceChildren(...project.images.map((imageData, index) => {
-            const button = document.createElement("button");
-            const image = document.createElement("img");
-            button.type = "button";
-            button.className = `case-thumb${index === 0 ? " active" : ""}`;
-            button.setAttribute("aria-label", `${translate("Ver imagen")} ${index + 1} · ${project.title}`);
-            image.src = imageData.src;
-            image.alt = "";
-            image.loading = "lazy";
-            button.appendChild(image);
+        buttons.forEach((button) => {
             button.addEventListener("click", () => {
-                mainImage.src = imageData.src;
-                mainImage.alt = translate(imageData.alt);
-                thumbs.querySelectorAll(".case-thumb").forEach((thumb) => thumb.classList.remove("active"));
-                button.classList.add("active");
+                const filter = button.dataset.filter;
+                if (grid.dataset.filter === filter) return;
+                buttons.forEach((item) => {
+                    const active = item === button;
+                    item.classList.toggle("is-active", active);
+                    item.setAttribute("aria-pressed", String(active));
+                });
+                grid.dataset.filter = filter;
+                let visibleIndex = 0;
+                tiles.forEach((tile) => {
+                    const show = filter === "all" || tile.dataset.cat === filter;
+                    tile.hidden = !show;
+                    tile.classList.remove("is-entering");
+                    if (!show || !motionOk()) return;
+                    tile.style.setProperty("--d", `${Math.min(visibleIndex * 0.05, 0.4).toFixed(2)}s`);
+                    void tile.offsetWidth;
+                    tile.classList.add("is-entering");
+                    visibleIndex += 1;
+                });
             });
-            return button;
-        }));
-
-        thumbs.hidden = project.images.length < 2;
+        });
     }
 
-    function openCaseStudy(projectId) {
-        const project = projects[projectId];
-        const dialog = document.getElementById("case-dialog");
-        if (!project || !dialog) return;
+    /* ---------- Projects: images (when provided) ---------- */
+    function renderTileImages() {
+        document.querySelectorAll(".tile[data-project]").forEach((tile) => {
+            const project = projects[tile.dataset.project];
+            const media = tile.querySelector(".tile-media");
+            if (!project?.image || !media || media.querySelector("img")) return;
+            const image = document.createElement("img");
+            image.src = project.image;
+            image.alt = project.title;
+            image.loading = "lazy";
+            image.decoding = "async";
+            media.prepend(image);
+            media.querySelector(".tile-empty")?.remove();
+        });
+    }
 
-        document.getElementById("case-code").textContent = project.code;
-        document.getElementById("case-status").textContent = translate(project.status);
-        document.getElementById("case-title").textContent = project.title;
-        document.getElementById("case-summary").textContent = translate(project.description);
-        document.getElementById("case-problem").textContent = translate(project.problem);
-        document.getElementById("case-solution").textContent = translate(project.solution);
-        renderCaseSpecs(project);
-        renderCaseGallery(project);
+    /* ---------- Case drawer ---------- */
+    const dialog = document.getElementById("case-dialog");
+
+    function pick(field) {
+        if (!field) return "";
+        if (typeof field === "string") return field;
+        return field[lang()] ?? field.en ?? field.es ?? "";
+    }
+
+    function fillCase(projectId) {
+        const project = projects[projectId];
+        if (!project || !dialog) return false;
+
+        const set = (id, value) => { const node = document.getElementById(id); if (node) node.textContent = value; };
+        set("case-code", project.code);
+        set("case-title", project.title);
+        set("case-summary", pick(project.summary));
+        set("case-problem", pick(project.problem));
+        set("case-solution", pick(project.solution));
+        set("case-role", pick(project.role));
+        set("case-platform", pick(project.platform));
+        set("case-stack", project.stack);
+
+        const status = document.getElementById("case-status");
+        if (status) {
+            status.textContent = t(project.status);
+            status.classList.toggle("is-live", Boolean(project.live));
+        }
+
+        const points = document.getElementById("case-points");
+        if (points) {
+            points.replaceChildren(...pick(project.points).map((text) => {
+                const item = document.createElement("li");
+                item.textContent = text;
+                return item;
+            }));
+        }
+
+        const media = dialog.querySelector(".case-media");
+        if (media) {
+            media.replaceChildren();
+            if (project.image) {
+                const image = document.createElement("img");
+                image.src = project.image;
+                image.alt = project.title;
+                media.appendChild(image);
+            } else {
+                const empty = document.createElement("span");
+                empty.className = "tile-empty";
+                empty.textContent = t("Vista previa en preparación");
+                media.appendChild(empty);
+            }
+        }
 
         const link = document.getElementById("case-link");
-        if (project.url) {
-            link.href = project.url;
-            link.hidden = false;
-        } else {
-            link.removeAttribute("href");
-            link.hidden = true;
+        if (link) {
+            if (project.url) { link.href = project.url; link.hidden = false; }
+            else { link.removeAttribute("href"); link.hidden = true; }
         }
 
+        const similar = document.getElementById("case-wa");
+        if (similar) similar.href = whatsappUrl(t(SIMILAR_MESSAGE).replace("{project}", project.title));
+        return true;
+    }
+
+    function openCase(projectId) {
+        if (!fillCase(projectId)) return;
+        selectedProject = projectId;
+        dialog.classList.remove("is-closing");
         if (typeof dialog.showModal === "function") dialog.showModal();
         else dialog.setAttribute("open", "");
-        document.body.classList.add("dialog-open");
+        dialog.querySelector(".case-panel")?.scrollTo(0, 0);
+        document.body.classList.add("no-scroll");
+        updateWhatsAppVisibility();
     }
 
-    function closeCaseStudy() {
-        const dialog = document.getElementById("case-dialog");
+    function closeCase() {
+        if (!dialog?.open || dialog.classList.contains("is-closing")) return;
+        const finish = () => {
+            dialog.classList.remove("is-closing");
+            if (typeof dialog.close === "function") dialog.close();
+            else dialog.removeAttribute("open");
+            document.body.classList.remove("no-scroll");
+            selectedProject = null;
+            updateWhatsAppVisibility();
+        };
+        if (!motionOk()) return finish();
+        dialog.classList.add("is-closing");
+        dialog.addEventListener("animationend", finish, { once: true });
+        window.setTimeout(() => { if (dialog.classList.contains("is-closing")) finish(); }, 600);
+    }
+
+    function initCases() {
+        document.querySelectorAll(".tile[data-project] .tile-hit").forEach((button) => {
+            button.addEventListener("click", () => openCase(button.closest(".tile").dataset.project));
+        });
         if (!dialog) return;
-        if (typeof dialog.close === "function") dialog.close();
-        else dialog.removeAttribute("open");
-        document.body.classList.remove("dialog-open");
+        dialog.querySelector("[data-close-dialog]")?.addEventListener("click", closeCase);
+        dialog.addEventListener("cancel", (event) => { event.preventDefault(); closeCase(); });
+        dialog.addEventListener("click", (event) => { if (event.target === dialog) closeCase(); });
     }
 
-    function initProjectArchive() {
-        const tabs = Array.from(document.querySelectorAll(".project-tab"));
-        if (!tabs.length) return;
-
-        tabs.forEach((tab, index) => {
-            tab.addEventListener("click", () => updateProject(tab.dataset.project, false));
-            tab.addEventListener("keydown", (event) => {
-                if (!['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp'].includes(event.key)) return;
-                event.preventDefault();
-                const direction = ['ArrowRight', 'ArrowDown'].includes(event.key) ? 1 : -1;
-                const next = (index + direction + tabs.length) % tabs.length;
-                updateProject(tabs[next].dataset.project, true);
-            });
-        });
-
-        document.getElementById("open-case")?.addEventListener("click", () => openCaseStudy(selectedProject));
-        document.querySelector("[data-close-dialog]")?.addEventListener("click", closeCaseStudy);
-
-        const dialog = document.getElementById("case-dialog");
-        dialog?.addEventListener("click", (event) => {
-            if (event.target === dialog) closeCaseStudy();
-        });
-        dialog?.addEventListener("close", () => document.body.classList.remove("dialog-open"));
+    /* ---------- Footer word ---------- */
+    function initFooterWord() {
+        const word = document.querySelector(".footer-word");
+        if (!word) return;
+        const letters = Array.from(word.textContent.trim());
+        word.replaceChildren(...letters.map((letter, index) => {
+            const span = document.createElement("span");
+            span.textContent = letter;
+            span.style.transitionDelay = `${index * 0.06}s`;
+            return span;
+        }));
+        if (!("IntersectionObserver" in window) || !motionOk()) {
+            word.classList.add("is-in");
+            return;
+        }
+        new IntersectionObserver(([entry], observer) => {
+            if (!entry.isIntersecting) return;
+            word.classList.add("is-in");
+            observer.disconnect();
+        }, { threshold: 0.3 }).observe(word);
     }
 
-    updateHeader();
-    window.addEventListener("scroll", updateHeader, { passive: true });
-    menuButton?.addEventListener("click", toggleMenu);
-    mobileNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-    document.querySelector(".copy-button")?.addEventListener("click", (event) => copyEmail(event.currentTarget));
+    /* ---------- Boot ---------- */
+    window.addEventListener("scroll", requestScroll, { passive: true });
+    window.addEventListener("resize", requestScroll, { passive: true });
+    menuButton?.addEventListener("click", () => setMenu(mobileNav?.hidden ?? false));
+    mobileNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !mobileNav?.hidden) setMenu(false); });
+
+    const year = document.getElementById("year");
     if (year) year.textContent = String(new Date().getFullYear());
 
+    initIntro();
     initReveal();
     initTypewriter();
-    initTilt();
-    initTechParticles();
-    initProjectArchive();
+    initHeroPointer();
+    initMarkSteps();
+    initCounters();
+    initMagnetic();
+    initFilters();
+    renderTileImages();
+    initCases();
+    initFooterWord();
+    initMail();
+    initWhatsAppFloat();
+    updateWhatsAppLinks();
+    onScroll();
+    window.__kzReady = true;
 
     window.addEventListener("kzaly:languagechange", () => {
         initTypewriter();
-        updateProject(selectedProject, false);
-        const dialog = document.getElementById("case-dialog");
-        if (dialog?.open) openCaseStudy(selectedProject);
+        updateWhatsAppLinks();
+        if (selectedProject && dialog?.open) fillCase(selectedProject);
     });
 })();

@@ -1,64 +1,101 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kzaly Group 2.0 | Soluciones digitales por Paul Medina</title>
-    <meta name="description" content="Kzaly Group es el estudio digital independiente de Paul Medina. Diseño web, sistemas para negocios, automatización con IA y contenido digital.">
-    <meta name="keywords" content="Kzaly Group, Paul Medina, páginas web, automatización, sistemas para negocios, portafolio, Perú">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Kzaly Group | Software y soluciones digitales por Paul Medina</title>
+    <meta name="description" content="Kzaly Group es el estudio de software de Paul Medina en Perú. Páginas web, sistemas para negocios, aplicaciones móviles y automatización con IA.">
     <meta name="author" content="Paul Jared Medina Aranda">
-    <meta name="theme-color" content="#070b10">
-    <meta property="og:title" content="Kzaly Group 2.0 | Soluciones digitales">
-    <meta property="og:description" content="Tecnología útil para negocios reales. Diseño, desarrollo y automatización por Paul Medina.">
-    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#05070a">
+    <meta name="color-scheme" content="dark">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="canonical" href="https://portafolio-paul-medina.vercel.app/">
 
-    <link rel="icon" type="image/png" href="assets/logo-kzaly-transparent.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kzaly Group">
+    <meta property="og:title" content="Kzaly Group | Software y soluciones digitales">
+    <meta property="og:description" content="Páginas web, sistemas para negocios, apps móviles y automatización. Trato directo con Paul Medina.">
+    <meta property="og:url" content="https://portafolio-paul-medina.vercel.app/">
+    <meta property="og:image" content="https://portafolio-paul-medina.vercel.app/assets/og-kzaly.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_PE">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" type="image/svg+xml" href="assets/logo-kzaly.svg">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/portfolio.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Kzaly Group",
+        "url": "https://portafolio-paul-medina.vercel.app/",
+        "logo": "https://portafolio-paul-medina.vercel.app/assets/apple-touch-icon.png",
+        "image": "https://portafolio-paul-medina.vercel.app/assets/og-kzaly.jpg",
+        "description": "Estudio de software: páginas web, sistemas para negocios, aplicaciones móviles y automatización con IA.",
+        "areaServed": "PE",
+        "founder": { "@type": "Person", "name": "Paul Jared Medina Aranda", "sameAs": ["https://github.com/Kopozz", "https://www.linkedin.com/in/paul-medina-92b20538a"] },
+        "telephone": "+51952449319"
+    }
+    </script>
+    <script src="js/boot.js"></script>
 </head>
 <body>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></symbol>
+        <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></symbol>
+        <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></symbol>
+        <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m7 10 5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3.5 5.5h17v13h-17zM4 6l8 6.5L20 6" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+        <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8.5 8.5h11v11h-11zM15.5 8.5v-4h-11v11h4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+        <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.17c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.21.88 2.39 1 2.55.13.17 1.74 2.65 4.21 3.72.59.25 1.05.4 1.4.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.29Z"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .7A11.5 11.5 0 0 0 8.36 23.1c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.29-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.76 0c2.19-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.41-2.72 5.39-5.3 5.68.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M5.34 7.5H1.78V22h3.56V7.5ZM3.56 1.75a2.08 2.08 0 1 0 0 4.16 2.08 2.08 0 0 0 0-4.16ZM22.22 13.68c0-4.36-2.33-6.39-5.44-6.39a4.7 4.7 0 0 0-4.25 2.34V7.5H8.97V22h3.56v-7.18c0-1.9.36-3.73 2.71-3.73 2.32 0 2.35 2.17 2.35 3.85V22h3.56l1.07-8.32Z"/></symbol>
+        <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></symbol>
+    </svg>
+
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <canvas class="tech-particles" id="tech-particles" aria-hidden="true"></canvas>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <header class="site-header" id="site-header">
-        <div class="container header-inner">
+        <div class="wrap header-inner">
             <a class="brand" href="#inicio" aria-label="Kzaly Group, inicio">
-                <span class="brand-mark" aria-hidden="true"><img src="assets/logo-kzaly-transparent.png" alt="" width="1536" height="1536"></span>
-                <span class="brand-copy">
-                    <strong>Kzaly Group</strong>
-                    <small>Taller digital <b>2.0</b></small>
-                </span>
+                <img class="brand-mark" src="assets/logo-kzaly.svg" alt="" width="28" height="31">
+                <span class="brand-word">KZALY<small>GROUP</small></span>
             </a>
 
-            <div class="header-actions">
-                <nav class="desktop-nav" aria-label="Navegación principal">
-                    <a href="#servicios">Servicios</a>
-                    <a href="#proyectos">Proyectos</a>
-                    <a href="#proceso">Proceso</a>
-                    <a href="#perfil">Estudio</a>
-                    <a class="nav-cta" href="#contacto">Iniciar proyecto</a>
-                </nav>
+            <nav class="desktop-nav" aria-label="Navegación principal">
+                <a href="#servicios" data-nav="servicios">Servicios</a>
+                <a href="#proyectos" data-nav="proyectos">Proyectos</a>
+                <a href="#proceso" data-nav="proceso">Proceso</a>
+                <a href="#perfil" data-nav="perfil">Estudio</a>
+            </nav>
 
+            <div class="header-actions">
                 <div class="language-switcher" data-language-switcher>
                     <button class="language-trigger" type="button" aria-label="Cambiar idioma" aria-haspopup="listbox" aria-expanded="false">
-                        <img src="assets/flags/es.svg" alt="" width="22" height="16" data-current-flag>
+                        <img src="assets/flags/es.svg" alt="" width="20" height="14" data-current-flag>
                         <span data-current-language>ES</span>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        <svg class="i" aria-hidden="true"><use href="#i-chevron"/></svg>
                     </button>
                     <div class="language-menu" role="listbox" aria-label="Seleccionar idioma" hidden>
-                        <button type="button" role="option" aria-selected="true" data-language="es"><img src="assets/flags/es.svg" alt="" width="22" height="16"><span>Español</span><small>ES</small></button>
-                        <button type="button" role="option" aria-selected="false" data-language="en"><img src="assets/flags/gb.svg" alt="" width="22" height="16"><span>English</span><small>EN</small></button>
-                        <button type="button" role="option" aria-selected="false" data-language="fr"><img src="assets/flags/fr.svg" alt="" width="22" height="16"><span>Français</span><small>FR</small></button>
-                        <button type="button" role="option" aria-selected="false" data-language="pt"><img src="assets/flags/pt.svg" alt="" width="22" height="16"><span>Português</span><small>PT</small></button>
-                        <button type="button" role="option" aria-selected="false" data-language="ja"><img src="assets/flags/jp.svg" alt="" width="22" height="16"><span>日本語</span><small>JA</small></button>
-                        <button type="button" role="option" aria-selected="false" data-language="ko"><img src="assets/flags/kr.svg" alt="" width="22" height="16"><span>한국어</span><small>KO</small></button>
-                        <button type="button" role="option" aria-selected="false" data-language="ru"><img src="assets/flags/ru.svg" alt="" width="22" height="16"><span>Русский</span><small>RU</small></button>
+                        <button type="button" role="option" aria-selected="true" data-language="es"><img src="assets/flags/es.svg" alt="" width="20" height="14"><span>Español</span><small>ES</small></button>
+                        <button type="button" role="option" aria-selected="false" data-language="en"><img src="assets/flags/gb.svg" alt="" width="20" height="14"><span>English</span><small>EN</small></button>
+                        <button type="button" role="option" aria-selected="false" data-language="fr"><img src="assets/flags/fr.svg" alt="" width="20" height="14"><span>Français</span><small>FR</small></button>
+                        <button type="button" role="option" aria-selected="false" data-language="pt"><img src="assets/flags/pt.svg" alt="" width="20" height="14"><span>Português</span><small>PT</small></button>
+                        <button type="button" role="option" aria-selected="false" data-language="ja"><img src="assets/flags/jp.svg" alt="" width="20" height="14"><span>日本語</span><small>JA</small></button>
+                        <button type="button" role="option" aria-selected="false" data-language="ko"><img src="assets/flags/kr.svg" alt="" width="20" height="14"><span>한국어</span><small>KO</small></button>
+                        <button type="button" role="option" aria-selected="false" data-language="ru"><img src="assets/flags/ru.svg" alt="" width="20" height="14"><span>Русский</span><small>RU</small></button>
                     </div>
                 </div>
-
+                <a class="header-cta" href="#contacto"><span>Iniciar proyecto</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                 <button class="menu-button" id="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
                     <span></span><span></span>
                 </button>
@@ -75,350 +112,391 @@
     </header>
 
     <main id="contenido">
+        <!-- HERO -->
         <section class="hero" id="inicio">
-            <div class="hero-signal" aria-hidden="true">
-                <span></span><span></span><span></span><span></span>
-            </div>
+            <div class="hero-field" aria-hidden="true"><span class="field-base"></span><span class="field-lit"></span></div>
 
-            <div class="container hero-grid">
-                <div class="hero-copy reveal">
-                    <p class="eyebrow"><span>KZ / 00</span> Taller digital · Perú</p>
-                    <h1>
-                        Convertimos tus ideas en
-                        <span class="typewriter-line">
-                            <span class="typewriter" data-typewriter>sitios web que venden.</span><i aria-hidden="true"></i>
-                        </span>
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <p class="label hero-label" data-intro><span class="label-dot" aria-hidden="true"></span><span>Estudio de software · Perú</span></p>
+                    <h1 class="hero-title">
+                        <span class="line" data-intro><span>Convertimos tus ideas en</span></span>
+                        <span class="line typewriter-line" data-intro><span class="typewriter" data-typewriter>sitios web que venden.</span><i aria-hidden="true"></i></span>
                     </h1>
                     <p class="sr-only">Convertimos tus ideas en sitios web que venden, sistemas que organizan, procesos que avanzan y experiencias que conectan.</p>
-                    <p class="hero-lead">Soy <strong>Paul Medina</strong>. Diseño y construyo herramientas digitales claras para negocios que necesitan avanzar sin sumar complejidad.</p>
+                    <p class="hero-lead" data-intro>Soy <strong>Paul Medina</strong>. Diseño y construyo herramientas digitales claras para negocios que necesitan avanzar sin sumar complejidad.</p>
 
-                    <div class="hero-actions">
-                        <a class="button button-primary energy-button" href="#proyectos">Explorar proyectos <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
-                        <a class="button button-secondary" href="https://wa.me/51952449319" target="_blank" rel="noopener">Hablar por WhatsApp <i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                    <div class="hero-actions" data-intro>
+                        <a class="btn btn-solid" href="#proyectos" data-magnetic><span>Explorar proyectos</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                        <a class="btn btn-line" href="https://wa.me/51952449319?text=Hola%20Paul%2C%20vi%20tu%20portafolio%20y%20quiero%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener noreferrer" data-wa-link><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Hablar por WhatsApp</span></a>
                     </div>
-
-                    <ul class="hero-facts" aria-label="Datos destacados">
-                        <li><span>Proyectos</span><strong>05</strong><small>seleccionados</small></li>
-                        <li><span>Modelo</span><strong>1:1</strong><small>trato directo</small></li>
-                        <li><span>Estado</span><strong class="online-text">En línea</strong><small>disponible</small></li>
-                    </ul>
                 </div>
 
-                <div class="hero-visual reveal reveal-delay" data-tilt-zone>
-                    <div class="machine-frame">
-                        <div class="machine-topbar">
-                            <span>MÁQUINA KZ / PORTADA-01</span>
-                            <span class="live-state"><i aria-hidden="true"></i> ACTIVA</span>
-                        </div>
-                        <div class="machine-art" data-tilt-item>
-                            <img src="assets/kzaly-hero-laptop.webp" alt="Laptop metálica flotante rodeada por finos flujos de datos azules" width="1536" height="1024" fetchpriority="high">
-                        </div>
-                        <div class="machine-footer">
-                            <span>DISEÑAR</span><span>DESARROLLAR</span><span>PUBLICAR</span>
-                        </div>
+                <div class="hero-mark" data-intro data-parallax>
+                    <div class="mark-frame">
+                        <span class="corner c-tl" aria-hidden="true"></span><span class="corner c-tr" aria-hidden="true"></span>
+                        <span class="corner c-bl" aria-hidden="true"></span><span class="corner c-br" aria-hidden="true"></span>
+                        <svg class="mark-svg" viewBox="320 296 616 676" role="img" aria-label="Logo de Kzaly Group">
+                            <defs>
+                                <linearGradient id="hero-k" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#02b5fc"/><stop offset="0.5" stop-color="#0071fb"/><stop offset="1" stop-color="#003fd9"/></linearGradient>
+                                <linearGradient id="hero-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0071fb"/><stop offset="1" stop-color="#033595"/></linearGradient>
+                            </defs>
+                            <path class="mk mk-k" pathLength="1" d="M331 306 L406 378 V690 L545 553 L613 603 L331 871 Z"/>
+                            <path class="mk mk-s" pathLength="1" d="M657 720 V958 L599 900 V778 Z"/>
+                            <path class="mk mk-w" pathLength="1" d="M648 444 H923 V745 L705 963 V851 L850 706 V535 Q850 520 835 520 H572 Z"/>
+                        </svg>
+                        <div class="mark-scan" aria-hidden="true"></div>
                     </div>
-                    <div class="floating-readout readout-top" aria-hidden="true"><b>05</b><span>ARCHIVO<br>ACTIVO</span></div>
-                    <div class="floating-readout readout-bottom" aria-hidden="true"><span>SISTEMA</span><b>2.0</b></div>
+                    <ol class="mark-steps" aria-label="Etapas">
+                        <li class="is-on"><span>01</span>DISEÑAR</li>
+                        <li><span>02</span>DESARROLLAR</li>
+                        <li><span>03</span>PUBLICAR</li>
+                    </ol>
                 </div>
+            </div>
+
+            <div class="wrap hero-facts" data-intro>
+                <dl>
+                    <div><dt>Proyectos</dt><dd><strong data-count="14">14</strong><span>documentados</span></dd></div>
+                    <div><dt>Modelo</dt><dd><strong>1:1</strong><span>trato directo</span></dd></div>
+                    <div><dt>Estado</dt><dd><strong class="online"><i aria-hidden="true"></i>En línea</strong><span>disponible</span></dd></div>
+                </dl>
+                <a class="scroll-cue" href="#servicios"><span>Desliza</span><i aria-hidden="true"></i></a>
             </div>
         </section>
 
-        <div class="capability-rail" aria-label="Áreas de trabajo">
-            <div class="container capability-track">
-                <span>Sitios web y páginas de destino</span><i></i><span>Sistemas de negocio</span><i></i><span>Automatización</span><i></i><span>Contenido digital</span><i></i><span>Asesoría en IA</span>
+        <!-- CAPABILITIES -->
+        <div class="rail" aria-label="Áreas de trabajo">
+            <div class="rail-track">
+                <ul class="rail-set">
+                    <li>Sitios web y páginas de destino</li><li>Sistemas de negocio</li><li>Aplicaciones móviles</li><li>Automatización</li><li>Contenido digital</li><li>Asesoría en IA</li>
+                </ul>
+                <ul class="rail-set" aria-hidden="true">
+                    <li>Sitios web y páginas de destino</li><li>Sistemas de negocio</li><li>Aplicaciones móviles</li><li>Automatización</li><li>Contenido digital</li><li>Asesoría en IA</li>
+                </ul>
             </div>
         </div>
 
-        <section class="section services-section" id="servicios">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <div>
-                        <p class="eyebrow"><span>KZ / 01</span> Servicios</p>
-                        <h2>Soluciones concretas.<br>Sin paquetes inflados.</h2>
-                    </div>
-                    <p>Cada servicio empieza con un alcance claro. Definimos qué se entrega, cuánto tarda y qué costos externos requiere antes de construir.</p>
-                </div>
+        <!-- SERVICES -->
+        <section class="section" id="servicios">
+            <div class="wrap">
+                <header class="section-head reveal">
+                    <p class="label"><span class="label-index">01</span><span>Servicios</span></p>
+                    <h2 class="section-title"><span>Soluciones concretas.</span> <span class="dim">Sin paquetes inflados.</span></h2>
+                    <p class="section-intro">Cada servicio empieza con un alcance claro. Definimos qué se entrega, cuánto tarda y qué costos externos requiere antes de construir.</p>
+                </header>
 
-                <div class="services-grid">
-                    <article class="service-card reveal">
-                        <div class="service-image"><img src="assets/services/optimizacion-laptop.webp" alt="Técnico optimizando una laptop" width="900" height="1125" loading="lazy" decoding="async"></div>
-                        <div class="service-body">
-                            <div class="service-meta"><span>SV-01</span><small>Soporte técnico</small></div>
-                            <h3>Optimización y formateo de laptop</h3>
-                            <p>Recupera velocidad, estabilidad y un entorno listo para trabajar.</p>
-                            <p class="service-outcome"><strong>Resultado</strong> Diagnóstico, configuración y programas esenciales.</p>
-                            <div class="service-footer"><strong>Desde S/60</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20consultar%20por%20la%20optimizaci%C3%B3n%20de%20mi%20laptop" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-                        </div>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-image"><img src="assets/services/pagina-web-landing.webp" alt="Diseñador revisando una página web adaptable" width="900" height="1125" loading="lazy" decoding="async"></div>
-                        <div class="service-body">
-                            <div class="service-meta"><span>SV-02</span><small>Presencia digital</small></div>
-                        <h3>Página web para negocios</h3>
-                            <p>Presenta tu oferta con claridad y convierte visitas en consultas.</p>
-                            <p class="service-outcome"><strong>Resultado</strong> Web adaptable, contacto directo y publicación.</p>
-                            <div class="service-footer"><strong>Desde S/350</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-                        </div>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-image"><img src="assets/services/catalogo-digital.webp" alt="Catálogo digital abierto desde un código QR" width="900" height="1125" loading="lazy" decoding="async"></div>
-                        <div class="service-body">
-                            <div class="service-meta"><span>SV-03</span><small>Venta digital</small></div>
-                            <h3>Catálogo digital + QR + WhatsApp</h3>
-                            <p>Organiza productos en un enlace simple de consultar y compartir.</p>
-                            <p class="service-outcome"><strong>Resultado</strong> Catálogo web, código QR y pedidos por WhatsApp.</p>
-                            <div class="service-footer"><strong>Desde S/120</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20un%20cat%C3%A1logo%20digital" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-                        </div>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-image"><img src="assets/services/sistema-negocio.webp" alt="Propietaria usando un sistema de inventario" width="900" height="1125" loading="lazy" decoding="async"></div>
-                        <div class="service-body">
-                            <div class="service-meta"><span>SV-04</span><small>Operación</small></div>
-                            <h3>Sistema para tu negocio</h3>
-                            <p>Ordena ventas, inventario, clientes o reservas con un flujo propio.</p>
-                            <p class="service-outcome"><strong>Resultado</strong> Sistema a medida, reportes y capacitación.</p>
-                            <div class="service-footer"><strong>Desde S/700</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20evaluar%20un%20sistema%20para%20mi%20negocio" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-                        </div>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-image"><img src="assets/services/automatizacion-ia.webp" alt="Flujo sencillo de automatización en una laptop" width="900" height="1125" loading="lazy" decoding="async"></div>
-                        <div class="service-body">
-                            <div class="service-meta"><span>SV-05</span><small>Automatización</small></div>
-                            <h3>Automatización sencilla con IA</h3>
-                            <p>Reduce pasos repetitivos y mejora el seguimiento de tu proceso.</p>
-                            <p class="service-outcome"><strong>Resultado</strong> Flujo automatizado, pruebas y guía de uso.</p>
-                            <div class="service-footer"><strong>Desde S/180</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20automatizar%20una%20tarea%20de%20mi%20negocio" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-                        </div>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-image"><img src="assets/services/posts-videos.webp" alt="Creación profesional de contenido para redes" width="900" height="1125" loading="lazy" decoding="async"></div>
-                        <div class="service-body">
-                            <div class="service-meta"><span>SV-06</span><small>Contenido</small></div>
-                            <h3>Publicaciones y videos para negocios</h3>
-                            <p>Comunica productos, promociones y novedades con coherencia visual.</p>
-                            <p class="service-outcome"><strong>Resultado</strong> Publicaciones, video corto y formatos para redes.</p>
-                            <div class="service-footer"><strong>Desde S/199/mes</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20contenido%20para%20las%20redes%20de%20mi%20negocio" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-                        </div>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-image"><img src="assets/services/portafolio-cv.webp" alt="Estudiante revisando su portafolio web" width="900" height="1125" loading="lazy" decoding="async"></div>
-                        <div class="service-body">
-                            <div class="service-meta"><span>SV-07</span><small>Marca personal</small></div>
-                            <h3>Portafolio y CV web</h3>
-                            <p>Reúne proyectos, experiencia y contacto en un enlace profesional.</p>
-                            <p class="service-outcome"><strong>Resultado</strong> Diseño personal, versión móvil y publicación.</p>
-                            <div class="service-footer"><strong>Desde S/120</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20crear%20mi%20portafolio%20web" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-                        </div>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <div class="service-image"><img src="assets/services/asesoria-ia.webp" alt="Sesión personalizada de IA y productividad" width="900" height="1125" loading="lazy" decoding="async"></div>
-                        <div class="service-body">
-                            <div class="service-meta"><span>SV-08</span><small>Acompañamiento 1:1</small></div>
-                            <h3>Asesoría en IA y productividad</h3>
-                            <p>Aplica herramientas de IA a tareas reales de estudio o trabajo.</p>
-                            <p class="service-outcome"><strong>Resultado</strong> Sesión personalizada, práctica y recursos.</p>
-                            <div class="service-footer"><strong>S/40 por hora</strong><a href="https://wa.me/51952449319?text=Hola%2C%20quiero%20agendar%20una%20asesor%C3%ADa%20de%20IA" target="_blank" rel="noopener">Consultar <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section work-section" id="proyectos">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <div>
-                        <p class="eyebrow"><span>KZ / 02</span> Archivo de proyectos</p>
-                        <h2>Trabajo real,<br>explicado desde dentro.</h2>
-                    </div>
-                    <p>Selecciona un proyecto para revisar su objetivo, alcance y decisiones principales. Cada ficha utiliza material real del producto.</p>
-                </div>
-
-                <div class="project-console reveal">
-                    <div class="project-selector" role="tablist" aria-label="Seleccionar proyecto">
-                        <div class="project-selector-head"><span>ÍNDICE DE PROYECTOS</span><small>05 registros</small></div>
-                        <button class="project-tab active" type="button" role="tab" aria-selected="true" data-project="botica">
-                            <span>P01</span><strong>Botica Vida y Salud</strong><small>Producción</small>
-                        </button>
-                        <button class="project-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-project="evelyn">
-                            <span>P02</span><strong>Web Evelyn SAC</strong><small>Desarrollo</small>
-                        </button>
-                        <button class="project-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-project="inventario">
-                            <span>P03</span><strong>Inventario Evelyn</strong><small>Desarrollo</small>
-                        </button>
-                        <button class="project-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-project="axon">
-                            <span>P04</span><strong>Axon Móvil</strong><small>Mantenimiento</small>
-                        </button>
-                        <button class="project-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-project="cognito">
-                            <span>P05</span><strong>Cognito Móvil</strong><small>Demostración privada</small>
-                        </button>
-                    </div>
-
-                    <article class="project-stage" id="project-stage" role="tabpanel" aria-live="polite">
-                        <div class="project-preview">
-                            <img id="project-image" src="assets/projects/botica-vida-salud.webp" alt="Interfaz del sistema Botica Vida y Salud" width="1024" height="1024">
-                            <div class="preview-scan" aria-hidden="true"></div>
-                            <span class="project-status status-live" id="project-status">En producción</span>
-                        </div>
-                        <div class="project-details">
-                            <div class="project-code"><span id="project-code">KZ–P01</span><small id="project-category">PWA · Comercio electrónico · Salud</small></div>
-                            <h3 id="project-title">Botica Vida y Salud</h3>
-                            <p id="project-description">Sistema farmacéutico para gestionar inventario, ventas y disponibilidad incluso cuando la conexión no es estable.</p>
-                            <dl class="project-specs">
-                                <div><dt>Rol</dt><dd id="project-role">Diseño y desarrollo</dd></div>
-                                <div><dt>Plataforma</dt><dd id="project-platform">Web · PWA</dd></div>
-                                <div><dt>Enfoque</dt><dd id="project-focus">Inventario y venta</dd></div>
-                            </dl>
-                            <ul class="project-deliverables" id="project-deliverables">
-                                <li>Control FEFO</li><li>Operación sin conexión</li><li>Ventas en tiempo real</li>
-                            </ul>
-                            <div class="project-actions">
-                                <button class="button button-primary" id="open-case" type="button" data-open-case="botica">Abrir caso de estudio <i class="fas fa-expand" aria-hidden="true"></i></button>
-                                <a class="project-live-link" id="project-link" href="https://www.boticavidaysalud.com/" target="_blank" rel="noopener">Visitar proyecto <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section process-section" id="proceso">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <div>
-                        <p class="eyebrow"><span>KZ / 03</span> Método de trabajo</p>
-                        <h2>Un proceso corto.<br>Cada etapa deja algo útil.</h2>
-                    </div>
-                    <p>Avanzamos por entregas visibles para validar temprano y evitar semanas de trabajo sobre una idea equivocada.</p>
-                </div>
-
-                <ol class="process-line">
-                    <li class="process-step reveal"><span>01</span><div><small>ENTRADA</small><h3>Entender</h3><p>Objetivo, usuario, problema y restricciones reales.</p></div></li>
-                    <li class="process-step reveal"><span>02</span><div><small>ALCANCE</small><h3>Definir</h3><p>Alcance, entregables, tecnología, tiempo y costos.</p></div></li>
-                    <li class="process-step reveal"><span>03</span><div><small>CONSTRUIR</small><h3>Construir</h3><p>Diseño y desarrollo mediante avances comprobables.</p></div></li>
-                    <li class="process-step reveal"><span>04</span><div><small>PUBLICAR</small><h3>Activar</h3><p>Publicación, capacitación y siguiente ciclo de mejora.</p></div></li>
+                <ol class="service-list">
+                    <li class="reveal"><a class="service" href="https://wa.me/51952449319?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer">
+                        <span class="svc-code">SV-01</span>
+                        <span class="svc-main"><span class="svc-title">Página web para negocios</span><span class="svc-desc">Presenta tu oferta con claridad y convierte visitas en consultas.</span></span>
+                        <span class="svc-out">Web adaptable, contacto directo y publicación.</span>
+                        <span class="svc-price">Desde S/350</span>
+                        <span class="svc-go" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                    </a></li>
+                    <li class="reveal"><a class="service" href="https://wa.me/51952449319?text=Hola%2C%20quiero%20evaluar%20un%20sistema%20para%20mi%20negocio" target="_blank" rel="noopener noreferrer">
+                        <span class="svc-code">SV-02</span>
+                        <span class="svc-main"><span class="svc-title">Sistema para tu negocio</span><span class="svc-desc">Ordena ventas, inventario, clientes o reservas con un flujo propio.</span></span>
+                        <span class="svc-out">Sistema a medida, reportes y capacitación.</span>
+                        <span class="svc-price">Desde S/700</span>
+                        <span class="svc-go" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                    </a></li>
+                    <li class="reveal"><a class="service" href="https://wa.me/51952449319?text=Hola%2C%20quiero%20un%20cat%C3%A1logo%20digital" target="_blank" rel="noopener noreferrer">
+                        <span class="svc-code">SV-03</span>
+                        <span class="svc-main"><span class="svc-title">Catálogo digital + QR + WhatsApp</span><span class="svc-desc">Organiza productos en un enlace simple de consultar y compartir.</span></span>
+                        <span class="svc-out">Catálogo web, código QR y pedidos por WhatsApp.</span>
+                        <span class="svc-price">Desde S/120</span>
+                        <span class="svc-go" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                    </a></li>
+                    <li class="reveal"><a class="service" href="https://wa.me/51952449319?text=Hola%2C%20quiero%20automatizar%20una%20tarea%20de%20mi%20negocio" target="_blank" rel="noopener noreferrer">
+                        <span class="svc-code">SV-04</span>
+                        <span class="svc-main"><span class="svc-title">Automatización sencilla con IA</span><span class="svc-desc">Reduce pasos repetitivos y mejora el seguimiento de tu proceso.</span></span>
+                        <span class="svc-out">Flujo automatizado, pruebas y guía de uso.</span>
+                        <span class="svc-price">Desde S/180</span>
+                        <span class="svc-go" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                    </a></li>
+                    <li class="reveal"><a class="service" href="https://wa.me/51952449319?text=Hola%2C%20quiero%20crear%20mi%20portafolio%20web" target="_blank" rel="noopener noreferrer">
+                        <span class="svc-code">SV-05</span>
+                        <span class="svc-main"><span class="svc-title">Portafolio y CV web</span><span class="svc-desc">Reúne proyectos, experiencia y contacto en un enlace profesional.</span></span>
+                        <span class="svc-out">Diseño personal, versión móvil y publicación.</span>
+                        <span class="svc-price">Desde S/120</span>
+                        <span class="svc-go" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                    </a></li>
+                    <li class="reveal"><a class="service" href="https://wa.me/51952449319?text=Hola%2C%20quiero%20contenido%20para%20las%20redes%20de%20mi%20negocio" target="_blank" rel="noopener noreferrer">
+                        <span class="svc-code">SV-06</span>
+                        <span class="svc-main"><span class="svc-title">Publicaciones y videos para negocios</span><span class="svc-desc">Comunica productos, promociones y novedades con coherencia visual.</span></span>
+                        <span class="svc-out">Publicaciones, video corto y formatos para redes.</span>
+                        <span class="svc-price">Desde S/199/mes</span>
+                        <span class="svc-go" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                    </a></li>
+                    <li class="reveal"><a class="service" href="https://wa.me/51952449319?text=Hola%2C%20quiero%20agendar%20una%20asesor%C3%ADa%20de%20IA" target="_blank" rel="noopener noreferrer">
+                        <span class="svc-code">SV-07</span>
+                        <span class="svc-main"><span class="svc-title">Asesoría en IA y productividad</span><span class="svc-desc">Aplica herramientas de IA a tareas reales de estudio o trabajo.</span></span>
+                        <span class="svc-out">Sesión personalizada, práctica y recursos.</span>
+                        <span class="svc-price">S/40 por hora</span>
+                        <span class="svc-go" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                    </a></li>
+                    <li class="reveal"><a class="service" href="https://wa.me/51952449319?text=Hola%2C%20quiero%20consultar%20por%20la%20optimizaci%C3%B3n%20de%20mi%20laptop" target="_blank" rel="noopener noreferrer">
+                        <span class="svc-code">SV-08</span>
+                        <span class="svc-main"><span class="svc-title">Optimización y formateo de laptop</span><span class="svc-desc">Recupera velocidad, estabilidad y un entorno listo para trabajar.</span></span>
+                        <span class="svc-out">Diagnóstico, configuración y programas esenciales.</span>
+                        <span class="svc-price">Desde S/60</span>
+                        <span class="svc-go" aria-hidden="true"><svg class="i"><use href="#i-arrow-up-right"/></svg></span>
+                    </a></li>
                 </ol>
             </div>
         </section>
 
-        <section class="section expertise-section" aria-labelledby="expertise-title">
-            <div class="container expertise-grid">
-                <div class="section-heading compact reveal">
-                    <div>
-                        <p class="eyebrow"><span>KZ / 04</span> Tecnologías utilizadas</p>
-                        <h2 id="expertise-title">Tecnología elegida según el problema.</h2>
+        <!-- PROJECTS -->
+        <section class="section section-work" id="proyectos">
+            <div class="wrap">
+                <header class="section-head reveal">
+                    <p class="label"><span class="label-index">02</span><span>Archivo de proyectos</span></p>
+                    <h2 class="section-title"><span>Trabajo real,</span> <span class="dim">explicado desde dentro.</span></h2>
+                    <p class="section-intro">Sistemas, webs y aplicaciones en los que trabajo. Abre cada ficha para ver el problema, la solución y la tecnología.</p>
+                </header>
+
+                <div class="filters reveal" role="group" aria-label="Filtrar proyectos">
+                    <button type="button" class="filter is-active" data-filter="all" aria-pressed="true"><span>Todos</span><sup>14</sup></button>
+                    <button type="button" class="filter" data-filter="sistemas" aria-pressed="false"><span>Sistemas</span><sup>7</sup></button>
+                    <button type="button" class="filter" data-filter="web" aria-pressed="false"><span>Web</span><sup>3</sup></button>
+                    <button type="button" class="filter" data-filter="movil" aria-pressed="false"><span>Móvil</span><sup>3</sup></button>
+                    <button type="button" class="filter" data-filter="ia" aria-pressed="false"><span>IA</span><sup>1</sup></button>
+                </div>
+
+                <!-- Para añadir una imagen más adelante: coloca el archivo en assets/projects/ y agrega
+                     <img src="assets/projects/archivo.webp" alt="..." loading="lazy"> dentro de .tile-media -->
+                <ul class="project-grid" id="project-grid" data-filter="all">
+                    <li class="tile is-featured" data-project="botica" data-cat="sistemas">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P01</span><span class="tile-status is-live">En producción</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">Botica Vida y Salud</span><span class="tile-cat">PWA · Comercio electrónico · Salud</span><span class="tile-stack">React · Supabase · PWA</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile is-featured" data-project="axon" data-cat="movil">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P02</span><span class="tile-status">En desarrollo</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">AXON Super App</span><span class="tile-cat">Super app · Delivery · Movilidad</span><span class="tile-stack">React Native · Rust · MongoDB · Redis</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="inventario" data-cat="sistemas">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P03</span><span class="tile-status">En desarrollo</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">Inventario Evelyn SAC</span><span class="tile-cat">Sistema web · Inventario</span><span class="tile-stack">Node.js · Express · React · PostgreSQL</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="evelyn" data-cat="web">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P04</span><span class="tile-status">En desarrollo</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">Web Evelyn SAC</span><span class="tile-cat">Web corporativa · ISP</span><span class="tile-stack">React · Three.js · Tailwind</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="selvastay" data-cat="sistemas">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P05</span><span class="tile-status">En desarrollo</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">SelvaStay Pro</span><span class="tile-cat">SaaS · Turismo · Sin conexión</span><span class="tile-stack">React · Supabase · Tailwind</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="gesk" data-cat="sistemas">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P06</span><span class="tile-status">En desarrollo</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">GESK</span><span class="tile-cat">Finanzas personales · Analítica</span><span class="tile-stack">React · TypeScript · Prisma · PostgreSQL</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="zentra" data-cat="movil">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P07</span><span class="tile-status">Prototipo</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">Zentra</span><span class="tile-cat">Logística · Gestión de rutas</span><span class="tile-stack">Expo · Express · Socket.io · PostgreSQL</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="repuestos" data-cat="sistemas">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P08</span><span class="tile-status">En desarrollo</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">Rectificadora de Repuestos</span><span class="tile-cat">Inventario y ventas · Taller</span><span class="tile-stack">PHP 8 · MVC · MySQL</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="polleria" data-cat="sistemas">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P09</span><span class="tile-status">Prototipo</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">Sistema de Pollería</span><span class="tile-cat">Punto de venta · Restaurante</span><span class="tile-stack">React · Vite</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="cognito" data-cat="movil">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P10</span><span class="tile-status">Demostración privada</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">Cognito</span><span class="tile-cat">Trivia gamificada · Aprendizaje</span><span class="tile-stack">Flutter · React Native</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="kzlyrics" data-cat="web">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P11</span><span class="tile-status">Prototipo</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">KZLyrics</span><span class="tile-cat">Aplicación web · Música</span><span class="tile-stack">React · Framer Motion · Express</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="dolcezza" data-cat="web">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P12</span><span class="tile-status">Prototipo</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">Heladería Dolcezza</span><span class="tile-cat">Menú interactivo · Gastronomía</span><span class="tile-stack">HTML · CSS · JavaScript</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="jemd" data-cat="sistemas">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P13</span><span class="tile-status">Prototipo</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">Sistema JEMD</span><span class="tile-cat">Gestión comercial · Ventas</span><span class="tile-stack">PHP · MySQL · JavaScript</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                    <li class="tile" data-project="kazzy" data-cat="ia">
+                        <button type="button" class="tile-hit" aria-haspopup="dialog">
+                            <span class="tile-media"><span class="tile-code">KZ–P14</span><span class="tile-status">Experimental</span><span class="tile-empty">Vista previa en preparación</span></span>
+                            <span class="tile-info"><span class="tile-title">Kazzy</span><span class="tile-cat">Asistente de voz con IA local</span><span class="tile-stack">Python · FastAPI · Ollama · Whisper</span></span>
+                            <span class="tile-go" aria-hidden="true"><svg class="i"><use href="#i-arrow"/></svg></span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PROCESS (light section) -->
+        <section class="section section-light" id="proceso">
+            <div class="wrap">
+                <header class="section-head reveal">
+                    <p class="label"><span class="label-index">03</span><span>Método de trabajo</span></p>
+                    <h2 class="section-title"><span>Un proceso corto.</span> <span class="dim">Cada etapa deja algo útil.</span></h2>
+                    <p class="section-intro">Avanzamos por entregas visibles para validar temprano y evitar semanas de trabajo sobre una idea equivocada.</p>
+                </header>
+
+                <ol class="process" data-process>
+                    <li class="process-rail" aria-hidden="true"><span></span></li>
+                    <li class="step reveal"><span class="step-num">01</span><small>ENTRADA</small><h3>Entender</h3><p>Objetivo, usuario, problema y restricciones reales.</p></li>
+                    <li class="step reveal"><span class="step-num">02</span><small>ALCANCE</small><h3>Definir</h3><p>Alcance, entregables, tecnología, tiempo y costos.</p></li>
+                    <li class="step reveal"><span class="step-num">03</span><small>CONSTRUIR</small><h3>Construir</h3><p>Diseño y desarrollo mediante avances comprobables.</p></li>
+                    <li class="step reveal"><span class="step-num">04</span><small>PUBLICAR</small><h3>Activar</h3><p>Publicación, capacitación y siguiente ciclo de mejora.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- STUDIO -->
+        <section class="section" id="perfil">
+            <div class="wrap studio">
+                <div class="studio-id reveal">
+                    <p class="label"><span class="label-index">04</span><span>La persona detrás del sistema</span></p>
+                    <h2 class="studio-name"><span>Paul Jared</span><span>Medina Aranda</span></h2>
+                    <p class="studio-role">Estudiante de Ingeniería de Sistemas · Fundador de Kzaly Group</p>
+                    <p class="studio-text">Trabajo directamente contigo desde la primera conversación hasta la entrega. Busco soluciones claras, mantenibles y ajustadas a la realidad de cada negocio.</p>
+                </div>
+
+                <div class="studio-data reveal">
+                    <dl class="facts">
+                        <div><dt>UBICACIÓN</dt><dd>Perú · Remoto</dd></div>
+                        <div><dt>ENFOQUE</dt><dd>Web · Sistemas · Móvil · IA</dd></div>
+                        <div><dt>PROCESO</dt><dd>Atención 1:1</dd></div>
+                        <div><dt>ESTADO</dt><dd class="online"><i aria-hidden="true"></i>Disponible</dd></div>
+                    </dl>
+
+                    <div class="stack">
+                        <p class="label"><span>Tecnologías utilizadas</span></p>
+                        <dl>
+                            <div><dt>Interfaz</dt><dd>HTML · CSS · JavaScript · TypeScript · React · Three.js · Tailwind</dd></div>
+                            <div><dt>Móvil</dt><dd>React Native · Expo · Flutter</dd></div>
+                            <div><dt>Servidor</dt><dd>Node.js · Express · Python · FastAPI · Rust · PHP · Java</dd></div>
+                            <div><dt>Datos y nube</dt><dd>PostgreSQL · MySQL · MongoDB · Redis · Supabase · Firebase · Vercel</dd></div>
+                        </dl>
                     </div>
                 </div>
-                <div class="stack-terminal reveal">
-                    <div class="terminal-head"><span>TECNOLOGÍA / CAPACIDADES</span><small>LISTO</small></div>
-                    <div class="stack-group"><strong>Interfaz</strong><div><span>HTML y CSS</span><span>JavaScript</span><span>TypeScript</span><span>React</span></div></div>
-                    <div class="stack-group"><strong>Servidor</strong><div><span>Node.js</span><span>Python</span><span>Java</span><span>PHP</span></div></div>
-                    <div class="stack-group"><strong>Datos y nube</strong><div><span>MySQL</span><span>PostgreSQL</span><span>Firebase</span><span>Supabase</span><span>Vercel</span></div></div>
-                </div>
             </div>
         </section>
 
-        <section class="section log-section" aria-labelledby="log-title">
-            <div class="container log-grid">
-                <div class="section-heading compact reveal">
-                    <div>
-                        <p class="eyebrow"><span>KZ / 05</span> Registro de avances</p>
-                        <h2 id="log-title">El estudio sigue en movimiento.</h2>
+        <!-- CONTACT -->
+        <section class="contact" id="contacto">
+            <div class="wrap contact-inner">
+                <p class="label reveal"><span class="label-index">05</span><span>Nueva conexión</span></p>
+                <h2 class="contact-title reveal">Cuéntame qué necesita resolver tu negocio.</h2>
+                <div class="contact-grid reveal">
+                    <p class="contact-text">Una conversación breve basta para entender el objetivo, plantear un alcance realista y darte un precio concreto.</p>
+                    <div class="contact-actions">
+                        <a class="btn btn-invert" href="https://wa.me/51952449319?text=Hola%20Paul%2C%20vi%20tu%20portafolio%20y%20quiero%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener noreferrer" data-wa-link data-magnetic><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Iniciar por WhatsApp</span></a>
+                        <a class="btn btn-ghost" href="#contacto" data-mail><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><span>Enviar correo</span></a>
                     </div>
-                </div>
-                <div class="build-log reveal">
-                    <article><span class="log-state active">Ahora</span><div><small>VERSIÓN 2.0</small><h3>Nueva identidad digital de Kzaly Group</h3><p>Sistema visual metálico, archivo interactivo de proyectos y narrativa de casos.</p></div></article>
-                    <article><span class="log-state">Producción</span><div><small>KZ–P01</small><h3>Botica Vida y Salud</h3><p>Inventario farmacéutico, ventas y operación sin conexión.</p></div></article>
-                    <article><span class="log-state">En desarrollo</span><div><small>KZ–P02 / P03</small><h3>Ecosistema Evelyn SAC</h3><p>Web comercial y herramienta interna para inventario.</p></div></article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section founder-section" id="perfil">
-            <div class="container founder-card reveal">
-                <div class="founder-ident">
-                    <div class="founder-mark"><img src="assets/logo-kzaly-transparent.png" alt="Logo de Kzaly Group" width="1536" height="1536"></div>
-                    <span>FUNDADOR / 01</span>
-                </div>
-                <div class="founder-copy">
-                    <p class="eyebrow"><span>KZ / 06</span> La persona detrás del sistema</p>
-                    <h2>Paul Jared<br>Medina Aranda</h2>
-                    <p class="founder-role">Estudiante de Ingeniería de Sistemas · Fundador de Kzaly Group</p>
-                    <p>Trabajo directamente contigo desde la primera conversación hasta la entrega. Busco soluciones claras, mantenibles y ajustadas a la realidad de cada negocio.</p>
-                </div>
-                <div class="founder-console">
-                    <div><span>UBICACIÓN</span><strong>Perú · Remoto</strong></div>
-                    <div><span>ENFOQUE</span><strong>Web · Sistemas · IA</strong></div>
-                    <div><span>PROCESO</span><strong>Atención 1:1</strong></div>
-                    <div><span>ESTADO</span><strong class="online-text">Disponible</strong></div>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact-section" id="contacto">
-            <div class="container contact-card reveal">
-                <div>
-                    <p class="eyebrow light"><span>KZ / 07</span> Nueva conexión</p>
-                    <h2>Cuéntame qué necesita resolver tu negocio.</h2>
-                    <p>Una conversación breve basta para entender el objetivo, plantear un alcance realista y darte un precio concreto.</p>
-                </div>
-                <div class="contact-actions">
-                    <a class="button button-light energy-button" href="https://wa.me/51952449319" target="_blank" rel="noopener"><i class="fab fa-whatsapp" aria-hidden="true"></i> Iniciar por WhatsApp</a>
-                    <a class="button button-outline-light" href="mailto:pauljared96@gmail.com"><i class="far fa-envelope" aria-hidden="true"></i> Enviar correo</a>
-                    <button class="copy-button" type="button" data-email="pauljared96@gmail.com">Copiar correo</button>
+                    <dl class="contact-lines">
+                        <div><dt>WHATSAPP</dt><dd>+51 952 449 319</dd></div>
+                        <div><dt>CORREO</dt><dd><span data-mail-text></span><button class="copy" type="button" data-copy-mail aria-label="Copiar correo"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg></button></dd></div>
+                    </dl>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <span class="brand-mark small" aria-hidden="true"><img src="assets/logo-kzaly-transparent.png" alt="" width="1536" height="1536"></span>
+        <div class="wrap">
+            <p class="footer-word" aria-hidden="true">KZALY</p>
+            <div class="footer-row">
                 <span>Kzaly Group · Diseñado y desarrollado por Paul Medina</span>
+                <nav class="footer-links" aria-label="Redes">
+                    <a href="https://github.com/Kopozz" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg class="i" aria-hidden="true"><use href="#i-github"/></svg></a>
+                    <a href="https://www.linkedin.com/in/paul-medina-92b20538a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+                    <a href="https://instagram.com/only_kopoz" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="i" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+                </nav>
+                <span class="mono">KZ / <span id="year">2026</span> / V3.0</span>
+                <a class="to-top" href="#inicio"><span>Volver arriba</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
             </div>
-            <div class="footer-links">
-                <a href="https://github.com/Kopozz" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7A11.5 11.5 0 0 0 8.36 23.1c.58.1.79-.25.79-.56v-2.23c-3.23.7-3.91-1.37-3.91-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.58-.29-5.29-1.29-5.29-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.16 1.18a10.9 10.9 0 0 1 5.76 0c2.19-1.49 3.16-1.18 3.16-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19 1.84 1.19 3.1 0 4.41-2.72 5.39-5.3 5.68.42.36.79 1.07.79 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg><span>GitHub</span></a>
-                <a href="https://www.linkedin.com/in/paul-medina-92b20538a" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.34 7.5H1.78V22h3.56V7.5ZM3.56 1.75a2.08 2.08 0 1 0 0 4.16 2.08 2.08 0 0 0 0-4.16ZM22.22 13.68c0-4.36-2.33-6.39-5.44-6.39a4.7 4.7 0 0 0-4.25 2.34V7.5H8.97V22h3.56v-7.18c0-1.9.36-3.73 2.71-3.73 2.32 0 2.35 2.17 2.35 3.85V22h3.56l1.07-8.32Z"/></svg><span>LinkedIn</span></a>
-                <a href="https://instagram.com/only_kopoz" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg><span>Instagram</span></a>
-            </div>
-            <p>KZ / <span id="year">2026</span> / V2.0</p>
         </div>
     </footer>
 
-    <dialog class="case-dialog" id="case-dialog" aria-labelledby="case-title">
-        <div class="case-shell">
-            <header class="case-header">
-                <div><span id="case-code">KZ–P01</span><small id="case-status">En producción</small></div>
-                <button class="dialog-close" type="button" data-close-dialog aria-label="Cerrar caso de estudio"><i class="fas fa-xmark" aria-hidden="true"></i></button>
+    <!-- Floating WhatsApp -->
+    <div class="wa-float" id="wa-float">
+        <p class="wa-bubble" id="wa-bubble" hidden><span>¿Tienes un proyecto? Hablemos.</span><button type="button" class="wa-bubble-close" aria-label="Cerrar"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button></p>
+        <a class="wa-button" href="https://wa.me/51952449319?text=Hola%20Paul%2C%20vi%20tu%20portafolio%20y%20quiero%20conversar%20sobre%20un%20proyecto." target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp" data-wa-link>
+            <span class="wa-ring" aria-hidden="true"></span>
+            <svg class="i wa-icon" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+            <span class="wa-label">Escríbeme</span>
+            <span class="wa-dot" aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <dialog class="case" id="case-dialog" aria-labelledby="case-title">
+        <div class="case-panel">
+            <header class="case-head">
+                <span class="mono" id="case-code">KZ–P01</span>
+                <span class="tile-status" id="case-status">En producción</span>
+                <button class="case-close" type="button" data-close-dialog aria-label="Cerrar caso de estudio"><svg class="i" aria-hidden="true"><use href="#i-close"/></svg></button>
             </header>
-            <div class="case-layout">
-                <div class="case-copy">
-                    <p class="eyebrow"><span>FICHA DEL CASO</span> Detalle del proyecto</p>
-                    <h2 id="case-title">Botica Vida y Salud</h2>
-                    <p id="case-summary">Sistema farmacéutico para gestionar inventario, ventas y disponibilidad incluso cuando la conexión no es estable.</p>
-                    <div class="case-block"><small>EL PROBLEMA</small><p id="case-problem"></p></div>
-                    <div class="case-block"><small>LA SOLUCIÓN</small><p id="case-solution"></p></div>
-                    <dl class="case-specs" id="case-specs"></dl>
-                    <a class="button button-primary" id="case-link" href="#" target="_blank" rel="noopener">Visitar proyecto <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
-                </div>
-                <div class="case-gallery">
-                    <img class="case-main-image" id="case-main-image" src="assets/projects/botica-vida-salud.webp" alt="Interfaz del sistema Botica Vida y Salud" width="1024" height="1024">
-                    <div class="case-thumbs" id="case-thumbs" aria-label="Galería del proyecto"></div>
+            <div class="case-media"><span class="tile-empty">Vista previa en preparación</span></div>
+            <div class="case-body">
+                <p class="label"><span>FICHA DEL CASO</span></p>
+                <h2 id="case-title">Botica Vida y Salud</h2>
+                <p class="case-summary" id="case-summary"></p>
+                <div class="case-block"><h3>EL PROBLEMA</h3><p id="case-problem"></p></div>
+                <div class="case-block"><h3>LA SOLUCIÓN</h3><p id="case-solution"></p></div>
+                <div class="case-block"><h3>PUNTOS CLAVE</h3><ul class="case-points" id="case-points"></ul></div>
+                <dl class="case-specs">
+                    <div><dt>Rol</dt><dd id="case-role"></dd></div>
+                    <div><dt>Plataforma</dt><dd id="case-platform"></dd></div>
+                    <div><dt>TECNOLOGÍA</dt><dd id="case-stack"></dd></div>
+                </dl>
+                <div class="case-actions">
+                    <a class="btn btn-solid" id="case-link" href="#" target="_blank" rel="noopener noreferrer"><span>Visitar proyecto</span><svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+                    <a class="btn btn-line" id="case-wa" href="https://wa.me/51952449319" target="_blank" rel="noopener noreferrer"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg><span>Quiero algo similar</span></a>
                 </div>
             </div>
         </div>
     </dialog>
 
-    <div class="toast" id="toast" role="status" aria-live="polite">Correo copiado</div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="js/i18n.js" defer></script>
+    <script src="js/projects.js" defer></script>
     <script src="js/portfolio.js" defer></script>
 </body>
 </html>
