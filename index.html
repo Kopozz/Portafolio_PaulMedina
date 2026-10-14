@@ -6,6 +6,7 @@
     <title>Kzaly Group | Software y soluciones digitales por Paul Medina</title>
     <meta name="description" content="Kzaly Group es el estudio de software de Paul Medina en Perú. Páginas web, sistemas para negocios, aplicaciones móviles y automatización con IA.">
     <meta name="author" content="Paul Jared Medina Aranda">
+    <meta name="copyright" content="© 2026 Kzaly Group · Paul Jared Medina Aranda. Todos los derechos reservados.">
     <meta name="theme-color" content="#05070a">
     <meta name="color-scheme" content="dark">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -62,6 +63,7 @@
     </svg>
 
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <canvas class="circuit-bg" id="circuit-bg" aria-hidden="true"></canvas>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
     <header class="site-header" id="site-header">
@@ -114,8 +116,6 @@
     <main id="contenido">
         <!-- HERO -->
         <section class="hero" id="inicio">
-            <div class="hero-field" aria-hidden="true"><span class="field-base"></span><span class="field-lit"></span></div>
-
             <div class="wrap hero-grid">
                 <div class="hero-copy">
                     <p class="label hero-label" data-intro><span class="label-dot" aria-hidden="true"></span><span>Estudio de software · Perú</span></p>
@@ -132,26 +132,55 @@
                     </div>
                 </div>
 
-                <div class="hero-mark" data-intro data-parallax>
-                    <div class="mark-frame">
+                <div class="hero-stage" data-intro>
+                    <div class="stage-frame" id="stage" role="img" aria-label="Animación: diseño, desarrollo y publicación de un sitio web">
                         <span class="corner c-tl" aria-hidden="true"></span><span class="corner c-tr" aria-hidden="true"></span>
                         <span class="corner c-bl" aria-hidden="true"></span><span class="corner c-br" aria-hidden="true"></span>
-                        <svg class="mark-svg" viewBox="320 296 616 676" role="img" aria-label="Logo de Kzaly Group">
-                            <defs>
-                                <linearGradient id="hero-k" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#02b5fc"/><stop offset="0.5" stop-color="#0071fb"/><stop offset="1" stop-color="#003fd9"/></linearGradient>
-                                <linearGradient id="hero-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0071fb"/><stop offset="1" stop-color="#033595"/></linearGradient>
-                            </defs>
-                            <path class="mk mk-k" pathLength="1" d="M331 306 L406 378 V690 L545 553 L613 603 L331 871 Z"/>
-                            <path class="mk mk-s" pathLength="1" d="M657 720 V958 L599 900 V778 Z"/>
-                            <path class="mk mk-w" pathLength="1" d="M648 444 H923 V745 L705 963 V851 L850 706 V535 Q850 520 835 520 H572 Z"/>
-                        </svg>
-                        <div class="mark-scan" aria-hidden="true"></div>
+                        <div class="stage-window" aria-hidden="true">
+                            <div class="stage-bar"><span class="stage-dots"><i></i><i></i><i></i></span><span class="stage-url"><span>tu-negocio.com</span></span></div>
+                            <div class="stage-body">
+                                <div class="scene scene-design is-active" data-scene="0">
+                                    <div class="wf-grid"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                                    <div class="wf-nav"><b></b><span></span><span></span><span></span></div>
+                                    <div class="wf-copy"><span class="wf-h"></span><span class="wf-h wf-short"></span><span class="wf-p"></span><span class="wf-p wf-short"></span><span class="wf-btn"></span></div>
+                                    <div class="wf-img"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0 0L100 100M100 0L0 100"/></svg></div>
+                                    <div class="wf-cards"><span></span><span></span><span></span></div>
+                                    <div class="wf-select"><i></i><i></i><i></i><i></i><em>560 × 96</em></div>
+                                    <div class="wf-inspector"><small>Tipografía</small><b>Aa</b><small>Color</small><span class="wf-swatches"><i></i><i></i><i></i></span></div>
+                                    <svg class="wf-cursor" viewBox="0 0 24 24"><path d="M4 2.5 19.5 13l-6.6 1.3L9.3 21z"/></svg>
+                                </div>
+                                <div class="scene scene-code" data-scene="1">
+                                    <ol class="code">
+                                        <li><span class="cl"><b class="tk-tag">&lt;section</b> <b class="tk-attr">class</b>=<b class="tk-str">"hero"</b><b class="tk-tag">&gt;</b></span></li>
+                                        <li><span class="cl">  <b class="tk-tag">&lt;h1&gt;</b>{title}<b class="tk-tag">&lt;/h1&gt;</b></span></li>
+                                        <li><span class="cl">  <b class="tk-tag">&lt;Button</b> <b class="tk-attr">to</b>=<b class="tk-str">"/contacto"</b> <b class="tk-tag">/&gt;</b></span></li>
+                                        <li><span class="cl"><b class="tk-tag">&lt;/section&gt;</b></span></li>
+                                        <li><span class="cl"> </span></li>
+                                        <li><span class="cl"><b class="tk-key">export async function</b> <b class="tk-fn">deploy</b>() {</span></li>
+                                        <li><span class="cl">  <b class="tk-key">await</b> <b class="tk-fn">build</b>({ minify: <b class="tk-key">true</b> })</span></li>
+                                        <li><span class="cl">  <b class="tk-key">return</b> <b class="tk-str">"ok"</b></span></li>
+                                        <li><span class="cl">}</span></li>
+                                    </ol>
+                                    <div class="term"><span class="cl">$ npm run build</span><span class="cl term-ok">✓ listo en 1.2 s</span></div>
+                                </div>
+                                <div class="scene scene-deploy" data-scene="2">
+                                    <div class="dp-head"><span>Publicando en producción</span><b class="dp-pct" data-deploy-pct>0%</b></div>
+                                    <div class="dp-bar"><i></i></div>
+                                    <ul class="dp-checks"><li>Compilación</li><li>Optimización de imágenes</li><li>Certificado SSL</li><li>Red global (CDN)</li></ul>
+                                    <div class="dp-live">
+                                        <img src="assets/logo-kzaly.svg" alt="" width="36" height="40">
+                                        <div class="dp-live-copy"><b>tu-negocio.com</b><span class="online"><i></i>En línea</span></div>
+                                        <small>200 OK · 48 ms</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <ol class="mark-steps" aria-label="Etapas">
-                        <li class="is-on"><span>01</span>DISEÑAR</li>
-                        <li><span>02</span>DESARROLLAR</li>
-                        <li><span>03</span>PUBLICAR</li>
-                    </ol>
+                    <div class="stage-steps" role="group" aria-label="Etapas">
+                        <button type="button" class="is-on" data-step="0"><i aria-hidden="true"></i><span>01</span>DISEÑAR</button>
+                        <button type="button" data-step="1"><i aria-hidden="true"></i><span>02</span>DESARROLLAR</button>
+                        <button type="button" data-step="2"><i aria-hidden="true"></i><span>03</span>PUBLICAR</button>
+                    </div>
                 </div>
             </div>
 
@@ -434,6 +463,7 @@
                         <div><dt>WHATSAPP</dt><dd>+51 952 449 319</dd></div>
                         <div><dt>CORREO</dt><dd><span data-mail-text></span><button class="copy" type="button" data-copy-mail aria-label="Copiar correo"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg></button></dd></div>
                     </dl>
+                    <p class="contact-legal"><span>Al escribirme, tus datos se usan solo para responderte, según la</span> <a href="/privacidad">Política de privacidad</a>.</p>
                 </div>
             </div>
         </section>
@@ -449,8 +479,17 @@
                     <a href="https://www.linkedin.com/in/paul-medina-92b20538a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg class="i" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
                     <a href="https://instagram.com/only_kopoz" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg class="i" aria-hidden="true"><use href="#i-instagram"/></svg></a>
                 </nav>
-                <span class="mono">KZ / <span id="year">2026</span> / V3.0</span>
+                <span class="mono">KZ / <span id="year">2026</span> / V3.1</span>
                 <a class="to-top" href="#inicio"><span>Volver arriba</span><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="footer-legal">
+                <p>© <span data-year>2026</span> Kzaly Group · Paul Jared Medina Aranda. <span>Todos los derechos reservados.</span></p>
+                <nav aria-label="Legal">
+                    <a href="/privacidad">Privacidad</a>
+                    <a href="/cookies">Cookies</a>
+                    <a href="/terminos">Términos y propiedad intelectual</a>
+                    <a href="/seguridad">Seguridad</a>
+                </nav>
             </div>
         </div>
     </footer>
@@ -494,9 +533,15 @@
         </div>
     </dialog>
 
+    <div class="cookie-note" id="cookie-note" role="region" aria-label="Aviso de cookies" hidden>
+        <p><span>Este sitio no usa cookies de publicidad ni de seguimiento. Solo guarda tu idioma en tu navegador.</span> <a href="/cookies">Más información</a></p>
+        <button type="button" class="cookie-ok" data-cookie-ok>Entendido</button>
+    </div>
+
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="js/i18n.js" defer></script>
     <script src="js/projects.js" defer></script>
     <script src="js/portfolio.js" defer></script>
+    <script src="js/circuit.js" defer></script>
 </body>
 </html>

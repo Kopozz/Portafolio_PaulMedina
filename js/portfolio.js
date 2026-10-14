@@ -24,7 +24,9 @@
     const t = (value) => window.KzalyI18n?.t(value) || value;
     const lang = () => window.KzalyI18n?.language || "es";
     const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
-    const motionOk = () => !reducedMotion.matches;
+    // Ambient animation always runs. A reduced-motion preference only removes
+    // parallax, tilt and magnetic pull (see the matching CSS block).
+    const pullOk = () => !reducedMotion.matches && finePointer.matches;
 
     /* ---------- Header, progress, scroll spy ---------- */
     const navLinks = Array.from(document.querySelectorAll(".desktop-nav a[data-nav]"));
@@ -182,7 +184,8 @@
 
         const start = () => root.classList.add("is-loaded");
         const fonts = document.fonts?.ready || Promise.resolve();
-        Promise.race([fonts, new Promise((resolve) => window.setTimeout(resolve, 700))]).then(() => window.requestAnimationFrame(start));
+        // Plain timers (not requestAnimationFrame) so a tab opened in the background still starts.
+        Promise.race([fonts, new Promise((resolve) => window.setTimeout(resolve, 700))]).then(() => window.setTimeout(start, 30));
     }
 
     function initReveal() {
@@ -193,7 +196,7 @@
             if (index > 0) element.style.setProperty("--d", `${Math.min(index * 0.06, 0.42).toFixed(2)}s`);
         });
 
-        if (!motionOk() || !("IntersectionObserver" in window)) {
+        if (!("IntersectionObserver" in window)) {
             elements.forEach((element) => element.classList.add("is-in"));
             return;
         }
@@ -209,14 +212,39 @@
     }
 
     /* ---------- Typewriter ---------- */
+    function typewriterWords() {
+        return Array.from(window.KzalyI18n?.words || ["sitios web que venden."]).filter(Boolean);
+    }
+
+    // Reserve the height of the tallest phrase so the headline box never changes size.
+    function lockTypewriterHeight() {
+        const line = document.querySelector(".typewriter-line");
+        const element = line?.querySelector("[data-typewriter]");
+        if (!line || !element) return;
+        const probe = line.cloneNode(true);
+        probe.removeAttribute("data-intro");
+        probe.setAttribute("aria-hidden", "true");
+        Object.assign(probe.style, { position: "absolute", visibility: "hidden", left: "0", top: "0", width: `${line.getBoundingClientRect().width}px`, minHeight: "0", clipPath: "none" });
+        line.parentElement.appendChild(probe);
+        const text = probe.querySelector("[data-typewriter]");
+        let tallest = 0;
+        typewriterWords().forEach((word) => {
+            text.textContent = word;
+            tallest = Math.max(tallest, probe.getBoundingClientRect().height);
+        });
+        probe.remove();
+        if (tallest > 0) line.style.setProperty("--tw-h", `${Math.ceil(tallest)}px`);
+    }
+
     function initTypewriter() {
         const element = document.querySelector("[data-typewriter]");
         if (!element) return;
-        const words = Array.from(window.KzalyI18n?.words || ["sitios web que venden."]).filter(Boolean);
+        const words = typewriterWords();
         window.clearTimeout(typewriterTimer);
         const run = ++typewriterRun;
         element.textContent = words[0];
-        if (words.length < 2 || !motionOk()) return;
+        lockTypewriterHeight();
+        if (words.length < 2) return;
 
         let wordIndex = 0;
         let characters = Array.from(words[0]);
@@ -256,63 +284,130 @@
         typewriterTimer = window.setTimeout(tick, 2600);
     }
 
-    /* ---------- Hero: cursor light + mark tilt ---------- */
-    function initHeroPointer() {
-        const field = document.querySelector(".hero-field");
-        const frame = document.querySelector(".mark-frame");
-        if (!hero || !field || !finePointer.matches || !motionOk()) return;
-
-        const target = { x: hero.offsetWidth * 0.72, y: hero.offsetHeight * 0.38 };
-        const current = { ...target };
+    /* ---------- Hero: tilt of the stage ---------- */
+    function initStageTilt() {
+        const frame = document.getElementById("stage");
+        if (!hero || !frame || !pullOk()) return;
+        let request = null;
         let tilt = { x: 0, y: 0 };
-        let frameId = null;
-
-        function loop() {
-            current.x += (target.x - current.x) * 0.12;
-            current.y += (target.y - current.y) * 0.12;
-            field.style.setProperty("--mx", `${current.x.toFixed(1)}px`);
-            field.style.setProperty("--my", `${current.y.toFixed(1)}px`);
-            if (frame) {
-                frame.style.setProperty("--rx", `${tilt.x.toFixed(2)}deg`);
-                frame.style.setProperty("--ry", `${tilt.y.toFixed(2)}deg`);
-            }
-            const settled = Math.abs(target.x - current.x) < 0.5 && Math.abs(target.y - current.y) < 0.5;
-            frameId = settled ? null : window.requestAnimationFrame(loop);
-        }
-
+        const apply = () => {
+            frame.style.setProperty("--rx", `${tilt.x.toFixed(2)}deg`);
+            frame.style.setProperty("--ry", `${tilt.y.toFixed(2)}deg`);
+            request = null;
+        };
         hero.addEventListener("pointermove", (event) => {
             const rect = hero.getBoundingClientRect();
-            target.x = event.clientX - rect.left;
-            target.y = event.clientY - rect.top;
-            const nx = target.x / rect.width - 0.5;
-            const ny = target.y / rect.height - 0.5;
-            tilt = { x: -ny * 9, y: nx * 12 };
-            if (!frameId) frameId = window.requestAnimationFrame(loop);
+            tilt = { x: -((event.clientY - rect.top) / rect.height - 0.5) * 7, y: ((event.clientX - rect.left) / rect.width - 0.5) * 9 };
+            if (!request) request = window.requestAnimationFrame(apply);
         }, { passive: true });
-
         hero.addEventListener("pointerleave", () => {
             tilt = { x: 0, y: 0 };
-            if (!frameId) frameId = window.requestAnimationFrame(loop);
+            if (!request) request = window.requestAnimationFrame(apply);
         });
     }
 
-    function initMarkSteps() {
-        const steps = Array.from(document.querySelectorAll(".mark-steps li"));
-        if (steps.length < 2 || !motionOk()) return;
+    /* ---------- Hero: design → code → deploy stage ----------
+       One clock drives everything: scene switches, the step progress bars and
+       the deploy counter. It stops while the hero is off screen or the tab is
+       hidden, and CSS animations inside the stage pause with it. */
+    function initStage() {
+        const frame = document.getElementById("stage");
+        if (!frame) return;
+        const scenes = Array.from(frame.querySelectorAll(".scene"));
+        const steps = Array.from(document.querySelectorAll(".stage-steps button"));
+        const durations = [5600, 5600, 5400];
+        const pct = frame.querySelector("[data-deploy-pct]");
+        const checks = Array.from(frame.querySelectorAll(".dp-checks li"));
+        const live = frame.querySelector(".dp-live");
+        if (scenes.length !== durations.length) return;
+
+        // Typing timings for the code scene: one character every 24 ms, lines in sequence.
+        // Re-run on language change because the terminal line is translated.
+        function timeCodeLines() {
+            let cursor = 0.25;
+            frame.querySelectorAll(".scene-code .cl").forEach((line) => {
+                const chars = Math.max(1, Array.from(line.textContent).length);
+                const duration = chars * 0.024;
+                line.style.setProperty("--n", String(chars));
+                line.style.setProperty("--d", `${duration.toFixed(3)}s`);
+                line.style.setProperty("--t", `${cursor.toFixed(3)}s`);
+                cursor += duration + 0.12;
+            });
+        }
+        timeCodeLines();
+        window.addEventListener("kzaly:languagechange", timeCodeLines);
+
         let index = 0;
-        window.setInterval(() => {
-            if (document.hidden) return;
-            steps[index].classList.remove("is-on");
-            index = (index + 1) % steps.length;
-            void steps[index].offsetWidth;
-            steps[index].classList.add("is-on");
-        }, 2400);
+        let elapsed = 0;
+        let last = null;
+        let visible = true;
+        let leaveTimer;
+
+        function deployCurve(t) {
+            // Fast start, short hold in the middle, smooth finish: reads like a real build.
+            if (t < 0.18) return t / 0.18 * 0.34;
+            if (t < 0.3) return 0.34 + (t - 0.18) / 0.12 * 0.08;
+            if (t < 0.58) return 0.42 + (t - 0.3) / 0.28 * 0.58;
+            return 1;
+        }
+
+        function renderDeploy(progress) {
+            const value = deployCurve(progress);
+            frame.style.setProperty("--dp", value.toFixed(3));
+            if (pct) pct.textContent = `${Math.round(value * 100)}%`;
+            checks.forEach((check, i) => check.classList.toggle("is-done", value >= (i + 1) / checks.length - 0.001));
+            live?.classList.toggle("is-on", value >= 1 && progress > 0.62);
+        }
+
+        function show(next) {
+            const previous = scenes[index];
+            index = next;
+            elapsed = 0;
+            window.clearTimeout(leaveTimer);
+            scenes.forEach((scene) => scene.classList.remove("is-leaving"));
+            if (previous !== scenes[index]) {
+                previous.classList.remove("is-active");
+                previous.classList.add("is-leaving");
+                leaveTimer = window.setTimeout(() => previous.classList.remove("is-leaving"), 600);
+            }
+            const scene = scenes[index];
+            scene.classList.remove("is-active");
+            void scene.offsetWidth;
+            scene.classList.add("is-active");
+            steps.forEach((step, i) => {
+                step.classList.toggle("is-on", i === index);
+                step.setAttribute("aria-pressed", String(i === index));
+                step.style.setProperty("--p", i < index ? "1" : "0");
+            });
+            if (index === 2) renderDeploy(0);
+        }
+
+        function tick(now) {
+            const running = visible && !document.hidden && root.classList.contains("is-loaded");
+            frame.classList.toggle("is-paused", !running);
+            if (last !== null && running) elapsed += Math.min(now - last, 100);
+            last = now;
+            const progress = clamp(elapsed / durations[index], 0, 1);
+            steps[index]?.style.setProperty("--p", progress.toFixed(4));
+            if (index === 2) renderDeploy(progress);
+            if (elapsed >= durations[index]) show((index + 1) % scenes.length);
+            window.requestAnimationFrame(tick);
+        }
+
+        steps.forEach((step, i) => step.addEventListener("click", () => show(i)));
+
+        if ("IntersectionObserver" in window) {
+            new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; }, { threshold: 0.05 }).observe(frame);
+        }
+
+        show(0);
+        window.requestAnimationFrame(tick);
     }
 
     /* ---------- Counters ---------- */
     function initCounters() {
         const counters = document.querySelectorAll("[data-count]");
-        if (!counters.length || !motionOk() || !("IntersectionObserver" in window)) return;
+        if (!counters.length || !("IntersectionObserver" in window)) return;
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (!entry.isIntersecting) return;
@@ -336,7 +431,7 @@
 
     /* ---------- Magnetic buttons ---------- */
     function initMagnetic() {
-        if (!finePointer.matches || !motionOk()) return;
+        if (!pullOk()) return;
         document.querySelectorAll("[data-magnetic], .wa-button").forEach((element) => {
             element.addEventListener("pointermove", (event) => {
                 const rect = element.getBoundingClientRect();
@@ -374,7 +469,7 @@
                     const show = filter === "all" || tile.dataset.cat === filter;
                     tile.hidden = !show;
                     tile.classList.remove("is-entering");
-                    if (!show || !motionOk()) return;
+                    if (!show) return;
                     tile.style.setProperty("--d", `${Math.min(visibleIndex * 0.05, 0.4).toFixed(2)}s`);
                     void tile.offsetWidth;
                     tile.classList.add("is-entering");
@@ -486,7 +581,6 @@
             selectedProject = null;
             updateWhatsAppVisibility();
         };
-        if (!motionOk()) return finish();
         dialog.classList.add("is-closing");
         dialog.addEventListener("animationend", finish, { once: true });
         window.setTimeout(() => { if (dialog.classList.contains("is-closing")) finish(); }, 600);
@@ -502,6 +596,20 @@
         dialog.addEventListener("click", (event) => { if (event.target === dialog) closeCase(); });
     }
 
+    /* ---------- Cookie notice ---------- */
+    function initCookieNote() {
+        const note = document.getElementById("cookie-note");
+        if (!note) return;
+        let seen = false;
+        try { seen = localStorage.getItem("kz-cookie-ack") === "1"; } catch { /* storage unavailable */ }
+        if (seen) return;
+        window.setTimeout(() => { note.hidden = false; }, 1800);
+        note.querySelector("[data-cookie-ok]")?.addEventListener("click", () => {
+            note.hidden = true;
+            try { localStorage.setItem("kz-cookie-ack", "1"); } catch { /* storage unavailable */ }
+        });
+    }
+
     /* ---------- Footer word ---------- */
     function initFooterWord() {
         const word = document.querySelector(".footer-word");
@@ -513,7 +621,7 @@
             span.style.transitionDelay = `${index * 0.06}s`;
             return span;
         }));
-        if (!("IntersectionObserver" in window) || !motionOk()) {
+        if (!("IntersectionObserver" in window)) {
             word.classList.add("is-in");
             return;
         }
@@ -531,14 +639,22 @@
     mobileNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
     document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !mobileNav?.hidden) setMenu(false); });
 
-    const year = document.getElementById("year");
-    if (year) year.textContent = String(new Date().getFullYear());
+    const currentYear = String(new Date().getFullYear());
+    document.querySelectorAll("#year, [data-year]").forEach((node) => { node.textContent = currentYear; });
+
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+        window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(lockTypewriterHeight, 150);
+    }, { passive: true });
+    document.fonts?.ready.then(lockTypewriterHeight);
 
     initIntro();
     initReveal();
     initTypewriter();
-    initHeroPointer();
-    initMarkSteps();
+    initStageTilt();
+    initStage();
+    initCookieNote();
     initCounters();
     initMagnetic();
     initFilters();

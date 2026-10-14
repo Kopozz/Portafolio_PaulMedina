@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Seguridad y protección de datos | Kzaly Group</title>
+    <meta name="description" content="Medidas de seguridad del sitio de Kzaly Group, manejo de datos de clientes y cómo reportar una vulnerabilidad.">
+    <meta name="author" content="Paul Jared Medina Aranda">
+    <meta name="copyright" content="© 2026 Kzaly Group · Paul Jared Medina Aranda. Todos los derechos reservados.">
+    <meta name="theme-color" content="#05070a">
+    <link rel="canonical" href="https://portafolio-paul-medina.vercel.app/seguridad">
+    <link rel="icon" type="image/svg+xml" href="/assets/logo-kzaly.svg">
+    <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/portfolio.css">
+    <script src="/js/boot.js"></script>
+</head>
+<body>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false">
+        <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square"/></symbol>
+    </svg>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <canvas class="circuit-bg" id="circuit-bg" aria-hidden="true"></canvas>
+
+    <header class="legal-header">
+        <div class="wrap header-inner">
+            <a class="brand" href="/" aria-label="Kzaly Group, inicio">
+                <img class="brand-mark" src="/assets/logo-kzaly.svg" alt="" width="28" height="31">
+                <span class="brand-word">KZALY<small>GROUP</small></span>
+            </a>
+            <a class="legal-back" href="/"><svg class="i" aria-hidden="true"><use href="#i-arrow"/></svg><span>Volver al sitio</span></a>
+        </div>
+    </header>
+
+    <main class="legal" id="contenido">
+        <div class="wrap legal-layout">
+            <nav class="legal-toc" aria-label="En esta página">
+                <a href="#sitio">1. Medidas en el sitio</a>
+                <a href="#clientes">2. Datos de clientes</a>
+                <a href="#reporte">3. Reportar una vulnerabilidad</a>
+            </nav>
+            <article class="legal-doc">
+                <p class="label"><span class="label-index">LEGAL</span><span>Cómo se protege el sitio</span></p>
+                <h1>Seguridad y protección de datos</h1>
+                <p class="legal-meta">Última actualización: 14 de octubre de 2026 · Versión 1.0</p>
+
+                <p class="lead">Este documento resume cómo se protege el sitio, cómo se manejan los datos de los clientes y cómo reportar una vulnerabilidad de forma responsable.</p>
+
+                <h2 id="sitio">1. Medidas en el sitio</h2>
+                <ul>
+                    <li><strong>Conexión cifrada obligatoria</strong> (HTTPS con HSTS): el navegador nunca se conecta sin cifrado.</li>
+                    <li><strong>Política de seguridad de contenido (CSP) estricta</strong>: solo se ejecuta código propio. No hay anuncios, rastreadores ni scripts de terceros.</li>
+                    <li><strong>Protección contra suplantación visual (clickjacking)</strong>: ningún otro sitio puede mostrar esta página dentro de la suya.</li>
+                    <li><strong>Permisos bloqueados</strong>: el sitio no puede usar cámara, micrófono, ubicación ni pagos.</li>
+                    <li><strong>Aislamiento de recursos</strong>: otros sitios no pueden incrustar las imágenes ni los archivos de este dominio.</li>
+                    <li><strong>Cortafuegos de Vercel</strong> con mitigación automática de ataques DDoS y verificación de bots.</li>
+                    <li><strong>Sitio estático</strong>: no hay base de datos, formularios ni panel de administración expuestos, y no se almacenan datos personales en el servidor.</li>
+                    <li><strong>Correo protegido</strong> frente a programas que recolectan direcciones para spam.</li>
+                </ul>
+
+                <h2 id="clientes">2. Datos de clientes</h2>
+                <ul>
+                    <li>Solo pido la información necesaria para cada proyecto.</li>
+                    <li>Las contraseñas y accesos que un cliente comparte se reciben por canales privados, se guardan cifrados y se eliminan o devuelven al terminar el proyecto.</li>
+                    <li>El código de los proyectos se guarda en repositorios privados con acceso restringido.</li>
+                    <li>Las cuentas que administran sitios y proyectos usan contraseñas únicas.</li>
+                    <li>Si ocurre un incidente que afecte datos de un cliente, se le informará en cuanto se confirme, junto con las medidas tomadas.</li>
+                </ul>
+
+                <h2 id="reporte">3. Reportar una vulnerabilidad</h2>
+                <p>Si encuentras un problema de seguridad, escribe a <a href="mailto:pauljared96@gmail.com?subject=Seguridad">pauljared96@gmail.com</a> con el asunto “Seguridad”. Incluye una descripción, los pasos para reproducirlo y su posible impacto. Responderé en un plazo de 5 días hábiles.</p>
+                <p>Mientras investigas, por favor:</p>
+                <ul>
+                    <li>No accedas, modifiques ni elimines datos de otras personas.</li>
+                    <li>No realices pruebas de denegación de servicio ni envíes tráfico masivo.</li>
+                    <li>Da un plazo razonable para corregir el problema antes de hacerlo público.</li>
+                </ul>
+                <p>Los datos de contacto también están en el archivo estándar <a href="/.well-known/security.txt">security.txt</a>.</p>
+                <nav class="legal-foot" aria-label="Documentos legales">
+                    <a href="/privacidad">Política de privacidad</a>
+                    <a href="/cookies">Política de cookies</a>
+                    <a href="/terminos">Términos y propiedad intelectual</a>
+                    <a href="/seguridad" aria-current="page">Seguridad y protección de datos</a>
+                </nav>
+                <p class="legal-meta">© 2026 Kzaly Group · Paul Jared Medina Aranda. Todos los derechos reservados.</p>
+            </article>
+        </div>
+    </main>
+    <script src="/js/circuit.js" defer></script>
+</body>
+</html>
