@@ -250,13 +250,13 @@
     }));
 
     const typewriterWords = {
-        es: ["sitios web que venden.", "sistemas que organizan.", "procesos que avanzan.", "experiencias que conectan.", "ideas que cobran vida."],
-        en: ["websites that sell.", "systems that organize.", "processes that move forward.", "experiences that connect.", "ideas brought to life."],
-        fr: ["sites web qui vendent.", "systèmes qui organisent.", "processus qui avancent.", "expériences qui connectent.", "idées qui prennent vie."],
-        pt: ["sites que vendem.", "sistemas que organizam.", "processos que avançam.", "experiências que conectam.", "ideias que ganham vida."],
-        ja: ["売上につながるWebサイトに。", "仕事を整えるシステムに。", "前進するプロセスに。", "人をつなぐ体験に。", "形になるアイデアに。"],
-        ko: ["판매를 만드는 웹사이트.", "업무를 정리하는 시스템.", "앞으로 나아가는 프로세스.", "사람을 연결하는 경험.", "현실이 되는 아이디어."],
-        ru: ["сайты, которые продают.", "системы, которые наводят порядок.", "процессы, которые движут вперёд.", "опыт, который объединяет.", "идеи, которые оживают."]
+        es: ["sitios web que venden.", "sistemas que organizan.", "procesos que avanzan.", "experiencias que conectan.", "marcas que destacan."],
+        en: ["websites that sell.", "systems that organize.", "processes that move forward.", "experiences that connect.", "brands that stand out."],
+        fr: ["sites web qui vendent.", "systèmes qui organisent.", "processus qui avancent.", "expériences qui connectent.", "marques qui se démarquent."],
+        pt: ["sites que vendem.", "sistemas que organizam.", "processos que avançam.", "experiências que conectam.", "marcas que se destacam."],
+        ja: ["売上につながるWebサイトに。", "仕事を整えるシステムに。", "前進するプロセスに。", "人をつなぐ体験に。", "際立つブランドに。"],
+        ko: ["판매를 만드는 웹사이트.", "업무를 정리하는 시스템.", "앞으로 나아가는 프로세스.", "사람을 연결하는 경험.", "돋보이는 브랜드."],
+        ru: ["сайты, которые продают.", "системы, которые наводят порядок.", "процессы, которые движут вперёд.", "опыт, который объединяет.", "бренды, которые выделяются."]
     };
 
     const textSources = new WeakMap();
